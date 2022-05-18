@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/style2.css"/>
-    <title>Loging</title>
+    <link rel="stylesheet" href="styles/style-forgot.css"/>
+    <title>Forgot-Recover</title>
 </head>
 <body>
     <h1>- ITBANK -</h1>
@@ -14,21 +14,22 @@
             <img src="logo.jpg" alt="Logo ITBANK"/>
         </div>
         <div class="cuerpo">
-            <h2></h2>
+            <h2>Recuperá tu usuario y/o clave digital</h2>
             <form>
-                <label for="username">Usuario:</label>
+                <label for="username">Ingrese su tipo y número de documento</label>
                 <br>
-                <input type="text" placeholder="Ingrese su usuario">
+                <!-- Falta agrear estilo al select -->
+                <select name="idtype" id="idtype" class="select-box">
+                    <option value="1">DNI</option>
+                    <option value="2">LC</option>
+                    <option value="3">LE</option>
+                    <option value="4">LI</option>
+                </select>
+                <input type="text" placeholder="Ingrese su número de documento">
                 <br>
 
-                <label for="Password">Contraseña:</label>
-                <input type="password" placeholder="Ingrese su contraseña">
-                <br>
                 <input type="submit" value="Ingresar">
                 <br>
-                <a href="../HomeBanking_ITBA-forgot/forgot.html">¿Olvidaste tu contraseña?</a>
-                <br>
-                <a href="/HomeBanking_ITBA-register-page/register-page.html">Registrate</a>
 
             </form>
         </div>
