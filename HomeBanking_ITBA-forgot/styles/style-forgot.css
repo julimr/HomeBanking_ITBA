@@ -32,6 +32,11 @@ body{
 
 }
 
+.cuerpo h2{
+    color: rgb(43, 53, 110);
+}
+
+
 .cuerpo input{    
     width: 250px;    
     margin-bottom: 20px;
@@ -119,7 +124,8 @@ footer{
 }
 
 .partFooter a:hover{    
-    color: aqua;
+    color: #0b1936;
+    text-decoration: underline;
 }
 
 .partFooter img{    
@@ -146,7 +152,7 @@ footer{
 }
 
 .social-media i:hover{    
-    color: #fff;    
-    background-color: aqua;    
-    border-color: #3A0CA3;
+    color: #fff;
+    background-color: #2C56A8;
+    border-color: #7697DA;
 }

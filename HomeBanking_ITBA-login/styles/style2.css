@@ -137,6 +137,6 @@ footer{
 
 .social-media i:hover{    
     color: #fff;    
-    background-color: aqua;    
+    background-color: rgb(0, 6, 6);    
     border-color: #3A0CA3;
 }
