@@ -13,9 +13,14 @@ Por el momento solo empleamos HTML y CSS.
 Tareas por hacer:
 
 Pestaña contacto (Se encarga Ciro Schapert y Ramiro Paez)
+
 Pestañas turnos web
+
 Agregar cuadro de inicio de sesión en la pagina principal (a debatir )
+
 Agregar menu lateral/desplegable en la página principal
+
 Maquetar inicio homebanking para dispositivos móviles
+
 Terminar de definir componentes que conforman la página principal (nav, carrousel, menú desplegable, tarjetas, etc)
 
