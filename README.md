@@ -26,5 +26,7 @@ Agregar menu lateral/desplegable en la página principal
 
 Maquetar inicio homebanking para dispositivos móviles
 
+Agregar botones de "<- volver" y opción de cambiar de idioma (se encarga Rodrigo Brude)
+
 Terminar de definir componentes que conforman la página principal (nav, carrousel, menú desplegable, tarjetas, etc)
 
