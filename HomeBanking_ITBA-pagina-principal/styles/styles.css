@@ -106,6 +106,16 @@
     visibility: hidden;
 }
 
+.cotizacion {
+    background-color: #f8f9fa;
+    display: flex;
+    justify-content: space-around;
+}
+@media (max-width:740px){
+    .productos{
+        justify-content: center;
+    }
+}
 @media (max-width:650px) {
     nav, .mi-perfil, .cerrar-sesion{
         visibility:hidden;
@@ -115,7 +125,8 @@
     .menu-burger{
         visibility:visible;
     }
-    .productos{
-        justify-content: center;
+    .cotizacion{
+        display: block;
+        align-items: center;
     }
   }
