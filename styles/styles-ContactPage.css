@@ -1,0 +1,484 @@
+@import url("https://fonts.googleapis.com/css2?family=Assistant&family=Kanit:wght@300&family=Montserrat:wght@300&family=Mukta:wght@300;400&family=Nunito&family=Roboto+Condensed&family=Source+Code+Pro&family=Source+Sans+Pro&family=Ubuntu&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Assistant&family=Kanit:wght@300&family=Montserrat:wght@300&family=Mukta:wght@300;400&family=Nanum+Gothic&family=Nunito&family=Roboto+Condensed&family=Source+Code+Pro&family=Source+Sans+Pro&family=Ubuntu&display=swap");
+/*header*/
+header::before {
+  content: "";
+  display: inline-block;
+  margin-bottom: 80px;
+}
+nav {
+  width: 100%;
+  height: 80px;
+  background: #fff;
+  border-bottom: 1px solid transparent;
+  box-shadow: 1px 1px 10px 0 rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: 0;
+  z-index: 100;
+}
+.nav {
+  display: flex;
+  justify-content: space-around;
+  height: 80px;
+  width: 100%;
+  align-items: center;
+  padding: 0 40px;
+}
+.nav .logo {
+  height: 80px;
+}
+.nav .logo img {
+  height: 100%;
+  vertical-align: top;
+}
+.enlaces-header {
+  font-weight: 300;
+}
+.nav .enlaces-header a {
+  color: #2c56a8;
+  text-decoration: none;
+  margin-left: 30px;
+}
+.nav .enlaces-header a:hover {
+  color: #fff;
+  background: #7697da;
+  border-radius: 8px;
+  box-shadow: 2px 5px 10px rgba(32, 32, 231, 0.603);
+  padding: 4px 6px;
+}
+header {
+  background: linear-gradient(#a8dadc, #fff);
+}
+.container {
+  display: inline block;
+  cursor: pointer;
+}
+.bar1,
+.bar2,
+.bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: #333;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+.change .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+  transform: rotate(-45deg) translate(-9px, 6px);
+}
+.change .bar2 {
+  opacity: 0;
+}
+.change .bar3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(45deg) translate(-8px, -8px);
+}
+
+body {
+  background-color: rgb(248, 246, 246);
+}
+
+main {
+  margin-bottom: 100px;
+}
+
+main .ayudaCliente {
+  height: 20em;
+  width: 100%;
+  z-index: 1;
+  background-image: url("../Images/imagenAtencionAlCliente.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 30em;
+  margin-bottom: 3em;
+}
+
+.ayudaCliente .colorAzul {
+  height: 20em;
+  width: 100%;
+  background-color: rgba(4, 33, 197, 0.7);
+  z-index: 2;
+
+  font-family: "Nunito", sans-serif;
+  text-align: center;
+}
+
+.colorAzul .titulo {
+  font-size: 4em;
+  color: white;
+  padding-top: 80px;
+}
+
+.colorAzul .subtitulo {
+  font-size: 3em;
+  color: #e4f5ff;
+  padding-top: 20px;
+}
+
+.contenidoPrincipal {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 100px;
+}
+
+.contenidoPrincipal .mapa {
+  width: 37em;
+  position: relative;
+}
+
+.contenidoPrincipal .mapa .ubicacion {
+  font-family: "Nunito", sans-serif;
+  font-size: 34px;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.contenidoPrincipal .formulario {
+  width: 35em;
+  height: 37em;
+
+  padding: 30px 20px;
+  border: 2px solid #c9c7c7;
+  border-radius: 10px;
+  box-shadow: 0px 3px 12px rgb(244 38 62 / 4%), 0px 1px 3px rgb(31 37 89 / 7%);
+  background-color: rgb(255, 255, 255);
+}
+
+.formulario label {
+  font-family: "Nanum Gothic", sans-serif;
+  padding-bottom: 20px;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.etiquetas {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.etiquetas .apellido {
+  padding-left: 14.3em;
+}
+
+.nombreApellido {
+  display: flex;
+  flex-direction: row;
+}
+
+.mensajeEmail {
+  display: flex;
+  flex-direction: column;
+}
+
+#nombre,
+#apellido {
+  margin-right: 10px;
+  width: 50%;
+  height: 62px;
+
+  border: 2px solid #e9e8e8;
+  border-radius: 10px;
+  box-shadow: 0px 2px 8px rgb(244 38 62 / 4%), 0px 1px 3px rgb(31 37 89 / 7%);
+
+  font-family: "Nunito", sans-serif;
+  color: #376992;
+  font-size: 24px;
+  padding: 0 20px;
+  margin-bottom: 2em;
+}
+
+#email {
+  width: 92%;
+  height: 62px;
+
+  border: 2px solid #e9e8e8;
+  border-radius: 10px;
+  box-shadow: 0px 2px 8px rgb(244 38 62 / 4%), 0px 1px 3px rgb(31 37 89 / 7%);
+
+  font-family: "Nunito", sans-serif;
+  color: #376992;
+  font-size: 24px;
+  padding: 0 20px;
+
+  outline: none;
+  margin-bottom: 2em;
+}
+
+#mensaje {
+  width: 92%;
+  height: 5em;
+
+  border: 2px solid #e9e8e8;
+  border-radius: 10px;
+  box-shadow: 0px 2px 8px rgb(244 38 62 / 4%), 0px 1px 3px rgb(31 37 89 / 7%);
+
+  font-family: "Nunito", sans-serif;
+  color: #376992;
+  font-size: 18px;
+  padding: 20px 20px;
+
+  outline: none;
+  resize: none;
+}
+
+#nombre:focus,
+#apellido:focus,
+#email:focus,
+#mensaje:focus {
+  border-color: rgb(0, 65, 245);
+  box-shadow: 0 1px 1px rgba(229, 103, 23, 0.075) inset,
+    0 0 8px rgba(0, 81, 255, 0.6);
+  outline: 0 none;
+}
+
+.enviar {
+  text-align: center;
+  margin-top: 3em;
+}
+
+.botonEnviar {
+  width: 40%;
+  height: 4em;
+
+  border-radius: 10px;
+  border-color: transparent;
+
+  background-color: rgb(10, 87, 189);
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  transition: 0.5s all;
+}
+
+.botonEnviar:hover {
+  background-color: rgb(10, 8, 110);
+  color: white;
+  transform: scale(1.1);
+}
+
+/*FOOTER*/
+
+footer {
+  width: 100%;
+  height: 35em;
+  background-color: #121521;
+  border-top-left-radius: 5%;
+  border-top-right-radius: 5%;
+}
+
+footer .informacion {
+  top: 3.5em;
+
+  width: 80%;
+  height: 25em;
+  background-color: #121521;
+  margin: 0 auto;
+  position: relative;
+  border-radius: 10px;
+}
+
+.informacion .logoInfo {
+  top: 2.5em;
+
+  width: 70%;
+  height: 10em;
+  background-color: #18346d;
+  margin: 0 auto;
+  position: relative;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  color: black;
+}
+
+.logoInfo img {
+  width: 18.1em;
+  height: 7.1em;
+  position: relative;
+  bottom: 3px;
+  display: inline;
+  margin-top: 25px;
+}
+
+.logoInfo .sobreIB {
+  position: relative;
+  top: 3.5em;
+  left: 2.2em;
+
+  width: 38%;
+  color: rgb(0, 0, 0);
+  font-family: "Nunito", sans-serif;
+  text-align: justify;
+  line-height: 20px;
+  font-weight: bold;
+}
+
+.sobreIB .titImp {
+  font-size: 19px;
+}
+
+.sobreIB .subTit {
+  color: #a9ceec;
+}
+
+.logoInfo .contactanos {
+  width: 20%;
+  color: rgb(255, 255, 255);
+  font-family: "Nunito", sans-serif;
+  font-weight: bold;
+  text-align: center;
+  display: inline;
+  position: relative;
+  left: 1em;
+  top: 2.5em;
+}
+
+#boton-contacto {
+  width: 11em;
+  height: 3em;
+  margin-top: 0.5em;
+
+  font-family: "Nunito", sans-serif;
+  color: white;
+  font-size: 18px;
+  background-color: #121521;
+  border: none;
+  border-radius: 5px;
+  transition: 0.5s all;
+}
+
+#boton-contacto:hover {
+  cursor: pointer;
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  border: 1px solid black;
+}
+
+.informacion .infoExtra {
+  display: flex;
+  position: relative;
+  justify-content: space-evenly;
+}
+
+.informacion .servicios {
+  display: flex;
+  flex-direction: column !important;
+  position: relative;
+  top: 5em;
+  font-family: "Nunito", sans-serif;
+}
+
+.servicios .tituloServ {
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.servicios .itemServ {
+  color: #c8ddee;
+  padding-top: 10px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.servicios .itemServ:hover {
+  color: #a9ceec;
+}
+
+.infoExtra .redesSociales {
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  top: 5em;
+  position: relative;
+  flex-direction: row;
+}
+
+.redesSociales p {
+  font-weight: bold;
+}
+
+.redesSociales .botones {
+  text-align: center;
+  padding-top: 20px;
+}
+
+.botones i {
+  font-size: 28px;
+  width: 35px;
+  height: 30px;
+
+  border: 2px solid black;
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+  margin-left: 10px;
+  padding: 12px;
+
+  box-shadow: 0 2px 3px black;
+}
+
+.iconoInst:hover {
+  transition: 0.5s all;
+  cursor: pointer;
+  transform: scale(1.1);
+  background: linear-gradient(
+    150deg,
+    #405de6,
+    #5851db,
+    #833ab4,
+    #c13584,
+    #e1306c,
+    #fd1d1d,
+    #f56040,
+    #f77737,
+    #fcaf45,
+    #ffdc80
+  );
+}
+
+.iconoYT:hover {
+  transition: 0.5s all;
+  background-color: #c4302b;
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.iconoLK:hover {
+  transition: 0.5s all;
+  background-color: #0072b1;
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.iconoTW:hover {
+  transition: 0.5s all;
+  background-color: #1da1f2;
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.iconoFB:hover {
+  transition: 0.5s all;
+  background-color: #4267b2;
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.informacion .servicios {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  top: 5em;
+}
+
+footer .derechosReservados {
+  position: relative;
+  top: 7em;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  color: #a9ceec;
+}

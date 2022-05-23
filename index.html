@@ -1,132 +1,198 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>ITBANK GROUP | ARGENTINA</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="./Images/logo icono.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="./styles/styles-index.css" />
+    <link rel="stylesheet" href="./styles/footer.css" />
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="icon" href="./Images/logo icono.png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
   </head>
   <body>
-      <header>
-        <nav>
-            <section class="contenedor nav">
-                <div class="logo">
-                    <img src="/logo.jpg" alt="">
-                </div>
-                <div class="enlaces-header">
-                    <a href="HomeBanking_ITBA-login/index2.html" target="_blank">HOME BANKING</a>
-                    <a href="#">CONTACTANOS</a>
-                    <a href="HomeBanking_ITBA-register-page/register-page.html" target="_blank">REGISTRATE</a>
-                    <a href="#">TURNOS WEB</a>
-                </div>
-            </section>
+    <header>
+      <nav>
+        <section class="contenedor nav">
+          <div class="d-flex">
             <div class="container" onclick="myFunction(this)">
               <div class="bar1"></div>
               <div class="bar2"></div>
               <div class="bar3"></div>
             </div>
-        </nav>
-      </header>
-      <div class="carousel">
-        <p class="placeholder-glow">
-          <span class="placeholder col-12"></span>
-        </p>
-        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img src="./Images/banner1.png" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="./Images/banner2.png" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="./Images/banner3.png" class="d-block w-100" alt="...">
-              </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
           </div>
-      </div>
+          <div class="logo">
+            <img src="./logo.jpg" alt="" />
+          </div>
+          <div class="enlaces-header">
+            <a href="./login-page.html" target="_blank">HOME BANKING</a>
+            <a href="./ContactPage.html">CONTACTANOS</a>
+            <a href="./register-page.html" target="_blank">REGISTRATE</a>
+            <a href="#">TURNOS WEB</a>
+          </div>
+        </section>
+      </nav>
+    </header>
+    <div class="carousel">
       <p class="placeholder-glow">
         <span class="placeholder col-12"></span>
       </p>
-      <section class="about-us">
-        <div class="contenedor1">
-            <h2 class="titulo"></h2>
-            <div class="contenedor-articulo">
-                <div class="articulo">
-                    <i class="fas fa-pen-fancy"></i>
-                    <h3>Encrontranos</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit harum quia corporis laudantium minus iure suscipit, blanditiis alias possimus officiis.</p>
-                    <a href="#">Mas informacion</a>
-                </div>
-                <div class="articulo">
-                    <i class="fas fa-comments"></i>
-                    <h3>Contactanos</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit harum quia corporis laudantium minus iure suscipit, blanditiis alias possimus officiis.</p>
-                    <a href="#">Mas informacion</a>
-                </div>
-                <div class="articulo">
-                    <i class="fas fa-chart-pie"></i>
-                    <h3>¿Te ayudamos?</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit harum quia corporis laudantium minus iure suscipit, blanditiis alias possimus officiis.</p>
-                    <a href="#">Mas informacion</a>
-                </div>
+      <div
+        id="carouselExampleControls"
+        class="carousel slide"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="./Images/banner1.png" class="d-block w-100" alt="..." />
+          </div>
+          <div class="carousel-item">
+            <img src="./Images/banner2.png" class="d-block w-100" alt="..." />
+          </div>
+          <div class="carousel-item">
+            <img src="./Images/banner3.png" class="d-block w-100" alt="..." />
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleControls"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleControls"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+    <p class="placeholder-glow">
+      <span class="placeholder col-12"></span>
+    </p>
+    <section class="about-us">
+      <div class="contenedor1">
+        <h2 class="titulo"></h2>
+        <div class="contenedor-articulo">
+          <div class="articulo">
+            <i class="fas fa-pen-fancy"></i>
+            <h3>Encontranos</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit
+              harum quia corporis laudantium minus iure suscipit, blanditiis
+              alias possimus officiis.
+            </p>
+            <a href="#">Mas informacion</a>
+          </div>
+          <div class="articulo">
+            <i class="fas fa-comments"></i>
+            <h3>Contactanos</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit
+              harum quia corporis laudantium minus iure suscipit, blanditiis
+              alias possimus officiis.
+            </p>
+            <a href="#">Mas informacion</a>
+          </div>
+          <div class="articulo">
+            <i class="fas fa-chart-pie"></i>
+            <h3>¿Te ayudamos?</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit
+              harum quia corporis laudantium minus iure suscipit, blanditiis
+              alias possimus officiis.
+            </p>
+            <a href="#">Mas informacion</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="contenedor1 services">
+      <img src="./Images/foto1.png" />
+      <div class="box-skills">
+        <h4><i class="far fa-check-circle"></i> Préstamos</h4>
+        <h4><i class="far fa-check-circle"></i> Jubilaciones</h4>
+        <h4><i class="far fa-check-circle"></i> Tarjetas</h4>
+        <h4><i class="far fa-check-circle"></i> Beneficios</h4>
+        <h4><i class="far fa-check-circle"></i> Atención Personalizada</h4>
+      </div>
+    </section>
+    
+  <!-- footer -->
+  <footer>
+    <section class="informacion">
+        
+        <div class="logoInfo">
+            <img src="./Images/logo.png" alt="Logo Itbank Group">
+            <div class="sobreIB">
+                <p class="titImp">lorem ipsum dolor sit amet, consectetur</p>
+                <p class="subTit">sed do eiusmod tempor incididunt ut labore</p>
+            </div>
+            <div class="contactanos">
+                <label for="contactanos">Para más consultas</label>
+                <input type="button" value="Contactanos" id="boton-contacto" name="contactanos">
             </div>
         </div>
-      </section>
-      <section class="contenedor1 services">
-        <img src="/foto1.png" alt="">
-        <div class="box-skills">
-            <h4><i class="far fa-check-circle"></i> Préstamos</h4>
-            <h4><i class="far fa-check-circle"></i> Jubilaciones</h4>
-            <h4><i class="far fa-check-circle"></i> Tarjetas</h4>
-            <h4><i class="far fa-check-circle"></i> Beneficios</h4>
-            <h4><i class="far fa-check-circle"></i> Atención Personalizada</h4>
-        </div>
-      </section>
-      <footer>
-        <div class="partFooter">
-            <img src="/logo.jpg" alt="">
-        </div>
-        <div class="partFooter">
-            <h4>Servicio</h4>
-            <a href="#">services 1</a>
-            <a href="#">services 2</a>
-            <a href="#">services 3</a>
-        </div>
-        <div class="partFooter">
-            <h4>Acerca de</h4>
-            <a href="#">about 1</a>
-            <a href="#">about 2</a>
-            <a href="#">about 3</a>
-        </div>
-        <div class="partFooter">
-            <h4>Redes sociales</h4>
-            <div class="social-media">
-                <i class="fab fa-facebook-f"></i>
-                <i class="fab fa-twitter"></i>
-                <i class="fab fa-instagram"></i>
-                <i class="fab fa-youtube"></i>
+        <section class="infoExtra">
+            <div class="servicios">
+                <p class="tituloServ">Servicios</p>
+                <a class="itemServ">Servicios 1</a>
+                <a class="itemServ">Servicios 2</a>
+                <a class="itemServ">Servicios 3</a>
             </div>
-        </div>
-    </footer>
-    <script src="https://kit.fontawesome.com/c15b744a04.js" crossorigin="anonymous" ></script>
+            <div class="servicios">
+                <p class="tituloServ">Acerca de</p>
+                <a class="itemServ">Acerca de 1</a>
+                <a class="itemServ">Acerca de 2</a>
+                <a class="itemServ">Acerca de 3</a>
+            </div>
+            <div class="servicios">
+                <p class="tituloServ">Más información</p>
+                <a class="itemServ">Términos y condiciones</a>
+                <a class="itemServ">Políticas de privacidad</a>
+            </div>
+            <div class="redesSociales">
+                <p>Síguenos en nuestras redes sociales</p>
+                <div class="botones">
+                    <i class="fab fa-facebook-f iconoFB"></i>
+                    <i class="fab fa-twitter iconoTW"></i>
+                    <i class="fab fa-instagram iconoInst"></i>
+                    <i class="fab fa-youtube iconoYT"></i>
+                    <i class="fa fa-linkedin-square iconoLK" aria-hidden="true"></i>
+                </div>
+            </div>
+        </section>
+    </section>
+    <div class="derechosReservados">
+        <p>&#169 2000-2022 ITBANK Group. Todos los derechos reservados</p>
+    </div>
+  </footer>
+    <script
+      src="https://kit.fontawesome.com/c15b744a04.js"
+      crossorigin="anonymous"
+    ></script>
     <script>
-        function myFunction(x) {
-          x.classList.toggle("change");
-        }
+      function myFunction(x) {
+        x.classList.toggle("change");
+      }
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

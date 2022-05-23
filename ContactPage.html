@@ -5,28 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ITBANK Group - Contacto</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="./styles/styles-ContactPage.css">
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="stylesheet" href="./styles/footer.css" />
 </head>
 <body>
     <header>
         <nav>
             <section class="contenedor nav">
+                <div class="d-flex">
+                    <div class="container" onclick="myFunction(this)">
+                        <div class="bar1"></div>
+                        <div class="bar2"></div>
+                        <div class="bar3"></div>
+                    </div> 
+                </div>
                 <div class="logo">
-                    <img src="/logo.jpg" alt="">
+                    <a href="./index.html"><img src="./Images/logo2.jpg" alt=""></a>
+                    
                 </div>
                 <div class="enlaces-header">
-                    <a href="HomeBanking_ITBA-login/index2.html" target="_blank">HOME BANKING</a>
+                    <a href="./login-page.html" target="_blank">HOME BANKING</a>
                     <a href="#">CONTACTANOS</a>
-                    <a href="HomeBanking_ITBA-register-page/register-page.html" target="_blank">REGISTRATE</a>
+                    <a href="./register-page.html" target="_blank">REGISTRATE</a>
                     <a href="#">TURNOS WEB</a>
                 </div>
             </section>
-            <!-- <div class="container" onclick="myFunction(this)">
-              <div class="bar1"></div>
-              <div class="bar2"></div>
-              <div class="bar3"></div>
-            </div> -->
         </nav>
     </header>
     <main>
@@ -69,7 +73,7 @@
         <section class="informacion">
             
             <div class="logoInfo">
-                <img src="/logoItbank.png" alt="Logo Itbank Group">
+                <img src="./Images/logo.png" alt="Logo Itbank Group">
                 <div class="sobreIB">
                     <p class="titImp">lorem ipsum dolor sit amet, consectetur</p>
                     <p class="subTit">sed do eiusmod tempor incididunt ut labore</p>
@@ -114,5 +118,10 @@
         </div>
     </footer>
     <script src="https://kit.fontawesome.com/c15b744a04.js" crossorigin="anonymous" ></script>
+    <script>
+        function myFunction(x) {
+          x.classList.toggle("change");
+        }
+    </script>
 </body>
 </html>

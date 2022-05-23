@@ -1,0 +1,226 @@
+/*FOOTER*/
+
+footer {
+    width: 100%;
+    height: 35em;
+    background-color: #121521;
+    border-top-left-radius: 5%;
+    border-top-right-radius: 5%;
+  }
+  
+  footer .informacion {
+    top: 3.5em;
+  
+    width: 80%;
+    height: 25em;
+    background-color: #121521;
+    margin: 0 auto;
+    position: relative;
+    border-radius: 10px;
+  }
+  
+  .informacion .logoInfo {
+    top: 2.5em;
+  
+    width: 70%;
+    height: 10em;
+    background-color: #18346d;
+    margin: 0 auto;
+    position: relative;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    color: black;
+  }
+  
+  .logoInfo img {
+    width: 18.1em;
+    height: 7.1em;
+    position: relative;
+    bottom: 3px;
+    display: inline;
+    margin-top: 25px;
+  }
+  
+  .logoInfo .sobreIB {
+    position: relative;
+    top: 3.5em;
+    left: 2.2em;
+  
+    width: 38%;
+    color: rgb(0, 0, 0);
+    font-family: "Nunito", sans-serif;
+    text-align: justify;
+    line-height: 20px;
+    font-weight: bold;
+  }
+  
+  .sobreIB .titImp {
+    font-size: 19px;
+  }
+  
+  .sobreIB .subTit {
+    color: #a9ceec;
+  }
+  
+  .logoInfo .contactanos {
+    width: 20%;
+    color: rgb(255, 255, 255);
+    font-family: "Nunito", sans-serif;
+    font-weight: bold;
+    text-align: center;
+    display: inline;
+    position: relative;
+    left: 1em;
+    top: 2.5em;
+  }
+  
+  #boton-contacto {
+    width: 11em;
+    height: 3em;
+    margin-top: 0.5em;
+  
+    font-family: "Nunito", sans-serif;
+    color: white;
+    font-size: 18px;
+    background-color: #121521;
+    border: none;
+    border-radius: 5px;
+    transition: 0.5s all;
+  }
+  
+  #boton-contacto:hover {
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    border: 1px solid black;
+  }
+  
+  .informacion .infoExtra {
+    display: flex;
+    position: relative;
+    justify-content: space-evenly;
+  }
+  
+  .informacion .servicios {
+    display: flex;
+    flex-direction: column !important;
+    position: relative;
+    top: 5em;
+    font-family: "Nunito", sans-serif;
+  }
+  
+  .servicios .tituloServ {
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+  }
+  
+  .servicios .itemServ {
+    color: #c8ddee;
+    padding-top: 10px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .servicios .itemServ:hover {
+    color: #a9ceec;
+  }
+  
+  .infoExtra .redesSociales {
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+    top: 5em;
+    position: relative;
+    flex-direction: row;
+  }
+  
+  .redesSociales p {
+    font-weight: bold;
+  }
+  
+  .redesSociales .botones {
+    text-align: center;
+    padding-top: 20px;
+  }
+  
+  .botones i {
+    font-size: 28px;
+    width: 35px;
+    height: 30px;
+  
+    border: 2px solid black;
+    background-color: transparent;
+    border: none;
+    border-radius: 50%;
+    margin-left: 10px;
+    padding: 12px;
+  
+    box-shadow: 0 2px 3px black;
+  }
+  
+  .iconoInst:hover {
+    transition: 0.5s all;
+    cursor: pointer;
+    transform: scale(1.1);
+    background: linear-gradient(
+      150deg,
+      #405de6,
+      #5851db,
+      #833ab4,
+      #c13584,
+      #e1306c,
+      #fd1d1d,
+      #f56040,
+      #f77737,
+      #fcaf45,
+      #ffdc80
+    );
+  }
+  
+  .iconoYT:hover {
+    transition: 0.5s all;
+    background-color: #c4302b;
+    cursor: pointer;
+    transform: scale(1.1);
+  }
+  
+  .iconoLK:hover {
+    transition: 0.5s all;
+    background-color: #0072b1;
+    cursor: pointer;
+    transform: scale(1.1);
+  }
+  
+  .iconoTW:hover {
+    transition: 0.5s all;
+    background-color: #1da1f2;
+    cursor: pointer;
+    transform: scale(1.1);
+  }
+  
+  .iconoFB:hover {
+    transition: 0.5s all;
+    background-color: #4267b2;
+    cursor: pointer;
+    transform: scale(1.1);
+  }
+  
+  .informacion .servicios {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    top: 5em;
+  }
+  
+  footer .derechosReservados {
+    position: relative;
+    top: 7em;
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    color: #a9ceec;
+  }
+  
