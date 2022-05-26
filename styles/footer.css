@@ -150,16 +150,15 @@ footer {
   .botones i {
     font-size: 28px;
     width: 35px;
-    height: 30px;
-  
+    height: 30px;  
     border: 2px solid black;
     background-color: transparent;
     border: none;
     border-radius: 50%;
     margin-left: 10px;
-    padding: 12px;
-  
+    padding: 12px;  
     box-shadow: 0 2px 3px black;
+    box-sizing: content-box;  /*Esta línea fue agregada para solucionar el problema de los iconos generado por el box-sizing: border-box incluido por bootstrap para el carousel*/
   }
   
   .iconoInst:hover {

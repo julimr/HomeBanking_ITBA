@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./styles/style-LoginPage.css" />
     <link rel="stylesheet" href="./styles/footer.css" />
     <link rel="icon" href="./Images/logo icono.png" />
+    <script src="login.js"></script>
     <title>Login</title>
   </head>
   <body>
@@ -17,13 +18,15 @@
         <form>
           <label for="username">Usuario:</label>
           <br />
-          <input type="text" placeholder="Ingrese su usuario" />
+          <input type="text" name="username" id="username" placeholder="Ingrese su usuario"  />
           <br />
 
           <label for="Password">Contraseña:</label>
-          <input type="password" placeholder="Ingrese su contraseña" />
+          <input type="password" name="password" id="password"  placeholder="Ingrese su contraseña" />
           <br />
-          <a href="./HomeBanking.html" class="boton-ingreso"> Ingresar </a>
+
+          <input type="button" value="Ingresar" onclick="logIn()">
+          <!-- <a href="./HomeBanking.html" class="boton-ingreso"> Ingresar </a> ancla previo al uso de js--> 
           <br />
           <br />
           <a href="./forgot.html">¿Olvidaste tu contraseña?</a>
