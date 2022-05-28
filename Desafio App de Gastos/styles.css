@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200&family=Montserrat:wght@300&family=Nanum+Gothic&family=Noto+Sans:wght@300&family=Nunito&family=Source+Code+Pro&display=swap');
+
+header {
+    width: 100%;
+    height: 10em;
+    background-color: rgb(0, 89, 255);
+
+    font-family: 'Inter', sans-serif;
+    color: white;
+    text-align: center;
+
+}
+
+header h1 {
+    font-size:36px;
+    padding-top: 1em;
+    padding-bottom: 10px;
+}
+
+header h2 {
+    font-size:24px;
+}
+
+main {
+    margin: 0 auto;
+    margin-top: 2em;
+    width: 940px;
+    text-align: center;
+    
+}
+
+main .datos {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.datos input {
+    width: 100%;
+}
+
+.datos button {
+    margin-top: 15px;
+    width: 30%;
+}
+
+main .personas {
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 3em;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    
+}
+
+.personas .formatoLinea {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    color: black;
+
+    width: 100%;
+    height: 3em;
+    border: 1px solid rgb(190, 190, 190);
+    border-radius: 5px;
+    padding-top: 11px;
+    margin-top: 5px;
+
+
+}
+
+main .calculos {
+    margin-top: 2em;
+}
+
+.gastoTot {
+    color: rgb(8, 1, 116);
+    font-size: 20px;
+}
+
+.pagoIndv {
+    color: rgb(8, 1, 116);
+    font-size: 18px;
+}
+
+@media screen and (max-width:480px) {
+
+    main {
+        width: 100%;
+    }
+    
+    main .datos {
+        width: 90%;
+    }
+
+}
