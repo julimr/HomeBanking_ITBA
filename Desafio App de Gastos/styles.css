@@ -38,6 +38,18 @@ main .datos {
     width: 100%;
 }
 
+.errores {
+    margin-top: 1em;
+}
+
+.advertencia {
+    color: red;
+}
+
+.sacarAdvertencia {
+    display: none;
+}
+
 .datos button {
     margin-top: 15px;
     width: 30%;
@@ -82,6 +94,23 @@ main .calculos {
     font-size: 18px;
 }
 
+.incorrecto {
+    transition: .5s all;
+    background-color: lightcoral !important;
+    border-color: red !important;
+}
+
+.desvanecer {
+
+	opacity:0;
+	transition : 0.5s;
+
+}
+
+.invisible {
+    display:none;
+}
+
 @media screen and (max-width:480px) {
 
     main {
@@ -89,6 +118,10 @@ main .calculos {
     }
     
     main .datos {
+        width: 90%;
+    }
+
+    main .personas{
         width: 90%;
     }
 
