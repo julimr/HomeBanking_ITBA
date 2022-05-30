@@ -52,11 +52,17 @@ botonEnviar.addEventListener ('click', function(){
 
 function agregarPersona (nombre, gasto) {
     
+    let image = document.createElement('img')
+    image.className = 'icon-delete'
+    image.src  = './delete-red.png'
+
     let fila = document.createElement ('span');
     fila.setAttribute("id","persona");
-    fila.textContent = `${nombre}: $${parseFloat(gasto).toFixed(2)}`;
+    fila.textContent = `${nombre}: $${parseFloat(gasto)}`;
+    fila.appendChild(image);
+    
 
-    fila.addEventListener ("dblclick", function (event) {
+    image.addEventListener ("click", function (event) {
 
         let gastoPersona = parseFloat(gasto).toFixed(2);
 

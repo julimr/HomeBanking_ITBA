@@ -1,128 +1,143 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200&family=Montserrat:wght@300&family=Nanum+Gothic&family=Noto+Sans:wght@300&family=Nunito&family=Source+Code+Pro&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200&family=Montserrat:wght@300&family=Nanum+Gothic&family=Noto+Sans:wght@300&family=Nunito&family=Source+Code+Pro&display=swap");
 
 header {
-    width: 100%;
-    height: 10em;
-    background-color: rgb(0, 89, 255);
+  width: 100%;
+  height: 10em;
+  background-color: rgb(0, 89, 255);
 
-    font-family: 'Inter', sans-serif;
-    color: white;
-    text-align: center;
-
+  font-family: "Inter", sans-serif;
+  color: white;
+  text-align: center;
 }
 
 header h1 {
-    font-size:36px;
-    padding-top: 1em;
-    padding-bottom: 10px;
+  font-size: 36px;
+  padding-top: 1em;
+  padding-bottom: 10px;
 }
 
 header h2 {
-    font-size:24px;
+  font-size: 24px;
 }
 
 main {
-    margin: 0 auto;
-    margin-top: 2em;
-    width: 940px;
-    text-align: center;
-    
+  margin: 0 auto;
+  margin-top: 2em;
+  width: 940px;
+  text-align: center;
 }
 
 main .datos {
-    width: 50%;
-    margin: 0 auto;
+  width: 50%;
+  margin: 0 auto;
 }
 
 .datos input {
-    width: 100%;
+  width: 100%;
 }
 
 .errores {
-    margin-top: 1em;
+  margin-top: 1em;
 }
 
 .advertencia {
-    color: red;
+  color: red;
 }
 
 .sacarAdvertencia {
-    display: none;
+  display: none;
 }
 
 .datos button {
-    margin-top: 15px;
-    width: 30%;
+  margin-top: 15px;
+  width: 30%;
 }
 
 main .personas {
-    width: 50%;
-    margin: 0 auto;
-    margin-top: 3em;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 3em;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 }
 
 .personas .formatoLinea {
-    font-family: 'Inter', sans-serif;
-    font-size: 18px;
-    color: black;
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  color: black;
 
-    width: 100%;
-    height: 3em;
-    border: 1px solid rgb(190, 190, 190);
-    border-radius: 5px;
-    padding-top: 11px;
-    margin-top: 5px;
+  width: 100%;
+  height: 3em;
+  border: 1px solid rgb(190, 190, 190);
+  border-radius: 5px;
+  padding-top: 11px;
+  margin-top: 5px;
 
+  display: flex;
+  justify-content: space-between;
 
+  padding-right: 1em;
+  padding-left: 1em;
+}
+
+.icon-delete {
+  height: 30px;
+  cursor: pointer;
+}
+.formatoLinea:hover {
+  background-color: rgba(128, 128, 128, 0.103);
 }
 
 main .calculos {
-    margin-top: 2em;
+  margin-top: 2em;
 }
 
 .gastoTot {
-    color: rgb(8, 1, 116);
-    font-size: 20px;
+  color: rgb(8, 1, 116);
+  font-size: 20px;
 }
 
 .pagoIndv {
-    color: rgb(8, 1, 116);
-    font-size: 18px;
+  color: rgb(8, 1, 116);
+  font-size: 18px;
 }
 
 .incorrecto {
-    transition: .5s all;
-    background-color: lightcoral !important;
-    border-color: red !important;
+  transition: 0.5s all;
+  background-color: lightcoral !important;
+  border-color: red !important;
 }
 
 .desvanecer {
-
-	opacity:0;
-	transition : 0.5s;
-
+  opacity: 0;
+  transition: 0.5s;
 }
 
 .invisible {
-    display:none;
+  display: none;
 }
+@media screen and (max-width: 945px) {
+  main .datos {
+    width: 90%;
+  }
 
-@media screen and (max-width:480px) {
-
-    main {
-        width: 100%;
-    }
-    
-    main .datos {
-        width: 90%;
-    }
-
-    main .personas{
-        width: 90%;
-    }
-
+  main .personas {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 500px) {
+  main {
+    width: 100%;
+  }
+}
+@media (min-width: 501px) and (max-width: 650px) {
+  main {
+    width: 80%;
+  }
+}
+@media (min-width: 651px) and (max-width: 945px) {
+  main {
+    width: 60%;
+  }
 }
