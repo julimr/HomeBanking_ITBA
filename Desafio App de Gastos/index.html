@@ -12,19 +12,22 @@
 <body>
     <header>
         <h1>APP DE GASTOS</h1>
-        <h2>Ingresá cúanto gastó cada uno</h2>
+        <h2>Ingresá cuánto gastó cada uno</h2>
     </header>
     <main>
         <section class="datos">
             <div class="form-floating mb-3">
                 <input type="text" class="form-control inputNombre" id="floatingInput" placeholder="Nombre">
                 <label for="floatingInput">Agregar nombre</label>
-              </div>
-              <div class="form-floating">
+            </div>
+            <div class="form-floating">
                 <input type="number" class="form-control inputGasto" id="floatingNumber" placeholder="Gasto">
                 <label for="floatingNumber">Gastado</label>
-              </div>
-              <button type="button" class="btn btn-primary botoncito">Enviar</button>
+            </div>
+            <div class="errores" id="errores">
+
+            </div>
+            <button type="submit" class="btn btn-primary botoncito" accesskey="enter">Enviar</button>
         </section>
         <section class="personas" id="secPersonas">
     
