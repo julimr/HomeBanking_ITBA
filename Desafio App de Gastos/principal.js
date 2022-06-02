@@ -1,11 +1,13 @@
 let nombre = document.querySelector ('.inputNombre');
 let gasto = document.querySelector ('.inputGasto')
+let individual = document.getElementById ('individual');
 
 let botonEnviar = document.querySelector ('.botoncito')
 let gastoTotal = 0;
 let contadorPersonas = 0;
 
 let error = document.createElement ('span');
+let error2 = document.createElement ('span');
 let sectionErrores = document.getElementById ('errores');
 let calculos = document.querySelector ('.calculos');
 
@@ -13,6 +15,7 @@ botonEnviar.addEventListener ('click', function(){
 
     if (validarNombre (nombre.value)) {
 
+        //Negativo o no numérico
         if (gasto.value < 0 || !(gasto.value > 0 )) {
             gasto.value = 0;
         }
@@ -40,11 +43,24 @@ botonEnviar.addEventListener ('click', function(){
 
     else {
         
-        error.textContent = "Solo letras y espacios";
-        sectionErrores.classList.remove ('sacarAdvertencia');
-        sectionErrores.appendChild (error);
-        error.classList.add ('advertencia');
+        if (nombre.value==""){
 
+            error.textContent = "";
+            error2.textContent = "El nombre no puede estar vacío";
+            sectionErrores.classList.remove ('sacarAdvertencia');
+            sectionErrores.appendChild (error2);
+            error2.classList.add ('advertencia');
+            
+        }
+
+        else {
+            error2.textContent="";
+            error.textContent = "Solo letras y espacios";
+            sectionErrores.classList.remove ('sacarAdvertencia');
+            sectionErrores.appendChild (error);
+            error.classList.add ('advertencia');
+        }
+        
         nombre.classList.add ('incorrecto');
     }
 
@@ -65,13 +81,14 @@ function agregarPersona (nombre, gasto) {
     image.addEventListener ("click", function (event) {
 
         let gastoPersona = parseFloat(gasto).toFixed(2);
-
+        image.remove();
         gastoTotal -= gastoPersona;
         contadorPersonas-=1;
         actualizarGastoTotal (gastoTotal);
         
         if (gastoTotal == 0) {
 
+            individual.textContent = `Cada uno debe pagar: $0.00`;
             calculos.classList.add ('desvanecer');
             setTimeout (function () {
 
@@ -109,8 +126,9 @@ function actualizarGastoTotal (gasto) {
 }
 
 function gastoIndividual (personas, total) {
-    let individual = document.getElementById ('individual');
+
     individual.textContent = `Cada uno debe pagar: $${(total/personas).toFixed(2)}`;
+
 }
 
 function validarNombre(nombre) {
