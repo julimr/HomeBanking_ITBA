@@ -2,7 +2,7 @@ body {
   margin: 0;
   padding: 0;
   background: url(/Images/fondo.png), #7B4397;
-  background: url(/Images/fondo.png), -webkit-gradient(linear, right top, left top, from(#5e48b1), to(#0b647a));
+  background: url(/Images/fondo.png), -webkit-gradient(linear, right top, left top, from(#5e48b1), to(#0d485f));
   background: url(/Images/fondo.png), linear-gradient(to left, #5e48b1, #0b647a)
   background-size: cover;
   font-family: sans-serif;
