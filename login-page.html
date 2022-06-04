@@ -7,90 +7,30 @@
     <link rel="stylesheet" href="./styles/style-LoginPage.css" />
     <link rel="stylesheet" href="./styles/footer.css" />
     <link rel="icon" href="./Images/logo icono.png" />
-    <script src="login.js"></script>
     <title>Login</title>
   </head>
   <body>
-    <a href="./index.html"><h1><img src="./Images/logo.png" alt="" /></h1></a>
-  
-    <a href="/index.html"> volver</a>
     <div class="contenedor">
-      <div class="cuerpo">
-        <h2></h2>
+        <img class="logo" src="/Images/logoAzul.jpeg" alt="Logo itbank"/>
+        <h1></h1>
         <form>
           <label for="username">Usuario:</label>
           <br />
-          <input type="text" name="username" id="username" placeholder="Ingrese su usuario"  />
+          <input type="text" placeholder="Ingrese su usuario" />
           <br />
 
           <label for="Password">Contraseña:</label>
-          <input type="password" name="password" id="password"  placeholder="Ingrese su contraseña" />
+          <input type="password" placeholder="Ingrese su contraseña" />
           <br />
-
-          <input class=boton-ingreso type="button" value="Ingresar" onclick="logIn()">
-          <!-- <a href="./HomeBanking.html" class="boton-ingreso"> Ingresar </a> ancla previo al uso de js--> 
+          <br />
+          <a href="./HomeBanking.html" class="boton-ingreso"> Ingresar </a>
           <br />
           <br />
           <a href="./forgot.html">¿Olvidaste tu contraseña?</a>
           <br />
+          <br />
           <a href="./register-page.html">Registrate</a>
         </form>
-      </div>
     </div>
-    
-  <!-- footer -->
-  <footer>
-    <section class="informacion">
-        
-        <div class="logoInfo">
-            <img src="./Images/logo-blanco.png" alt="Logo Itbank Group">
-            <div class="sobreIB">
-                <p class="titImp">lorem ipsum dolor sit amet, consectetur</p>
-                <p class="subTit">sed do eiusmod tempor incididunt ut labore</p>
-            </div>
-            <div class="contactanos">
-                <label for="contactanos">Para más consultas</label>
-                <input type="button" value="Contactanos" id="boton-contacto" name="contactanos">
-            </div>
-        </div>
-        <section class="infoExtra">
-            <div class="servicios">
-                <p class="tituloServ">Servicios</p>
-                <a class="itemServ">Servicios 1</a>
-                <a class="itemServ">Servicios 2</a>
-                <a class="itemServ">Servicios 3</a>
-            </div>
-            <div class="servicios">
-                <p class="tituloServ">Acerca de</p>
-                <a class="itemServ">Acerca de 1</a>
-                <a class="itemServ">Acerca de 2</a>
-                <a class="itemServ">Acerca de 3</a>
-            </div>
-            <div class="servicios">
-                <p class="tituloServ">Más información</p>
-                <a class="itemServ">Términos y condiciones</a>
-                <a class="itemServ">Políticas de privacidad</a>
-            </div>
-            <div class="redesSociales">
-                <p>Síguenos en nuestras redes sociales</p>
-                <div class="botones">
-                    <i class="fab fa-facebook-f iconoFB"></i>
-                    <i class="fab fa-twitter iconoTW"></i>
-                    <i class="fab fa-instagram iconoInst"></i>
-                    <i class="fab fa-youtube iconoYT"></i>
-                    <i class="fa fa-linkedin-square iconoLK" aria-hidden="true"></i>
-                </div>
-            </div>
-        </section>
-    </section>
-    <div class="derechosReservados">
-        <p>&#169 2000-2022 ITBANK Group. Todos los derechos reservados</p>
-    </div>
-  </footer>
-
-    <script
-      src="https://kit.fontawesome.com/c15b744a04.js"
-      crossorigin="anonymous"
-    ></script>
   </body>
 </html>
