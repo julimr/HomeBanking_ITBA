@@ -5,8 +5,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Kanit:wght@300&family=Nunito&family=Roboto+Condensed&family=Source+Code+Pro&family=Source+Sans+Pro&display=swap");
 
 body {
-  width: 100%;
-  background: linear-gradient(#a8dadc, #2c56a8);
+  margin: 0;
+  padding: 0;
+  /* background: url(/HomeBanking_ITBA-main/Images/fondo.png), #7B4397; */
+  /* background: url(/HomeBanking_ITBA-main/Images/fondo.png), -webkit-gradient(linear, right top, left top, from(#7B4397), to(#106980)); */
+  background: url(/Images/fondo.png), linear-gradient(to left, #1d5c97, #2287a0);
+  /* background-size: cover; */
+  font-family: sans-serif;
+  height: 100vh;
 }
 
 header {
@@ -48,7 +54,7 @@ main .formulario-registro {
   font-family: "Source Code Pro", monospace;
   font-size: 36px;
   text-align: center;
-  color: #142c3b;
+  color: #000;
   font-weight: bold;
 }
 
@@ -56,12 +62,12 @@ main .formulario-registro {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  color: #457b9d;
+  color: #000;
 }
 
 .formulario-registro .completar label {
   font-family: "Nunito", sans-serif;
-  padding-top: 20px;
+  padding-top: 25px;
   padding-bottom: 5px;
   font-size: 16px;
 }
@@ -71,7 +77,7 @@ main .formulario-registro {
   border-bottom: solid 1px #bcd5eb;
   background: transparent;
 
-  color: #d1deeb;
+  color: #000;
   font-size: 15px;
 
   width: 20em;
