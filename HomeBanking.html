@@ -5,6 +5,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="icon" href="Images/logo icono.png">
   <link REL=StyleSheet HREF="./styles/styles-Homebanking.css" TYPE="text/css" MEDIA=screen>
   <link rel="stylesheet" href="./styles/footer.css" />
@@ -16,23 +18,23 @@
 <body>
   <header>
     <section class="header-elementos">
-      <img class="header-itbank-logo" src="./Images/logo.png" alt="">
+      <img class="header-itbank-logo" src="./Images/logo-blanco.png" alt="">
       <div class="buttons-nav">
-        <button class="bttn bttn-claro mi-perfil ">Mi Perfil</button>
-        <button class="bttn bttn-oscuro cerrar-sesion">
-          <a href="./login-page.html">Cerrar sesión</a>
+        <button class="bttn bttn-claro mi-perfil ">MI PERFIL</button>
+        <button class="bttn bttn-claro cerrar-sesion">
+          <a href="./login-page.html">CERRAR SESIÓN</a>
         </button>
         <img class="menu-burger" src="Images/menu.svg" alt="">
       </div>
     </section>
     <nav>
       <ul class="nav-navegacion">
-        <li>Cuentas</li>
-        <li>Tarjetas</li>
-        <li>Transferencias</li>
-        <li>Pagos</li>
-        <li>Inversiones</li>
-        <li>Préstamos</li>
+        <li>CUENTAS</li>
+        <li>TARJETAS</li>
+        <li>TRANSFERENCIAS</li>
+        <li>PAGOS</li>
+        <li>INVERSIONES</li>
+        <li>PRÉSTAMOS</li>
       </ul>
     </nav>
   </header>
@@ -46,6 +48,8 @@
             aria-label="Slide 2"></button>
           <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
             aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3"
+            aria-label="Slide 4"></button>
         </div>
         <div class="carousel-inner">
           <div class="carousel-item active">
@@ -55,17 +59,17 @@
                 <p>Necesitas ayuda?</p>
                 <button class="bttn bttn-oscuro">Pedir ayuda</button>
               </div>
-              <img class="w-25" src="Images/online_banking.svg" class="d-block w-100" alt="...">
+              <img class="w-25 imgCarousel" src="Images/online_banking.svg" class="d-block w-100" alt="...">
             </div>
           </div>
-          <div class="carousel-item m-2">
+          <div class="carousel-item ">
             <div class="d-flex justify-content-around">
               <div>
                 <h1>¿Necesitás dinero?</h1>
                 <p>Pedí un préstamo</p>
                 <button class="bttn bttn-oscuro">Pedi tu préstamo</button>
               </div>
-              <img class="w-25" src="Images/online_payment.svg" class="d-block w-100" alt="...">
+              <img class="w-25 imgCarousel" src="Images/online_payment.svg" class="d-block w-100" alt="...">
             </div>
           </div>
           <div class="carousel-item">
@@ -75,7 +79,20 @@
                 <p>Hacé un plazo fijo</p>
                 <button class="bttn bttn-oscuro">Crear plazo fijo</button>
               </div>
-              <img class="w-25" src="Images/finance.svg" class="d-block w-100" alt="...">
+              <img class="w-25 imgCarousel" src="Images/finance.svg" class="d-block w-100" alt="...">
+            </div>
+          </div>
+          <div class="carousel-item ">
+            <div class="d-flex justify-content-around">
+              <div>
+                <h1>Tenemos una novedad!</h1>
+                <h1>Nueva App de gastos</h1>
+                <p>Para que puedas dividir los gastos con tus amigos</p>
+                <button class="bttn bttn-oscuro">
+                  <a class="btn-appGastos" href="./Desafio App de Gastos/appDeGastos.html">Ir a la app</a>
+                  </button>
+              </div>
+              <img class="w-25 imgCarousel" src="Images/happy_news.svg" alt="...">
             </div>
           </div>
         </div>
@@ -92,7 +109,7 @@
       </div>
     </div>
   </section>
-  <section class="m-3 mt-5 ">
+  <section class="sectionProductos">
     <h2>Tus Productos</h2>
     <div class="productos d-flex flex-wrap m-2">
       <div class="card card-style" style="width: 18rem;">
@@ -144,7 +161,7 @@
       </div>
     </div>
   </section>
-  <section class=" cotizacion">
+  <!-- <section class=" cotizacion">
     <p class="cotizacion_texto">
       Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates iure quidem magnam soluta enim at beatae
       laborum, eaque doloremque quaerat provident impedit ea, ex aliquid pariatur. Sapiente cum accusantium ducimus.
@@ -177,7 +194,7 @@
         </tbody>
       </table>
     </section>
-  </section>
+  </section> -->
   
   <!-- footer -->
   <!-- <footer>

@@ -1,11 +1,11 @@
 * {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "roboto", sans-serif;
 }
 .bttn {
   margin: 1em;
   height: 40px;
   text-align: center;
-  border-radius: 10px;
+  border-radius: 20px;
   border-width: 1px;
   border-style: double;
   justify-content: center;
@@ -13,60 +13,84 @@
 }
 
 .bttn-oscuro {
-  background-color: #01497c;
-  border-color: #01497c;
+  background: #457b9d;
+  border-color: #457b9d;
   color: white;
+  /* font-weight: bold; */
 }
 
 .bttn a,
 .bttn a:hover {
   text-decoration: none;
-  color: white;
+  
 }
 
 .bttn-oscuro:hover,
 .bttn-claro:hover {
-  background-color: #468faf;
-  border-color: #468faf;
-  color: black;
+  background-color: rgb(6, 129, 185);
+  border-color: rgb(6, 129, 185);
   cursor: pointer;
 }
 .bttn-claro {
   background-color: #dee2e6;
   border-color: #dee2e6;
+  color: black;
 }
-
+.cerrar-sesion a,.cerrar-sesion a:hover{
+  color: black;
+}
 .header-elementos {
   height: 5em;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background: url(/Images/fondo.png), linear-gradient(to left, #1d5c97, #2287a0);
 }
 .header-itbank-logo {
   height: 5em;
 }
 .nav-navegacion {
-  padding: 0px 3em;
+  padding: 0.5em 3em;
+  margin: 0px;
   list-style: none;
   display: flex;
   justify-content: space-between;
-  background-image: linear-gradient(to right, #468faf, #01497c);
-  color: white;
-  font-weight: bold;
+  /* background-image: linear-gradient(to right, #468faf, #01497c); */
+  /* color: white; */
+  color: #2c56a8;
+  /* font-weight: bold; */
 }
 .nav-navegacion li {
   margin: 0.5em;
   background-color: none;
+  
 }
 .nav-navegacion li:hover {
-  color: #012641;
+  /* color: #012641; */
   cursor: pointer;
+  color: #fff;
+  background: #7697da;
+  border-radius: 8px;
+  box-shadow: 2px 5px 10px rgba(32, 32, 231, 0.603);
+  
 }
 .carousel {
-  background-color: #f8f9fa;
+  /* background-color: #f2f2f2;
   color: #012641;
   height: 17em;
-  padding: 0.5em;
+  padding: 0.5em; */
+  height: 17em;
+}
+
+.carousel-control-next{
+  height: auto;
+}
+.btn-appGastos{
+  color: white;
+}
+.imgCarousel{
+  height:15em;
+  width: 25%;
 }
 .bloque-ayuda {
   margin: 0.5em;
@@ -115,7 +139,16 @@
 .menu-burger {
   visibility: hidden;
 }
-
+.sectionProductos{
+  background: linear-gradient(#a8dadc, #2c56a8);
+  padding: 1em;
+  padding-top: 2em;
+  margin-top: 8px;
+}
+.one{
+  background-image: url(.././Images/banner1.png);
+  
+}
 .cotizacion {
   background-color: #f8f9fa;
   display: flex;
