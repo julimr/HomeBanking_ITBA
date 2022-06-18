@@ -3,7 +3,7 @@ fetch("https://www.dolarsi.com/api/api.php?type=valoresprincipales")
     .then((data) => data.json())
     .then((data) =>
         data.forEach((e) => {
-            console.log(e);
+            //console.log(e);
             if (e.casa.nombre != "Dolar Soja" &&
                 e.casa.nombre != "Bitcoin" &&
                 e.casa.nombre != "Argentina"
@@ -83,14 +83,35 @@ function agregarVenta(container, data){
 }
 function agregarVariacion(container,data){
     const variacion = document.createElement('div');
+    const indicador = document.createElement ('span');
+
+    const containerVariacion = document.createElement('div');
+    containerVariacion.classList.add ('displayVariacion');
+
     if (data.casa.variacion == undefined){
-        variacion.innerText = `Variación: +0,00`;
+        variacion.innerText = `VARIACIÓN: 0,00 %`;
+        establecerIndicador(indicador,0,containerVariacion);
+        containerVariacion.append (variacion);
     } else{
-        variacion.innerText = `Variación: +${data.casa.variacion}`;
+        variacion.innerText = `VARIACIÓN: ${data.casa.variacion} %`;
+        let valorVariacion = data.casa.variacion.replace(',', '.');
+        establecerIndicador(indicador,valorVariacion,containerVariacion);
+        containerVariacion.append (variacion);
     }
     
     variacion.className = "variacion";
-    container.appendChild(variacion);
+    container.appendChild(containerVariacion);
+}
+function establecerIndicador (indicador,valor,container){
+    if (parseFloat(valor) < 0) {
+        console.log ("V");
+        indicador.classList.toggle('indicador-negativo','indicador');
+    } else {
+        console.log ("F");
+        indicador.classList.toggle('indicador','indicador-negativo');
+    }
+
+    container.appendChild (indicador);
 }
 function agregarActualizacion(container){
     let fecha = new Date().toLocaleDateString();
@@ -98,7 +119,14 @@ function agregarActualizacion(container){
     let minutos = new Date().getMinutes();
 
     const actualizacion = document.createElement('div');
-    actualizacion.innerText = `Actualizado: ${fecha} ${hora}:${minutos}`;
+
+    if (minutos < 10) {
+        actualizacion.innerText = `ACTUALIZADO: ${fecha} ${hora}:0${minutos}`;
+    }
+    else {
+        actualizacion.innerText = `ACTUALIZADO: ${fecha} ${hora}:${minutos}`;
+    }
+
     actualizacion.className = "actualizacion"
     container.appendChild(actualizacion);
 }
