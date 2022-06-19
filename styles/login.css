@@ -1,0 +1,245 @@
+body {
+    display: flex;
+}
+
+.sin_error{
+    display: none;
+}
+
+.con_error{
+    display: block !important;
+    text-align: center;
+    color: red;
+}
+
+/*Responsive para celulares*/
+@media screen and (min-width:0){
+    body {
+        flex-direction: column;
+    }
+    .ilustracion{
+        height: 40vh;
+        width: 100vw;
+    }
+    .ilustracion__capa{
+        height: 40vh;
+        width: 100vw;
+    }
+    .ilustracion__imagen{
+        height: 40vh;
+        width: 100vw;
+    }
+    .ilustracion__capa-logo{
+        display: none;
+    }
+    .ilustracion__capa-titulo{
+        font-size: 2rem;
+        line-height: 2.5rem;
+        padding-top: 2rem;
+        text-align: center;
+    }
+    .ilustracion__capa-descripcion {
+        font-size: 1.5rem;
+        line-height: 2.5rem;
+        padding-top: 1.4rem;
+        text-align: center;
+    }
+    .ilustracion__capa-informacion{
+        position: absolute;
+        bottom: 0;
+        height: 38%;
+        text-align: center;
+        width: 100%;
+    }
+
+    .ilustracion__capa-informacion-aviso{
+        font-size: 1.2rem;
+        line-height: 2.3rem;
+    }
+
+    .ilustracion__capa-informacion-boton{
+        font-size: 1.0rem;
+        height: 3.0rem;
+        width: 12rem;
+    }
+
+    .formulario {
+        border-top: 3px solid darkblue;
+        height: 90vh;
+        width: 100vw;
+    }
+
+    .formulario__estructura{
+        height: 100%;
+        width: 95%;
+    }
+
+    .formulario__datos-final-boton{
+        font-size: 1.1rem;
+        height: 2.5rem;
+        width: 55%;
+    }
+
+    .formulario__datos-final-enlaces{
+        font-size: 1.1rem;
+    }
+
+    .enlaces-recuperar{
+        padding-bottom: 1.8rem;
+        padding-top: 1.3rem;
+    }
+
+}
+
+/*Responsive para tablets*/
+@media screen and (min-width:768px){
+    body {
+        flex-direction: column;
+    }
+    .ilustracion{
+        height: 40vh;
+        width: 100vw;
+    }
+    .ilustracion__capa{
+        height: 40vh;
+        width: 100vw;
+    }
+    .ilustracion__capa-titulo{
+        font-size: 2.7rem;
+        line-height: 2.8rem;
+        text-align: center;
+    }
+    .ilustracion__capa-descripcion {
+        text-align: center;
+    }
+    .ilustracion__imagen{
+        height: 40vh;
+        width: 100vw;
+    }
+    .ilustracion__capa-logo{
+        display: none;
+    }
+    .ilustracion__capa-informacion{
+        font-size: 1rem;
+        margin-top: 12rem;
+    }
+    .ilustracion__capa-informacion-aviso{
+        font-size: 1.5rem;
+        line-height: 2.3rem;
+    }
+
+    .ilustracion__capa-informacion-boton{
+        font-size: 1.2rem;
+        height: 3.5rem;
+        width: 15rem;
+    }
+
+    .formulario {
+        border-top: 3px solid darkblue;
+        height: 90vh;
+        width: 100vw;
+    }
+
+    .formulario__estructura{
+        height: 90%;
+        width: 70%;
+    }
+
+    .formulario__datos-final-boton{
+        font-size: 1.2rem;
+        height: 3.0rem;
+        width: 70%;
+    }
+
+    .formulario__datos-final-enlaces{
+        font-size: 1.1rem;
+    }
+
+    .enlaces-recuperar{
+        padding-bottom: 1.5rem;
+        padding-top: 0.5rem;
+    }
+
+}
+
+/*Configuracion para escritorio*/
+@media screen and (min-width:922px){
+    body{
+        flex-direction: row;
+    }
+    .ilustracion{
+        height: 100vh;
+        width: 70vw;
+    }
+    .ilustracion__capa{
+        height: 100vh;
+        width: 70vw;
+    }
+    .ilustracion__capa-titulo{
+        font-size: 4.7rem;
+        line-height: 2.8rem;
+        padding-left: 1rem;
+        padding-top: 3rem;
+        text-align: left;
+    }
+    .ilustracion__capa-descripcion {
+        font-size: 2.0rem;
+        line-height: 2.5rem;
+        padding-left: 1rem;
+        padding-top: 4rem;
+        text-align: left;
+    }
+    .ilustracion__imagen{
+        background: url('login/ilustracionLogin.jpg') no-repeat center / cover !important;
+        height: 100vh;
+        width: 70vw;
+    }
+    .ilustracion__capa-logo{
+        display: inline-block;
+    }
+    .ilustracion__capa-informacion{
+        background-color: rgba(21, 95, 233, 0.6) !important;
+        position: absolute;
+        bottom: 0;
+        flex-direction: row !important;
+        height: 8%;
+        width: 100%;
+    }
+    .ilustracion__capa-informacion-aviso{
+        font-size: 1.5rem;
+        line-height: 2.3rem;
+    }
+
+    .ilustracion__capa-informacion-boton{
+        font-size: 1.2rem;
+        height: 3.5rem;
+        width: 15rem;
+    }
+
+    .formulario {
+        border: none;
+        height: 100vh;
+        width: 100vw;
+    }
+
+    .formulario__estructura{
+        height: 85%;
+        width: 85%;
+    }
+
+    .formulario__datos-final-boton{
+        font-size: 1.2rem;
+        height: 3.0rem;
+        width: 70%;
+    }
+
+    .formulario__datos-final-enlaces{
+        font-size: 1.0rem;
+    }
+
+    .enlaces-recuperar{
+        padding-bottom: 1.5rem;
+        padding-top: 0.5rem;
+    }
+
+}
