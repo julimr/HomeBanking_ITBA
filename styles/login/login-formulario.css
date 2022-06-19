@@ -12,6 +12,7 @@
     align-items: center;
     font-family: 'Poppins', sans-serif;
     box-shadow: 0 0 10px 0 #0d47a1;
+    height: 100%;
 }
 
 .formulario__estructura_contenedor-logo{
@@ -34,7 +35,7 @@
 }
 
 .formulario__datos{
-    padding-top: 3rem;
+    padding-top: 1em;
     display: flex;
     flex-direction: column;
     width: 65%

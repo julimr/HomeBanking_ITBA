@@ -200,7 +200,7 @@ section div h2{
   margin: 2em;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
 }
 .containerDolarTitulo{
@@ -289,6 +289,13 @@ p{
   .productos {
     justify-content: center;
   }
+
+}
+@media (max-width: 880px) {
+  .list-group-itemDolar{
+    width:45%;
+    margin: 0.5em;
+  }
 }
 @media (max-width: 650px) {
   nav,
@@ -313,4 +320,9 @@ p{
   .tabla {
     width: 100%;
   }
+  .list-group-itemDolar{
+    width:80%;
+    margin: 0.5em;
+  }
+
 }

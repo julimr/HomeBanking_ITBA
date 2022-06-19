@@ -62,6 +62,9 @@ nav {
   height: 100%;
   vertical-align: top;
 }
+.menu-burger{
+  visibility: hidden;
+}
 .enlaces-header {
   font-weight: 300;
 }
@@ -194,6 +197,12 @@ header {
 footer{
     box-sizing: content-box !important;
 }
+@media (max-width: 766px) {
+  .menu-burger{
+    visibility:visible;
+  }
+}
+
 /* footer {
   background: #f2f5fc;
   padding: 60px 0;

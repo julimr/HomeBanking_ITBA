@@ -35,6 +35,7 @@
     background-color: #001845;
     color: white;
     border: none;
+    height: 80%;
 }
 
 .ilustracion__capa-informacion-boton:hover{
@@ -42,4 +43,7 @@
     cursor: pointer;
     color: black;
     background-color: #FDFDFD;
+}
+.ilustracion__capa-informacion-aviso{
+    font-size: 1em;
 }

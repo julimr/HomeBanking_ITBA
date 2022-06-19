@@ -43,6 +43,7 @@ ingresar.addEventListener ('click', function(){
             mensajeError.classList.toggle('con_error', 'sin_error');
             ingresar.classList.remove ('deshabilitar');
             window.location.href ='https://julimr.github.io/HomeBanking_ITBA/HomeBanking.html';
+            
         } else {
             mensajeError.classList.toggle('con_error', 'sin_error');
             mensajeError.innerHTML = 'Los datos ingresados son incorrectos';
