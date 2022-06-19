@@ -141,11 +141,17 @@
 }
 .sectionProductos{
   background: linear-gradient(#a8dadc, #2c56a8);
-  padding: 1em;
-  padding-top: 2em;
+  padding: 2em 1em 1em 1em;
   margin-top: 8px;
+  text-align: center;
 }
-.one{
+
+.productos{
+  justify-content: space-around;
+}
+
+/* Esto está en uso?? */
+/* .one{
   background-image: url(.././Images/banner1.png);
   
 }
@@ -159,7 +165,126 @@
 }
 .tabla {
   width: 25%;
+} */
+
+/* Section dolarPrice */
+
+section .dolarPrice ul {
+  list-style: none;
 }
+
+section div h2{
+  padding: 20px;
+}
+.borderDolarUp{
+  border-radius: 25px 25px 0 0;
+}
+
+.borderDolarDown{
+  border-radius: 0 0 25px 25px;
+}
+
+.dolarPrice{
+  text-align: center;
+  margin-top: 8px;
+}
+
+.list-groupDolar{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.list-group-itemDolar{
+  width: 25%;
+  height: auto;
+  margin: 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.containerDolarTitulo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5em 0;
+  width: 100%;
+  font-size: large;
+  text-transform: uppercase;
+  background:  #BFDBF7;
+  
+}
+.imgDolar{
+  width: 2em;
+  padding-right: 0.7em;
+}
+.containerDolar{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.containerDolarDivisa{
+  width: 100%;
+  padding: 1em 0 0 0;
+  display: flex;
+  justify-content: space-around;
+  background-color: #6eaded;
+}
+.tituloCompra, .tituloVenta, .referencia{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 14px;
+  
+}
+.divisa{
+  font-size: 20px;
+  font-weight: bold;
+  color: rgb(6, 99, 22);
+}
+.variacion, .actualizacion{
+  display: flex;
+  justify-content: center;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+}
+
+.displayVariacion{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #4999e9;
+}
+
+.indicador {
+  width: 0;
+  height: 0;
+  border-right: 6px solid transparent;
+  border-left: 6px solid transparent;
+  border-bottom: 12px solid rgb(8, 179, 2);
+  margin-right: 5px;
+}
+
+.indicador-negativo {
+  width: 0;
+  height: 0;
+  border-right: 6px solid transparent;
+  border-left: 6px solid transparent;
+  border-top: 12px solid rgb(255, 0, 0);
+  margin-right: 5px;
+}
+
+.actualizacion{
+  background: #1666b6;
+  padding-top: 0.3em;
+  padding-bottom: 0.3em;
+  font-weight: bold;
+}
+p{
+  margin: 0px;
+}
+
+
 @media (max-width: 740px) {
   .productos {
     justify-content: center;
