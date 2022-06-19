@@ -1,0 +1,43 @@
+.formulario__datos-final{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+    font-family: 'Poppins', sans-serif;
+    color: rgb(0, 0, 0);
+}
+
+.formulario__datos-final-boton{
+    border: none;
+    background-color: #1e88e5;
+    color: rgb(255, 255, 255);
+    letter-spacing: 1px;
+}
+
+.formulario__datos-final-boton:hover{
+    transition: .5s all;
+    cursor: pointer;
+    background-color: #015481;
+}
+
+.formulario__datos-final-enlaces{
+    text-align: center;
+    margin-top: 2.2rem;
+}
+
+.enlaces-recuperar a{
+    text-decoration: none;
+    color: darkblue;
+    font-weight: bolder;
+}
+
+.enlaces-registrar a{
+    text-decoration: none;
+    color: darkblue;
+    font-weight: bolder;
+}
+
+.enlaces-recuperar a:hover, .enlaces-registrar a:hover{
+    color: #020642;
+    font-weight: 700;
+}
