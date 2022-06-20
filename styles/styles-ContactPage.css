@@ -52,6 +52,7 @@ header {
 .container {
   display: inline block;
   cursor: pointer;
+  visibility: hidden;
 }
 .bar1,
 .bar2,
