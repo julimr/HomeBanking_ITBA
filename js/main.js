@@ -53,7 +53,7 @@ function agregarTituloDolar(containerDolar, data){
     containerDolarTitulo.className = "containerDolarTitulo borderDolarUp"
     const titulo = document.createElement('div');
     const img = document.createElement('img');
-    img.src = "./images/dolar.png";
+    img.src = "/Images/dolar.png";
     img.className= "imgDolar"
     titulo.innerText = `${data.casa.nombre}`;
     titulo.className = "titulo";
