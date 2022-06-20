@@ -9,7 +9,7 @@ body {
   padding: 0;
   /* background: url(/HomeBanking_ITBA-main/Images/fondo.png), #7B4397; */
   /* background: url(/HomeBanking_ITBA-main/Images/fondo.png), -webkit-gradient(linear, right top, left top, from(#7B4397), to(#106980)); */
-  background: url(/Images/fondo.png), linear-gradient(to left, #1d5c97, #2287a0);
+  background: url(../Images/fondo.png), linear-gradient(to left, #1d5c97, #2287a0);
   /* background-size: cover; */
   font-family: sans-serif;
   height: 100vh;
