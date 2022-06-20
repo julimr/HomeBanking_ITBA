@@ -42,7 +42,7 @@ ingresar.addEventListener ('click', function(){
         if (validacion) {
             mensajeError.classList.toggle('con_error', 'sin_error');
             ingresar.classList.remove ('deshabilitar');
-            window.location.href ='https://julimr.github.io/HomeBanking_ITBA/HomeBanking.html';
+            location.href="./HomeBanking.html";
             
         } else {
             mensajeError.classList.toggle('con_error', 'sin_error');
