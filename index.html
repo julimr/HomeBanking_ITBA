@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="./styles/footer.css" />
     <link rel="stylesheet" href="./styles/reset.css">
     <link rel="icon" href="./Images/logo icono.png" />
+    <script src="https://kit.fontawesome.com/7aa67bc4d7.js" crossorigin="anonymous"></script>
+    <script defer src="/js/index.js"></script>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -18,26 +20,25 @@
     />
   </head>
   <body>
-    <header>
-      <nav>
-        <section class="contenedor nav">
-          <div class=" menu-burger d-flex">
-            <div class="container" onclick="myFunction(this)">
-              <div class="bar1"></div>
-              <div class="bar2"></div>
-              <div class="bar3"></div>
-            </div>
-          </div>
-          <div class="logo">
-            <img src="./logo.jpg" alt="" />
-          </div>
-          <div class="enlaces-header">
-            <a href="./login-page.html" >HOME BANKING</a>
-            <a href="./ContactPage.html">CONTACTANOS</a>
-            <a href="./register-page.html" target="_blank">REGISTRATE</a>
-            <a href="#">TURNOS WEB</a>
-          </div>
-        </section>
+    <header class="header">
+      <nav class="nav contenedor">
+        <div class="logo">
+          <img src="/Images/logo.png" class="logo">
+        </div>
+          <button class="nav-toggle" aria-label="Abrir menú">
+              <i class="fa-solid fa-bars"></i>
+          </button>
+          <ul class="nav-menu nav-menu_visible enlaces-header">
+              <li class="nav-menu-item">
+                  <a href="/login-page.html" class="nav-menu-link nav-link">HOME BANKING</a>
+              </li>
+              <li class="nav-menu-item">
+                  <a href="/ContactPage.html" class="nav-menu-link nav-link">CONTACTANOS</a>
+              </li>
+              <li class="nav-menu-item">
+                  <a href="/register-page.html" class="nav-menu-link nav-link">REGISTRATE</a>
+              </li>
+          </ul>
       </nav>
     </header>
     <div class="carousel">
@@ -138,12 +139,12 @@
         <div class="logoInfo">
             <img src="./Images/logo-blanco.png" alt="Logo Itbank Group">
             <div class="sobreIB">
-                <p class="titImp">lorem ipsum dolor sit </p>
+                <p class="titImp">lorem ipsum dolor sit ametr</p>
                 <p class="subTit">sed do eiusmod tempor </p>
             </div>
             <div class="contactanos">
                 <label for="contactanos">Para más consultas</label>
-                <a href="./ContactPage.html"><input type="button" value="Contactanos" id="boton-contacto" name="contactanos"></a>
+                <input type="button" value="Contactanos" id="boton-contacto" name="contactanos">
             </div>
         </div>
         <section class="infoExtra">
