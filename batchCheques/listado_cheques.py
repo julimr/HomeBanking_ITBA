@@ -23,12 +23,12 @@ def ingresarTipoSalida():
         Devuelve un string con lo ingresado
     """
 
-    salida = (input('▶ Ingrese la salida (PANTALLA o CSV): ')).lower()
+    salida = (input('-> Ingrese la salida (PANTALLA o CSV): ')).lower()
 
     #Solicitamos hasta que se ingrese una opción válida
     while (salida != "pantalla" and salida != "csv"):
-        print('\n❌ Error en el tipo de salida, vuelva a ingresarlo ❌\n')
-        salida = (input('▶ Ingrese la salida (PANTALLA o CSV): ')).lower()
+        print('\n|X| Error en el tipo de salida, vuelva a ingresarlo |X|\n')
+        salida = (input('-> Ingrese la salida (PANTALLA o CSV): ')).lower()
     return salida
 
 
@@ -45,12 +45,12 @@ def ingresarTipoCheque():
         Devuelve un string con lo ingresado
     """
 
-    tipoCheque = (input('▶ Ingrese la salida (EMITIDO o DEPOSITADO): ')).lower()
+    tipoCheque = (input('-> Ingrese la salida (EMITIDO o DEPOSITADO): ')).lower()
 
     #Solicitamos hasta que se ingrese una opción válida
     while tipoCheque != "emitido" and tipoCheque != "depositado":
-        print('\n❌ Error en el tipo de cheque, vuelva a ingresarlo ❌\n')
-        tipoCheque = (input('▶ Ingrese la salida EMITIDO o DEPOSITADO: ')).lower()
+        print('\n|X| Error en el tipo de cheque, vuelva a ingresarlo |X|\n')
+        tipoCheque = (input('-> Ingrese la salida EMITIDO o DEPOSITADO: ')).lower()
     return tipoCheque
 
 
@@ -68,15 +68,26 @@ def ingresarEstadoCheque():
     """
 
     estadoCheque = (
-        input('▶ Ingrese el estado del cheque (PENDIENTE, APROBADO, RECHAZADO o vacío para ver todos): ')).lower()
+        input('-> Ingrese el estado del cheque (PENDIENTE, APROBADO, RECHAZADO o vacío para ver todos): ')).lower()
 
     #Solicitamos hasta que se ingrese una opción válida
     while estadoCheque != "pendiente" and estadoCheque != "aprobado" and estadoCheque != "rechazado" and estadoCheque != "":
-        print('\n❌ Error en el estado de cheque, vuelva a ingresarlo ❌\n')
+        print('\n|X| Error en el estado de cheque, vuelva a ingresarlo |X|\n')
         estadoCheque = (
-            input('▶ Ingrese el estado del cheque (PENDIENTE, APROBADO, RECHAZADO o vacío para ver todos): ')).lower()
+            input('-> Ingrese el estado del cheque (PENDIENTE, APROBADO, RECHAZADO o vacío para ver todos): ')).lower()
     return estadoCheque
 
+def filtrarPorFecha():
+    filtrar = input('\n⏸¿Desea filtrar por rango de fecha (Si/No)?: ').lower()
+    if(filtrar == 'si'):
+        rangoFecha = [
+            input('\n->Ingrese la fecha mínima de emisión(dd-mm-yyyy): '),
+            input('->Ingrese la fecha máxima de emisión (dd-mm-yyyy): ')
+        ]
+    else:
+        rangoFecha = []
+
+    return rangoFecha
 
 def abrirArchivo(nombreArchivo):
     """
@@ -106,7 +117,7 @@ def abrirArchivo(nombreArchivo):
 
     #Si no se puede, notificamos el error
     except FileNotFoundError:
-        sys.exit('\n❌ El archivo al que intenta acceder no fue encontrado ❌')
+        sys.exit('\n|X| El archivo al que intenta acceder no fue encontrado |X|')
 
 def filtrarDatos(archivo, dniCliente, tipoCheque, estadoCheque, rango):
 
@@ -137,28 +148,25 @@ def filtrarDatos(archivo, dniCliente, tipoCheque, estadoCheque, rango):
     filtradas = []
     cheques = []
     for linea in archivo:
-        
         #Guardamos todos los numeros de cheques
-        verificarNroCheque(linea, cheques)
+        obtenerNroCheque(linea, cheques)
     for linea in archivo:
-
         #Preguntamos si esa linea de datos coincide con todos los filtros
         if (coincideDNI(linea, dniCliente) and
                 coincideTipoCheque(linea, tipoCheque) and
                 coincideEstadoCheque(linea, estadoCheque) and coincideRangoFecha(linea,rango)):
-
              #Si se encontró dos veces un numero de cheque en distintas cuentas, notificamos el error   
             if(cheques.count(linea['NroCheque']) > 1):
-                sys.exit('\n❌ El número de cheque se encuentra repetido en otra cuenta ❌')
+                sys.exit('\n|X| El número de cheque se encuentra repetido en otra cuenta |X|')
             estampaOrigen = int(linea['FechaOrigen'])
             estampaPago = int(linea['FechaPago'])
             stampToDate(linea,estampaOrigen,estampaPago)
-
             #Guardamos los datos coincidentes
             filtradas.append(linea)
+
     return filtradas
 
-def verificarNroCheque(linea, cheques):
+def obtenerNroCheque(linea, cheques):
     """
     Description
     -----------
@@ -418,22 +426,15 @@ def ingresarDatos():
 
     print('===SISTEMA PROCESAMIENTO BATCH DE CHEQUES===\n')
 
-    nombreArchivo = input('▶ Ingrese el nombre del archivo csv: ')
+    nombreArchivo = input('-> Ingrese el nombre del archivo csv: ')
     archivo_csv = abrirArchivo(nombreArchivo)
 
-    dniCliente = input('▶ Ingrese el DNI del cliente: ')
+    dniCliente = input('-> Ingrese el DNI del cliente: ')
     tipoSalida = ingresarTipoSalida()
     tipoCheque = ingresarTipoCheque()
     estadoCheque = ingresarEstadoCheque()
 
-    filtrar = input('\n⏸¿Desea filtrar por rango de fecha (Si/No)?: ').lower()
-    if(filtrar == 'si'):
-        rangoFecha = [
-            input('\n▶Ingrese la fecha mínima de emisión(dd-mm-yyyy): '),
-            input('▶Ingrese la fecha máxima de emisión (dd-mm-yyyy): ')
-        ]
-    else:
-        rangoFecha = []
+    rangoFecha = filtrarPorFecha()
 
     lineasFiltradas = filtrarDatos(archivo_csv, dniCliente, tipoCheque, estadoCheque, rangoFecha)
 
