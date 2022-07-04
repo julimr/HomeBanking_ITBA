@@ -78,11 +78,11 @@ def ingresarEstadoCheque():
     return estadoCheque
 
 def filtrarPorFecha():
-    filtrar = input('\n⏸¿Desea filtrar por rango de fecha (Si/No)?: ').lower()
+    filtrar = input('\n|| ¿Desea filtrar por rango de fecha (Si/No)?: ').lower()
     if(filtrar == 'si'):
         rangoFecha = [
-            input('\n->Ingrese la fecha mínima de emisión(dd-mm-yyyy): '),
-            input('->Ingrese la fecha máxima de emisión (dd-mm-yyyy): ')
+            input('\n-> Ingrese la fecha mínima de emisión(dd-mm-yyyy): '),
+            input('-> Ingrese la fecha máxima de emisión (dd-mm-yyyy): ')
         ]
     else:
         rangoFecha = []
