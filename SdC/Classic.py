@@ -1,11 +1,10 @@
-from .Clientes import Clientes
-from .Cuentas import Cuentas
+from Clientes import Clientes
+from Cuentas import Cuentas
 from convertirSalidaTPS import *
-dataDict = convertToDict('salidaTPS.json')
 
-class Classic(Clientes, Cuentas):
-    def __init__(self):
-        super().__init__(datos=dataDict)
+class Classic(Clientes):
+    def __init__(self, datos):
+        super().__init__(datos)
         self.caracteristicas = Cuentas(10000, 150000, 0, 1, 0)
         self.cuentas = self.caracteristicas.definirCajas(True, False, False)
         self.maximos = self.caracteristicas.definirMaximos(1,0,0)

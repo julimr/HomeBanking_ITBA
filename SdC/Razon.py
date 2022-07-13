@@ -3,7 +3,7 @@ class Razon:
         self.type = type
     
     def resolver(self,cliente,evento):
-        return ''
+         pass
 
 class RazonAltaChequera(Razon):
     def __init__(self, type):
