@@ -69,7 +69,7 @@ class Clientes:
         self.transacciones.append(nuevaTarjeta)
 
     def ALTA_CHEQUERA(self,monto,cuentaNumero):
-        if (self.puede_crear_tarjeta_credito()):
+        if (self.puede_crear_chequera()):
             altaChequera = RazonAltaChequera("APROBADO", cuentaNumero, self.cupoDiarioRestante , monto,datetime.now,
             self.cantidad_transacciones() +1, self.saldoEnCuenta, self.cantTarjetasCredito(), self.cantChequeras() )
             altaChequera.resolver(self,monto)
