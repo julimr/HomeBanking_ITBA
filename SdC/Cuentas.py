@@ -7,7 +7,16 @@ class Cuentas:
         self.costo_transferencias = costo_transferencias
         self.saldo_descubierto_disponible = saldo_descubierto_disponible
 
-    def definirCuentas(self, cajaAhorroPesos, cajaAhorroDolares, cuentaCorrientePesos):
+    def definirCajas(self, cajaAhorroPesos, cajaAhorroDolares, cuentaCorrientePesos):
         self.cajaAhorroPesos = cajaAhorroPesos
         self.cajaAhorroDolares = cajaAhorroDolares
         self.cuentaCorrientePesos = cuentaCorrientePesos
+
+        return [self.cajaAhorroPesos, self.cajaAhorroDolares, self.cuentaCorrientePesos]
+
+    def definirMaximos(self, tarjetasDebito, tarjetasCredito, chequeras):
+        self.tarjetasDebito = tarjetasDebito
+        self.tarjetasCredito = tarjetasCredito
+        self.chequeras = chequeras
+
+        return [self.tarjetasDebito, self.tarjetasCredito, self.chequeras]

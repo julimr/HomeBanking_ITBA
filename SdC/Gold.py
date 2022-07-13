@@ -1,11 +1,14 @@
-import Clientes
-import Cuentas
+from .Clientes import Clientes
+from .Cuentas import Cuentas
+from convertirSalidaTPS import *
+dataDict = convertToDict('salidaTPS.json')
 
 class Gold(Clientes, Cuentas):
-    def __init__(self, nombre, apellido, numero, dni):
-        super().__init__(nombre, apellido, numero, dni)
+    def __init__(self):
+        super().__init__(datos=dataDict)
         self.caracteristicas = Cuentas(20000, 500000, 0, 0.5, 10000)
-        self.cuentas=?
+        self.cuentas = self.caracteristicas.definirCajas(False, True, True)
+        self.maximos = self.caracteristicas.definirMaximos(1,1,1)
 
     def puede_crear_chequera():
         return True
