@@ -55,6 +55,7 @@ class Cliente:
         return self.totalChequerasActualmente
     
     def clasificar_transacciones(self,datosTransacciones):
+        ''' Clasifica las transacciones dependiendo del tipo'''
         transacciones = []
         for transaccion in datosTransacciones:
             self.totalChequerasActualmente = transaccion['totalChequerasActualmente']
@@ -76,6 +77,7 @@ class Cliente:
         return transacciones
     
     def resolver_transacciones(self):
+        ''' Devuelve el reporte de las transacciones '''
         reporteFinal = []
         for t in self.transacciones:
             reporteTransaccion = {}
@@ -86,5 +88,4 @@ class Cliente:
             reporteTransaccion['monto'] = t.monto
             reporteTransaccion['razonRechazo'] = resultado
             reporteFinal.append(reporteTransaccion)
-        print(reporteFinal)
         return reporteFinal
