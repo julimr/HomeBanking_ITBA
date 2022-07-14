@@ -1,70 +1,41 @@
 
 class Razon:
-    def __init__(self,estado,tipo,cuentaNumero,
-    CupoDiarioRestante,monto,fecha, numero,saldoEnCuenta,
-    totalTarjetasDeCreditoActualmente,totalChequerasActualmente):
-        self.estado = estado
-        self.tipo = tipo
-        self.cuentaNumero = cuentaNumero
-        self.CupoDiarioRestante = CupoDiarioRestante
-        self.monto = monto
-        self.fecha = fecha
-        self.numero = numero
-        self.saldoEnCuenta = saldoEnCuenta
-        self.totalTarjetasDeCreditoActualmente = totalTarjetasDeCreditoActualmente
-        self.totalChequerasActualmente = totalChequerasActualmente
+    def __init__(self, datos):
+        self.estado = datos['estado']
+        self.tipo = datos['tipo']
+        self.cuentaNumero = datos['cuentaNumero']
+        self.cupoDiarioRestante = datos['cupoDiarioRestante']
+        self.monto = datos['monto']
+        self.fecha = datos['fecha']
+        self.numero = datos['numero']
+        self.saldoEnCuenta = datos['saldoEnCuenta']
+        self.totalTarjetasDeCreditoActualmente = datos['totalTarjetasDeCreditoActualmente']
+        self.totalChequerasActualmente = datos['totalChequerasActualmente']
 
     
-    def resolver(self,cliente,monto):
-         pass
+    def resolver(self,cliente, evento):
+        pass
 
 class RazonAltaChequera(Razon):
-    def __init__(self, estado, cuentaNumero, CupoDiarioRestante, monto,
-    fecha, numero, saldoEnCuenta, totalTarjetasDeCreditoActualmente, totalChequerasActualmente):
-        super().__init__(estado, cuentaNumero, CupoDiarioRestante, monto, fecha, numero,
-        saldoEnCuenta, totalTarjetasDeCreditoActualmente, totalChequerasActualmente)
-        self.tipo = "ALTA_CHEQUERA"
-    
-    def resolver(self, cliente, monto):
-        cliente.nueva_chequera()
+    def __init__(self, datos):
+        super().__init__(datos)
     
 class RazonAltaTarjetaCredito(Razon):
-    def __init__(self, estado, cuentaNumero, CupoDiarioRestante, monto,
-    fecha, numero, saldoEnCuenta, totalTarjetasDeCreditoActualmente, totalChequerasActualmente):
-        super().__init__(estado, cuentaNumero, CupoDiarioRestante, monto, fecha, numero,
-        saldoEnCuenta, totalTarjetasDeCreditoActualmente, totalChequerasActualmente)
-        self.tipo = "ALTA_TARJETA_CREDITO"
-    
-    def resolver(self, cliente, monto):
-        cliente.cantTarjetasCredito += 1
+    def __init__(self, datos):
+        super().__init__(datos)
 
 class RazonCompraDolar(Razon):
-    def __init__(self, estado, cuentaNumero, CupoDiarioRestante, monto,
-    fecha, numero, saldoEnCuenta, totalTarjetasDeCreditoActualmente, totalChequerasActualmente):
-        super().__init__(estado, cuentaNumero, CupoDiarioRestante, monto, fecha, numero,
-        saldoEnCuenta, totalTarjetasDeCreditoActualmente, totalChequerasActualmente)
-        self.tipo = "COMPRAR_DOLAR"
+    def __init__(self, datos):
+        super().__init__(datos)
 
 class RazonRetiroEfectivo(Razon):
-    def __init__(self, estado, cuentaNumero, CupoDiarioRestante, monto,
-    fecha, numero, saldoEnCuenta, totalTarjetasDeCreditoActualmente, totalChequerasActualmente):
-        super().__init__(estado, cuentaNumero, CupoDiarioRestante, monto, fecha, numero,
-        saldoEnCuenta, totalTarjetasDeCreditoActualmente, totalChequerasActualmente)
-        self.tipo = "RETIRO_EFECTIVO_CAJERO_AUTOMATICO"
-    
-    def resolver(self, cliente, monto):
-        cliente.retirar_efectivo(monto)
+    def __init__(self, datos):
+        super().__init__(datos)
         
 class RazonTransferenciaEnviada(Razon):
-    def __init__(self, estado, cuentaNumero, CupoDiarioRestante, monto,
-    fecha, numero, saldoEnCuenta, totalTarjetasDeCreditoActualmente, totalChequerasActualmente):
-        super().__init__(estado, cuentaNumero, CupoDiarioRestante, monto, fecha, numero,
-        saldoEnCuenta, totalTarjetasDeCreditoActualmente, totalChequerasActualmente)
-        self.tipo = "TRANSFERENCIA_ENVIADA"
+    def __init__(self, datos):
+        super().__init__(datos)
 
 class RazonTransferenciaRecibida(Razon):
-    def __init__(self, estado, cuentaNumero, CupoDiarioRestante, monto,
-    fecha, numero, saldoEnCuenta, totalTarjetasDeCreditoActualmente, totalChequerasActualmente):
-        super().__init__(estado, cuentaNumero, CupoDiarioRestante, monto, fecha, numero,
-        saldoEnCuenta, totalTarjetasDeCreditoActualmente, totalChequerasActualmente)
-        self.tipo = "TRANSFERENCIA_RECIBIDA"
+    def __init__(self, datos):
+        super().__init__(datos)

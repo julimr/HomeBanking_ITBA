@@ -1,8 +1,8 @@
-from Clientes import Clientes
+from Clientes import Cliente
 from Cuentas import Cuentas
 from convertirSalidaTPS import *
 
-class Classic(Clientes):
+class Classic(Cliente):
     def __init__(self, datos):
         super().__init__(datos)
         self.caracteristicas = Cuentas(10000, 150000, 0, 1, 0)
