@@ -1,4 +1,9 @@
-import json 
+import json
+
+from Classic import Classic
+from Gold import Gold
+from Black import Black
+
 
 def convertToDict(file):
 
