@@ -78,7 +78,7 @@ class Cliente:
     
     def resolver_transacciones(self):
         ''' Devuelve el reporte de las transacciones '''
-        reporteFinal = []
+        reporteFinalTransacciones = []
         for t in self.transacciones:
             reporteTransaccion = {}
             resultado = t.resolver(self)
@@ -87,5 +87,17 @@ class Cliente:
             reporteTransaccion['estado'] = t.estado
             reporteTransaccion['monto'] = t.monto
             reporteTransaccion['razonRechazo'] = resultado
-            reporteFinal.append(reporteTransaccion)
-        return reporteFinal
+            reporteFinalTransacciones.append(reporteTransaccion)
+        return reporteFinalTransacciones
+    
+    def reporte_cliente(self):
+        reporteCliente = {}
+        reporteTransacciones = self.resolver_transacciones()
+        reporteCliente['nombre'] = self.nombre
+        reporteCliente['numero'] = self.numero
+        reporteCliente['dni'] = self.dni
+        reporteCliente['direccion'] = { 'calle': self.direccion.calle, 'numero': self.direccion.numero,
+                                        'ciudad': self.direccion.ciudad, 'provincia': self.direccion.provincia,
+                                        'pais': self.direccion.pais}
+        reporteCliente['transacciones'] = reporteTransacciones
+        return reporteCliente
