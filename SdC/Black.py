@@ -23,7 +23,7 @@ class Black(Cliente):
             raise NoPuedeCrearExcedeElLimite('No puede dar de alta una nueva chequera porque excede el límite (2 chequeras).')
 
     def puede_crear_tarjeta_credito(self):
-        if (self.totalChequerasActualmente >= 5):
+        if (self.totalTarjetasDeCreditoActualmente >= 5):
             raise NoPuedeCrearExcedeElLimite('No puede dar de alta una nueva tarjeta de crédito porque excede el límite (5 tarjetas).')
 
     def puede_comprar_dolar(self):
