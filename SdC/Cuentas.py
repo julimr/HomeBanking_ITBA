@@ -1,22 +1,19 @@
-class Cuentas:
-    def __init__(self, limite_extraccion_diario, limite_transferencia_recibida, monto, costo_transferencias, saldo_descubierto_disponible):
+class Cuenta:
+    def __init__(self, limite_extraccion_diario, limite_transferencia_recibida, costo_transferencias, saldo_descubierto_disponible):
 
         self.limite_extraccion_diario = limite_extraccion_diario
         self.limite_transferencia_recibida = limite_transferencia_recibida
-        self.monto = monto
         self.costo_transferencias = costo_transferencias
         self.saldo_descubierto_disponible = saldo_descubierto_disponible
 
-    def definirCajas(self, cajaAhorroPesos, cajaAhorroDolares, cuentaCorrientePesos):
-        self.cajaAhorroPesos = cajaAhorroPesos
-        self.cajaAhorroDolares = cajaAhorroDolares
-        self.cuentaCorrientePesos = cuentaCorrientePesos
+class CuentaAhorroEnPesos(Cuenta):
+    def __init__(self, limite_extraccion_diario, limite_transferencia_recibida, costo_transferencias, saldo_descubierto_disponible):
+        super().__init__(limite_extraccion_diario, limite_transferencia_recibida, costo_transferencias, saldo_descubierto_disponible)
 
-        return [self.cajaAhorroPesos, self.cajaAhorroDolares, self.cuentaCorrientePesos]
+class CuentaAhorroEnDolares(Cuenta):
+    def __init__(self, limite_extraccion_diario, limite_transferencia_recibida, costo_transferencias, saldo_descubierto_disponible):
+        super().__init__(limite_extraccion_diario, limite_transferencia_recibida, costo_transferencias, saldo_descubierto_disponible)
 
-    def definirMaximos(self, tarjetasDebito, tarjetasCredito, chequeras):
-        self.tarjetasDebito = tarjetasDebito
-        self.tarjetasCredito = tarjetasCredito
-        self.chequeras = chequeras
-
-        return [self.tarjetasDebito, self.tarjetasCredito, self.chequeras]
+class CuentaCorriente(Cuenta):
+    def __init__(self, limite_extraccion_diario, limite_transferencia_recibida, costo_transferencias, saldo_descubierto_disponible):
+        super().__init__(limite_extraccion_diario, limite_transferencia_recibida, costo_transferencias, saldo_descubierto_disponible)

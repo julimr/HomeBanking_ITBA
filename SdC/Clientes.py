@@ -2,6 +2,7 @@
 from Direccion import Direccion
 from Razon import RazonAltaChequera, RazonAltaTarjetaCredito, RazonCompraDolar, RazonRetiroEfectivo, RazonTransferenciaEnviada, RazonTransferenciaRecibida
 from Exceptions import NoPuedeRealizarTransferenciaNoHayDineroDisponible, NoPuedeRecibirTransferenciaPorqueExcedeMontoMaximo, NoPuedeRetirarExcedeDineroDisponible, NoPuedeRetirarExcedeMontoMaximo
+from SdC.Tarjetas import TarjetaDebito
 
 class Cliente:
     totalTarjetasDeCreditoActualmente = 0
@@ -9,7 +10,8 @@ class Cliente:
     cupoDiario = 0
     comisionTransferencias = 0
     montoMaximoTrasferenciasRecibidas = 0
-
+    tarjetas = []
+    cuentasBancarias = {}
     def __init__(self, datos):
         self.nombre = datos['nombre']
         self.apellido = datos['apellido']
@@ -21,6 +23,8 @@ class Cliente:
                                     datos['direccion']['provincia'],
                                     datos['direccion']['pais'])
         self.transacciones = self.clasificar_transacciones(datos['transacciones'])
+        self.tarjetas.append(TarjetaDebito(self))
+        
 
     def puede_crear_chequera(self):
         pass
@@ -47,13 +51,7 @@ class Cliente:
     def puede_recibir_transferencia(self, monto):
         if ( monto > self.montoMaximoTrasferenciasRecibidas):
             raise NoPuedeRecibirTransferenciaPorqueExcedeMontoMaximo(f'No puede recibir la transferencia porque excede el monto máximo.')
-
-    def cantTarjetasCredito(self):
-        return self.totalTarjetasDeCreditoActualmente
-
-    def cantChequeras(self):
-        return self.totalChequerasActualmente
-    
+   
     def clasificar_transacciones(self,datosTransacciones):
         ''' Clasifica las transacciones dependiendo del tipo'''
         transacciones = []

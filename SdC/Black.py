@@ -1,17 +1,22 @@
 from Clientes import Cliente
 from Cuentas import Cuentas
-from Exceptions import NoPuedeCrearExcedeElLimite 
+from Exceptions import NoPuedeCrearExcedeElLimite
+from SdC.Cuentas import CuentaAhorroEnDolares, CuentaAhorroEnPesos, CuentaCorriente 
 
 
 class Black(Cliente):
     cupoDiario = 100000
     comisionTransferencias = 0
     montoMaximoTrasferenciasRecibidas = 0
+    saldoDescubiertoDisponible = -10000
     def __init__(self, datos):
         super().__init__(datos)
-        self.caracteristicas = Cuentas(100000, 500000, 0, 0, 10000)
-        self.cuentas = self.caracteristicas.definirCajas(True, True, True)
-        self.maximos = self.caracteristicas.definirMaximos(0,5,2)
+        cuentaAhorroPesos = CuentaAhorroEnPesos(self.cupoDiario, self.montoMaximoTrasferenciasRecibidas, self.comisionTransferencias, self.saldoDescubiertoDisponible)
+        cuentaCorriente = CuentaCorriente(self.cupoDiario, self.montoMaximoTrasferenciasRecibidas, self.comisionTransferencias, self.saldoDescubiertoDisponible)
+        cuentaAhorroEnDolares = CuentaAhorroEnDolares(self.cupoDiario, self.montoMaximoTrasferenciasRecibidas, self.comisionTransferencias, self.saldoDescubiertoDisponible)
+        self.cuentasBancarias['cuentaAhorroEnPesos'] = cuentaAhorroPesos
+        self.cuentasBancarias['cuentaCorriente'] = cuentaCorriente
+        self.cuentasBancarias['cuentaAhorroEnDolares'] = cuentaAhorroEnDolares
 
     def puede_crear_chequera(self):
         if (self.totalChequerasActualmente >= 2):
