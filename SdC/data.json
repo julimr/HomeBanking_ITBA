@@ -1,0 +1,254 @@
+[
+    {
+        "nombre": "Nicolas",
+        "numero": 100001,
+        "dni": "29494777",
+        "direccion": {
+            "calle": "Rivadavia",
+            "numero": "7900",
+            "ciudad": "Capital Federal",
+            "provincia": "Buenos Aires",
+            "pais": "Argentina"
+        },
+        "transacciones": [
+            {
+                "fecha": "20/06/2022 16:00:55",
+                "tipo": "RETIRO_EFECTIVO_CAJERO_AUTOMATICO",
+                "estado": "ACEPTADA",
+                "monto": 1000,
+                "razonRechazo": ""
+            },
+            {
+                "fecha": "20/06/2022 17:00:55",
+                "tipo": "RETIRO_EFECTIVO_CAJERO_AUTOMATICO",
+                "estado": "RECHAZADA",
+                "monto": 11000,
+                "razonRechazo": "No puede retirar $11000 porque excede el l\u00edmite diario de $10000."
+            },
+            {
+                "fecha": "20/06/2022 18:00:55",
+                "tipo": "RETIRO_EFECTIVO_CAJERO_AUTOMATICO",
+                "estado": "RECHAZADA",
+                "monto": 9000,
+                "razonRechazo": "No puede retirar $9000 porque excede el cupo diario restante de $3000."
+            },
+            {
+                "fecha": "21/06/2022 10:11:11",
+                "tipo": "RETIRO_EFECTIVO_CAJERO_AUTOMATICO",
+                "estado": "RECHAZADA",
+                "monto": 9000,
+                "razonRechazo": "No puede retirar $9000 porque excede el cupo diario restante de $3000."
+            },
+            {
+                "fecha": "22/06/2022 16:00:55",
+                "tipo": "ALTA_TARJETA_CREDITO",
+                "estado": "RECHAZADA",
+                "monto": 9000,
+                "razonRechazo": "No puede dar de alta una tarjeta de cr\u00e9dito porque el Cliente Classic no lo tiene permitido."
+            },
+            {
+                "fecha": "23/06/2022 16:00:55",
+                "tipo": "ALTA_CHEQUERA",
+                "estado": "RECHAZADA",
+                "monto": 9000,
+                "razonRechazo": "No puede dar de alta una chequera porque el Cliente Classic no lo tiene permitido."
+            },
+            {
+                "fecha": "24/06/2022 16:00:55",
+                "tipo": "COMPRA_DOLAR",
+                "estado": "RECHAZADA",
+                "monto": 9000,
+                "razonRechazo": "No puede comprar d\u00f3lares porque el Cliente Classic no lo permite."
+            },
+            {
+                "fecha": "25/06/2022 16:00:55",
+                "tipo": "TRANSFERENCIA_ENVIADA",
+                "estado": "RECHAZADA",
+                "monto": 100000,
+                "razonRechazo": "No puede realizar trasferencia porque no hay suficiente dinero en la cuenta. Disponible: $100000. A retirar: $101000.0"
+            },
+            {
+                "fecha": "24/06/2022 17:00:00",
+                "tipo": "TRANSFERENCIA_RECIBIDA",
+                "estado": "ACEPTADA",
+                "monto": 9000,
+                "razonRechazo": ""
+            },
+            {
+                "fecha": "25/06/2022 16:00:55",
+                "tipo": "TRANSFERENCIA_RECIBIDA",
+                "estado": "RECHAZADA",
+                "monto": 200000,
+                "razonRechazo": "No puede recibir la transferencia porque excede el monto m\u00e1ximo."
+            }
+        ]
+    },
+    {
+        "nombre": "Nicolas",
+        "numero": 100001,
+        "dni": "29494777",
+        "direccion": {
+            "calle": "Rivadavia",
+            "numero": "7900",
+            "ciudad": "Capital Federal",
+            "provincia": "Buenos Aires",
+            "pais": "Argentina"
+        },
+        "transacciones": [
+            {
+                "fecha": "10/06/2022 16:00:55",
+                "tipo": "RETIRO_EFECTIVO_CAJERO_AUTOMATICO",
+                "estado": "ACEPTADA",
+                "monto": 1000,
+                "razonRechazo": ""
+            },
+            {
+                "fecha": "10/06/2022 16:40:55",
+                "tipo": "RETIRO_EFECTIVO_CAJERO_AUTOMATICO",
+                "estado": "RECHAZADA",
+                "monto": 11000,
+                "razonRechazo": "No hay suficiente dinero disponible en la cuenta. Disponible: $10000"
+            },
+            {
+                "fecha": "10/06/2022 16:55:45",
+                "tipo": "RETIRO_EFECTIVO_CAJERO_AUTOMATICO",
+                "estado": "RECHAZADA",
+                "monto": 9000,
+                "razonRechazo": "No puede retirar $9000 porque excede el cupo diario restante de $3000."
+            },
+            {
+                "fecha": "10/06/2022 16:56:55",
+                "tipo": "RETIRO_EFECTIVO_CAJERO_AUTOMATICO",
+                "estado": "RECHAZADA",
+                "monto": 9000,
+                "razonRechazo": "No puede retirar $9000 porque excede el cupo diario restante de $3000."
+            },
+            {
+                "fecha": "11/06/2022 16:00:55",
+                "tipo": "ALTA_TARJETA_CREDITO",
+                "estado": "RECHAZADA",
+                "monto": 9000,
+                "razonRechazo": "No puede dar de alta una nueva tarjeta de cr\u00e9dito porque excede el l\u00edmite (1 tarjeta de cr\u00e9dito)."
+            },
+            {
+                "fecha": "12/06/2022 16:00:55",
+                "tipo": "ALTA_CHEQUERA",
+                "estado": "RECHAZADA",
+                "monto": 9000,
+                "razonRechazo": "No puede dar de alta una nueva chequera porque excede el l\u00edmite (1 chequera)."
+            },
+            {
+                "fecha": "13/06/2022 10:00:00",
+                "tipo": "COMPRA_DOLAR",
+                "estado": "RECHAZADA",
+                "monto": 9000,
+                "razonRechazo": null
+            },
+            {
+                "fecha": "14/06/2022 16:00:55",
+                "tipo": "TRANSFERENCIA_ENVIADA",
+                "estado": "RECHAZADA",
+                "monto": 100000,
+                "razonRechazo": "No puede realizar trasferencia porque no hay suficiente dinero en la cuenta. Disponible: $100000. A retirar: $100499.99999999999"
+            },
+            {
+                "fecha": "20/06/2022 16:00:55",
+                "tipo": "TRANSFERENCIA_RECIBIDA",
+                "estado": "ACEPTADA",
+                "monto": 9000,
+                "razonRechazo": ""
+            },
+            {
+                "fecha": "21/06/2022 16:00:55",
+                "tipo": "TRANSFERENCIA_RECIBIDA",
+                "estado": "RECHAZADA",
+                "monto": 600000,
+                "razonRechazo": "No puede recibir la transferencia porque excede el monto m\u00e1ximo."
+            }
+        ]
+    },
+    {
+        "nombre": "Nicolas",
+        "numero": 100001,
+        "dni": "29494777",
+        "direccion": {
+            "calle": "Rivadavia",
+            "numero": "7900",
+            "ciudad": "Capital Federal",
+            "provincia": "Buenos Aires",
+            "pais": "Argentina"
+        },
+        "transacciones": [
+            {
+                "fecha": "06/06/2022 10:00:55",
+                "tipo": "RETIRO_EFECTIVO_CAJERO_AUTOMATICO",
+                "estado": "ACEPTADA",
+                "monto": 1000,
+                "razonRechazo": ""
+            },
+            {
+                "fecha": "06/06/2022 10:10:55",
+                "tipo": "RETIRO_EFECTIVO_CAJERO_AUTOMATICO",
+                "estado": "RECHAZADA",
+                "monto": 11000,
+                "razonRechazo": "No hay suficiente dinero disponible en la cuenta. Disponible: $10000"
+            },
+            {
+                "fecha": "06/06/2022 10:22:55",
+                "tipo": "RETIRO_EFECTIVO_CAJERO_AUTOMATICO",
+                "estado": "RECHAZADA",
+                "monto": 9000,
+                "razonRechazo": "No puede retirar $9000 porque excede el cupo diario restante de $3000."
+            },
+            {
+                "fecha": "06/06/2022 10:33:33",
+                "tipo": "RETIRO_EFECTIVO_CAJERO_AUTOMATICO",
+                "estado": "RECHAZADA",
+                "monto": 9000,
+                "razonRechazo": "No puede retirar $9000 porque excede el cupo diario restante de $3000."
+            },
+            {
+                "fecha": "06/06/2022 12:00:00",
+                "tipo": "ALTA_TARJETA_CREDITO",
+                "estado": "RECHAZADA",
+                "monto": 9000,
+                "razonRechazo": null
+            },
+            {
+                "fecha": "06/06/2022 12:30:55",
+                "tipo": "ALTA_CHEQUERA",
+                "estado": "RECHAZADA",
+                "monto": 9000,
+                "razonRechazo": "No puede dar de alta una nueva chequera porque excede el l\u00edmite (2 chequeras)."
+            },
+            {
+                "fecha": "06/06/2022 12:45:33",
+                "tipo": "COMPRA_DOLAR",
+                "estado": "RECHAZADA",
+                "monto": 9000,
+                "razonRechazo": null
+            },
+            {
+                "fecha": "06/06/2022 13:00:55",
+                "tipo": "TRANSFERENCIA_ENVIADA",
+                "estado": "RECHAZADA",
+                "monto": 1000000,
+                "razonRechazo": "No puede realizar trasferencia porque no hay suficiente dinero en la cuenta. Disponible: $100000. A retirar: $1000000"
+            },
+            {
+                "fecha": "06/06/2022 13:11:15",
+                "tipo": "TRANSFERENCIA_RECIBIDA",
+                "estado": "ACEPTADA",
+                "monto": 9000,
+                "razonRechazo": ""
+            },
+            {
+                "fecha": "06/06/2022 16:00:55",
+                "tipo": "TRANSFERENCIA_RECIBIDA",
+                "estado": "ACEPTADA",
+                "monto": 200000,
+                "razonRechazo": ""
+            }
+        ]
+    }
+]
