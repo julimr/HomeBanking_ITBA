@@ -37,7 +37,7 @@ file = open('index.html', 'w')
 file.write(content)
 file.close()
 
-webbrowser.open_new_tab('index.html')
+# webbrowser.open_new_tab('index.html')
 
 '''
 La linea de arriba abre una nueva pestaña que no va a funcionar, porque al usar JS se necesita un servidor.
