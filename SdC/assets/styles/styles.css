@@ -1,0 +1,93 @@
+:root{
+    --titleFont: 'Gugi', cursive;
+    --textFont: 'Lato', sans-serif;
+    --blueCard: #0578eb;
+    --classicColor: #c6c7c8;
+    --goldColor: #ffbf00;
+    --blackColor: #000814;
+}
+
+body{
+    display: flex;
+    background-color: white;
+    margin: auto;
+    height: auto;
+    justify-content: center;
+    gap: 4rem;
+    padding: 2rem 0;
+}
+
+.client{
+    height: auto;
+    /* width: auto; */
+    display: flex;
+    flex-direction: column;
+    border: 2px solid darkblue;
+}
+
+.title{
+    font-family: var(--titleFont);
+    text-align: center;
+    font-size: 2.5rem;
+    background-color: var(--blueCard);
+    padding: 1rem 0;
+    letter-spacing: 2px;
+    color: white;
+}
+
+/* .classic{
+    color: var(--classicColor);
+}
+
+.gold{
+    color: var(--goldColor);
+}
+
+.black{
+    color: var(--blackColor);
+} */
+
+.data{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem 0.5rem;
+}
+
+.data-item{
+    font-family: var(--textFont);
+    font-size: 1.5rem;
+    color: black;
+}
+
+#changeFormat{
+    font-weight: bold;
+    margin-right: .7rem;
+}
+
+.transactions{
+    display: flex;
+    flex-direction: column;
+}
+
+.subtitle{
+    font-size: 1.7rem;
+}
+
+.transactions__list{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0.5rem;
+}
+
+.transaction{
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+    padding: 1rem 0;
+    border-bottom: 2px solid var(--blueCard);
+}
+
+.tr-item{
+    font-size: 1.2rem;
+}
