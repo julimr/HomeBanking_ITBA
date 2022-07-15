@@ -2,9 +2,6 @@
     --titleFont: 'Gugi', cursive;
     --textFont: 'Lato', sans-serif;
     --blueCard: #0578eb;
-    --classicColor: #c6c7c8;
-    --goldColor: #ffbf00;
-    --blackColor: #000814;
 }
 
 body{
@@ -13,13 +10,12 @@ body{
     margin: auto;
     height: auto;
     justify-content: center;
-    gap: 4rem;
-    padding: 2rem 0;
+    gap: 3rem;
 }
 
 .client{
     height: auto;
-    /* width: auto; */
+    width: 30rem;
     display: flex;
     flex-direction: column;
     border: 2px solid darkblue;
@@ -34,18 +30,6 @@ body{
     letter-spacing: 2px;
     color: white;
 }
-
-/* .classic{
-    color: var(--classicColor);
-}
-
-.gold{
-    color: var(--goldColor);
-}
-
-.black{
-    color: var(--blackColor);
-} */
 
 .data{
     display: flex;
@@ -90,4 +74,46 @@ body{
 
 .tr-item{
     font-size: 1.2rem;
+}
+
+@media screen and (min-width:0){
+    body{
+        flex-direction: column;
+        padding: 0;
+        border: 2px solid darkblue;     
+    }
+    .client{
+        width: 100%;
+        margin: 0 auto;
+    }
+    .tr-item{
+        font-size: 1.1rem;
+    }
+}
+
+@media screen and (min-width:1200px){
+    body{
+        flex-direction: row;
+        padding: 2rem 0;
+        border: none;
+    }
+    .client{
+        width: 30%;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (min-width:1400px){
+    body{
+        flex-direction: row;
+        padding: 2rem 0;
+        border: none;
+    }
+    .client{
+        width: 30%;
+        margin: 0 auto;
+    }
+    .tr-item{
+        font-size: 1.2rem;
+    }
 }
