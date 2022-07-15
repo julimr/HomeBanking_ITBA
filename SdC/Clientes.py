@@ -45,7 +45,7 @@ class Cliente:
     def puede_realizar_transferencia(self, monto, saldoEnCuenta):
         dineroARetirar = monto * ( 1 + self.comisionTransferencias)
         if ( dineroARetirar > saldoEnCuenta ):
-            raise NoPuedeRealizarTransferenciaNoHayDineroDisponible(f'No puede realizar trasferencia porque no hay suficiente dinero en la cuenta. Disponible: ${saldoEnCuenta}. A retirar: ${dineroARetirar}')
+            raise NoPuedeRealizarTransferenciaNoHayDineroDisponible(f'No puede realizar trasferencia porque no hay suficiente dinero en la cuenta. Disponible: ${saldoEnCuenta}. A retirar: ${round(dineroARetirar,2)}')
 
     def puede_recibir_transferencia(self, monto):
         if ( monto > self.montoMaximoTrasferenciasRecibidas):
