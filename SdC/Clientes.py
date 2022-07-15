@@ -1,8 +1,7 @@
-
 from Direccion import Direccion
 from Razon import RazonAltaChequera, RazonAltaTarjetaCredito, RazonCompraDolar, RazonRetiroEfectivo, RazonTransferenciaEnviada, RazonTransferenciaRecibida
 from Exceptions import NoPuedeRealizarTransferenciaNoHayDineroDisponible, NoPuedeRecibirTransferenciaPorqueExcedeMontoMaximo, NoPuedeRetirarExcedeDineroDisponible, NoPuedeRetirarExcedeMontoMaximo
-from SdC.Tarjetas import TarjetaDebito
+from Tarjetas import TarjetaDebito
 
 class Cliente:
     totalTarjetasDeCreditoActualmente = 0

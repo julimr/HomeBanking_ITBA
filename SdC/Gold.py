@@ -1,7 +1,7 @@
 from Clientes import Cliente
 from Cuentas import Cuentas
 from Exceptions import NoPuedeCrearExcedeElLimite, NoPuedeRetirarExcedeMontoMaximo
-from SdC.Cuentas import CuentaAhorroEnDolares, CuentaCorriente
+from Cuentas import CuentaAhorroEnDolares, CuentaCorriente
 
 
 class Gold(Cliente):
@@ -11,9 +11,6 @@ class Gold(Cliente):
     saldoDescubiertoDisponible = -10000
     def __init__(self, datos):
         super().__init__(datos)
-        self.caracteristicas = Cuentas(20000, 500000, 0, 0.5, 10000)
-        self.cuentas = self.caracteristicas.definirCajas(False, True, True)
-        self.maximos = self.caracteristicas.definirMaximos(1,1,1)
         cuentaCorriente = CuentaCorriente(self.cupoDiario, self.montoMaximoTrasferenciasRecibidas, self.comisionTransferencias, self.saldoDescubiertoDisponible)
         cuentaAhorroEnDolares = CuentaAhorroEnDolares(self.cupoDiario, self.montoMaximoTrasferenciasRecibidas, self.comisionTransferencias, self.saldoDescubiertoDisponible)
         self.cuentasBancarias['cuentaCorriente'] = cuentaCorriente

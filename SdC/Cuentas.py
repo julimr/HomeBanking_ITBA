@@ -1,4 +1,4 @@
-class Cuenta:
+class Cuentas:
     def __init__(self, limite_extraccion_diario, limite_transferencia_recibida, costo_transferencias, saldo_descubierto_disponible):
 
         self.limite_extraccion_diario = limite_extraccion_diario
@@ -6,14 +6,14 @@ class Cuenta:
         self.costo_transferencias = costo_transferencias
         self.saldo_descubierto_disponible = saldo_descubierto_disponible
 
-class CuentaAhorroEnPesos(Cuenta):
+class CuentaAhorroEnPesos(Cuentas):
     def __init__(self, limite_extraccion_diario, limite_transferencia_recibida, costo_transferencias, saldo_descubierto_disponible):
         super().__init__(limite_extraccion_diario, limite_transferencia_recibida, costo_transferencias, saldo_descubierto_disponible)
 
-class CuentaAhorroEnDolares(Cuenta):
+class CuentaAhorroEnDolares(Cuentas):
     def __init__(self, limite_extraccion_diario, limite_transferencia_recibida, costo_transferencias, saldo_descubierto_disponible):
         super().__init__(limite_extraccion_diario, limite_transferencia_recibida, costo_transferencias, saldo_descubierto_disponible)
 
-class CuentaCorriente(Cuenta):
+class CuentaCorriente(Cuentas):
     def __init__(self, limite_extraccion_diario, limite_transferencia_recibida, costo_transferencias, saldo_descubierto_disponible):
         super().__init__(limite_extraccion_diario, limite_transferencia_recibida, costo_transferencias, saldo_descubierto_disponible)

@@ -1,7 +1,7 @@
 from Clientes import Cliente
 from Cuentas import Cuentas
 from Exceptions import NoPuedeCrearExcedeElLimite
-from SdC.Cuentas import CuentaAhorroEnDolares, CuentaAhorroEnPesos, CuentaCorriente 
+from Cuentas import CuentaAhorroEnDolares, CuentaAhorroEnPesos, CuentaCorriente 
 
 
 class Black(Cliente):
@@ -27,7 +27,7 @@ class Black(Cliente):
             raise NoPuedeCrearExcedeElLimite('No puede dar de alta una nueva tarjeta de crédito porque excede el límite (5 tarjetas).')
 
     def puede_comprar_dolar(self):
-        pass
+        True
     
     def puede_recibir_transferencia(self, monto):
         pass

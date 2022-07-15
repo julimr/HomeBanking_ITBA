@@ -1,7 +1,7 @@
 from Clientes import Cliente
 from Cuentas import Cuentas
 from Exceptions import NoPuedePorClienteClassic
-from SdC.Cuentas import CuentaAhorroEnPesos
+from Cuentas import CuentaAhorroEnPesos
 from Tarjetas import TarjetaDebito
 
 
