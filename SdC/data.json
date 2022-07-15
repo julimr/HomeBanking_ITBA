@@ -149,7 +149,7 @@
                 "tipo": "TRANSFERENCIA_ENVIADA",
                 "estado": "RECHAZADA",
                 "monto": 100000,
-                "razonRechazo": "No puede realizar trasferencia porque no hay suficiente dinero en la cuenta. Disponible: $100000. A retirar: $100499.99999999999"
+                "razonRechazo": "No puede realizar trasferencia porque no hay suficiente dinero en la cuenta. Disponible: $100000. A retirar: $100500.0"
             },
             {
                 "fecha": "20/06/2022 16:00:55",
