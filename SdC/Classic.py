@@ -21,7 +21,7 @@ class Classic(Cliente):
     def puede_crear_tarjeta_credito(self):
         raise NoPuedePorClienteClassic('No puede dar de alta una tarjeta de crédito porque el Cliente Classic no lo tiene permitido.')
 
-    def puede_comprar_dolar(self):
+    def puede_comprar_dolar(self, monto, saldoEnCuenta, cupoDiarioRestante):
         raise NoPuedePorClienteClassic('No puede comprar dólares porque el Cliente Classic no lo permite.')
 
 

@@ -1,5 +1,5 @@
 
-from Exceptions import NoPuedeCrearExcedeElLimite, NoPuedePorClienteClassic, NoPuedeRealizarTransferenciaNoHayDineroDisponible, NoPuedeRecibirTransferenciaPorqueExcedeMontoMaximo, NoPuedeRetirarExcedeDineroDisponible, NoPuedeRetirarExcedeMontoMaximo
+from Exceptions import NoPuedeCrearExcedeElLimite, NoPuedePorClienteClassic, NoPuedeRealizarTransferenciaNoHayDineroDisponible, NoPuedeRecibirTransferenciaPorqueExcedeMontoMaximo, NoPuedeRetirarExcedeDineroDisponible, NoPuedeRetirarExcedeMontoMaximo, NoPuedeComprarDolaresExcedeDineroDisponible, NoPuedeComprarDolaresExcedeMontoMaximo
 
 
 class Razon:
@@ -56,9 +56,13 @@ class RazonCompraDolar(Razon):
     def resolver(self, cliente):
         if (self.estado == 'RECHAZADA'):
             try:
-                cliente.puede_comprar_dolar()
+                cliente.puede_comprar_dolar(self.monto, self.saldoEnCuenta, self.cupoDiarioRestante)
             except NoPuedePorClienteClassic as e:
                 return e.mensaje
+            except NoPuedeComprarDolaresExcedeMontoMaximo as e:
+                return e.mensaje
+            except NoPuedeComprarDolaresExcedeDineroDisponible as e:
+               return e.mensaje 
         else: 
             return ''
 

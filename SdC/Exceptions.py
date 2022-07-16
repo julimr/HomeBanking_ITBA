@@ -21,3 +21,11 @@ class NoPuedeRealizarTransferenciaNoHayDineroDisponible(Exception):
 class NoPuedeRecibirTransferenciaPorqueExcedeMontoMaximo(Exception):
     def __init__(self, mensaje):
         self.mensaje = mensaje
+
+class NoPuedeComprarDolaresExcedeMontoMaximo(Exception):
+    def __init__(self, mensaje):
+        self.mensaje = mensaje
+
+class NoPuedeComprarDolaresExcedeDineroDisponible(Exception):
+    def __init__(self, mensaje):
+        self.mensaje = mensaje

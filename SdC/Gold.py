@@ -1,8 +1,8 @@
 from Clientes import Cliente
 from Cuentas import Cuentas
-from Exceptions import NoPuedeCrearExcedeElLimite, NoPuedeRetirarExcedeMontoMaximo
-from Cuentas import CuentaAhorroEnDolares, CuentaCorriente
+from Exceptions import NoPuedeCrearExcedeElLimite, NoPuedeComprarDolaresExcedeDineroDisponible, NoPuedeComprarDolaresExcedeMontoMaximo
 
+from Cuentas import CuentaAhorroEnDolares, CuentaCorriente
 
 class Gold(Cliente):
     cupoDiario = 20000
@@ -24,6 +24,11 @@ class Gold(Cliente):
         if (self.totalTarjetasDeCreditoActualmente >= 1):
             raise NoPuedeCrearExcedeElLimite('No puede dar de alta una nueva tarjeta de crédito porque excede el límite (1 tarjeta de crédito).')
 
-    def puede_comprar_dolar(self):
-        return True
+    def puede_comprar_dolar(self, monto, saldoEnCuenta, cupoDiarioRestante):
+        if (monto > saldoEnCuenta):
+            raise NoPuedeComprarDolaresExcedeDineroDisponible(f'No hay suficiente dinero disponible en la cuenta. Disponible: ${saldoEnCuenta}')
+        elif (monto > self.cupoDiario):
+            raise NoPuedeComprarDolaresExcedeMontoMaximo(f'No puede comprar US${monto} porque excede el límite diario de ${self.cupoDiario}.')
+        elif(monto > cupoDiarioRestante):
+            raise NoPuedeComprarDolaresExcedeMontoMaximo(f'No puede comprar US${monto} porque excede el cupo diario restante de ${cupoDiarioRestante}.')
     
