@@ -1,3 +1,4 @@
+#Generamos el template HTML que se ejecutará para crear la página
 content = f'<!DOCTYPE html> \
 <html lang="en"> \
 <head> \
