@@ -10,7 +10,6 @@ body{
     margin: auto;
     height: auto;
     justify-content: center;
-    gap: 3rem;
 }
 
 .client{
@@ -74,6 +73,17 @@ body{
 
 .tr-item{
     font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+.accepted{
+    color: #4ad128;
+    font-weight: bold;
+}
+
+.rejected{
+    color:rgb(243, 101, 101);
+    font-weight: bold;
 }
 
 @media screen and (min-width:0){
@@ -110,7 +120,7 @@ body{
         border: none;
     }
     .client{
-        width: 30%;
+        width: 26%;
         margin: 0 auto;
     }
     .tr-item{
