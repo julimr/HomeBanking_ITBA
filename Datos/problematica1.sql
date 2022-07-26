@@ -8,7 +8,7 @@ VALUES ('Classic'), ('Gold'), ('Black');
 
 SELECT *
 FROM tipos_cliente;
-							
+				
 CREATE TABLE  IF NOT EXISTS  cuentas(
 							cuenta_id INTEGER PRIMARY KEY,
 							tipo_cuenta TEXT NOT NULL --Pesos, Dolares, Corriente	
@@ -45,8 +45,8 @@ FROM tipo_tarjetas;
 --Desde aca para abajo no ejecute nada, lo de arriba si
 
 CREATE TABLE IF NOT EXISTS tarjeta(
-								numero INTEGER PRIMARY KEY CHECK (length(numero)<=20),
-								CVV INTEGER CHECK (length(numero)=3),
+								numero TEXT PRIMARY KEY CHECK (length(numero)<=20),
+								CVV TEXT CHECK (length(numero)=3),
 								fecha_otorgamiento TEXT NOT NULL,
 								fecha_expiracion TEXT NOT NULL,
 								tipo_tarjeta_id INTEGER NOT NULL
@@ -67,3 +67,13 @@ ALTER TABLE tarjeta
     ADD COLUMN customer_id INTEGER NOT NULL,
     ADD FOREIGN KEY (customer_id)
         REFERENCES cliente(customer_id);
+
+--Esta tabla puede ser usada por clientes, empleados y sucursales
+CREATE TABLE IF NOT EXISTS direccion(
+								direccion_id INTEGER PRIMARY KEY,
+								direccion_numero TEXT NOT NULL,
+								direccion_ciudad TEXT NOT NULL,
+								direccion_provincia TEXT NOT NULL,
+								direccion_pais TEXT NOT NULL
+								--REF
+								)
