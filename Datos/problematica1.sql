@@ -77,3 +77,12 @@ CREATE TABLE IF NOT EXISTS direccion(
 								direccion_pais TEXT NOT NULL
 								--REF
 								)
+
+--Actualiza de empleados, la columna employee_hire_date
+--substr(string, donde arranca, largo(opcional))
+UPDATE empleado
+SET employee_hire_date = substr(employee_hire_date, 7) || "-" || substr(employee_hire_date,4,2) || "-" || substr(employee_hire_date, 1,2); 
+							
+SELECT employee_hire_date
+FROM empleado
+LIMIT 10
