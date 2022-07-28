@@ -59,7 +59,7 @@ CREATE TABLE IF NOT EXISTS tarjeta(
 								);
 --1.5 - Agregar 500 tarjetas de credito
 SELECT *
-FROM empleado
+FROM tarjeta
 
 -- 1.6 - Agregar la entidad direcciones, que puede ser usada por los clientes, empleados y sucursales
 CREATE TABLE IF NOT EXISTS direccion(
@@ -83,8 +83,14 @@ CREATE TABLE IF NOT EXISTS direccion(
 SELECT *
 FROM direccion
 
--- EJECUTADO HASTA ACA!!
+--1.8 - Ampliar el alcance de la entidad cuenta para que identifique el tipo de la misma
+--(lo hice desde la edicion de la tabla para poder ponerle foreign key)
 
+-- 1.9 - Asignar un tipo de cuenta a cada registro de cuenta de forma aleatoria
+UPDATE cuenta 
+SET tipo_cuenta = ABS(RANDOM()) % (4 - 1) + 1;
+
+--1.10
 --Actualiza de empleados, la columna employee_hire_date
 --substr(string, donde arranca, largo(opcional))
 UPDATE empleado

@@ -1,4 +1,4 @@
-INSERT INTO `tarjetas` (`numero`,`cvv`,`fecha_otorgamiento`,`fecha_expiracion`,`tipo_tarjeta_id`,`marca_id`,`customer_id`)
+INSERT INTO `tarjeta` (`numero`,`CVV`,`fecha_otorgamiento`,`fecha_expiracion`,`tipo_tarjeta_id`,`marca_id`,`customer_id`)
 VALUES
   ("522 67741 72888 479","465","2021-01-02","2022-12-01",2,2,366),
   ("372438381537427","815","2018-10-14","2023-01-01",2,2,353),
@@ -50,7 +50,7 @@ VALUES
   ("5528657245132295","333","2018-07-28","2023-04-25",2,1,11),
   ("4539 536 48 8411","592","2017-02-06","2022-06-16",2,2,152),
   ("523768 4885123758","173","2021-07-23","2023-03-03",2,2,481);
-INSERT INTO `direccion` (`numero`,`cvv`,`fecha_otorgamiento`,`fecha_expiracion`,`tipo_tarjeta_id`,`marca_id`,`customer_id`)
+INSERT INTO `tarjeta` (`numero`,`cvv`,`fecha_otorgamiento`,`fecha_expiracion`,`tipo_tarjeta_id`,`marca_id`,`customer_id`)
 VALUES
   ("3488 535835 25841","153","2016-04-05","2023-07-04",2,2,300),
   ("371687572164372","955","2018-03-23","2021-11-20",2,2,36),
@@ -102,7 +102,7 @@ VALUES
   ("346415537157824","445","2018-03-26","2023-02-06",2,2,364),
   ("553776 431553 9117","548","2020-01-09","2023-08-27",2,2,235),
   ("348945665623526","639","2017-09-28","2022-08-14",2,2,9);
-INSERT INTO `direccion` (`numero`,`cvv`,`fecha_otorgamiento`,`fecha_expiracion`,`tipo_tarjeta_id`,`marca_id`,`customer_id`)
+INSERT INTO `tarjeta` (`numero`,`cvv`,`fecha_otorgamiento`,`fecha_expiracion`,`tipo_tarjeta_id`,`marca_id`,`customer_id`)
 VALUES
   ("4916157894451658","712","2016-05-16","2022-05-09",2,2,162),
   ("342697672583922","453","2019-03-25","2023-09-02",2,1,156),
@@ -154,7 +154,7 @@ VALUES
   ("3762 386755 76354","790","2017-11-04","2023-02-05",2,3,270),
   ("546985 8733976240","969","2015-10-02","2023-11-06",2,1,342),
   ("377181788442669","622","2017-08-21","2022-12-09",2,2,218);
-INSERT INTO `direccion` (`numero`,`cvv`,`fecha_otorgamiento`,`fecha_expiracion`,`tipo_tarjeta_id`,`marca_id`,`customer_id`)
+INSERT INTO `tarjeta` (`numero`,`cvv`,`fecha_otorgamiento`,`fecha_expiracion`,`tipo_tarjeta_id`,`marca_id`,`customer_id`)
 VALUES
   ("348453683185941","355","2016-01-30","2022-06-25",2,2,244),
   ("376545477867843","933","2015-12-06","2021-09-06",2,2,55),
@@ -206,7 +206,7 @@ VALUES
   ("455 69565 56785 591","490","2016-06-24","2023-06-06",2,3,305),
   ("4556 845 99 8864","553","2020-05-11","2021-09-11",2,2,160),
   ("346588847624947","459","2019-06-24","2023-05-16",2,1,429);
-INSERT INTO `direccion` (`numero`,`cvv`,`fecha_otorgamiento`,`fecha_expiracion`,`tipo_tarjeta_id`,`marca_id`,`customer_id`)
+INSERT INTO `tarjeta` (`numero`,`cvv`,`fecha_otorgamiento`,`fecha_expiracion`,`tipo_tarjeta_id`,`marca_id`,`customer_id`)
 VALUES
   ("492965 4232454837","488","2016-07-06","2023-09-26",2,2,32),
   ("5563 6815 3487 7713","709","2017-08-10","2022-09-16",2,2,221),
@@ -258,7 +258,7 @@ VALUES
   ("4916 4241 9823 2550","459","2016-04-21","2022-08-20",2,2,124),
   ("5351 7545 2521 2533","700","2015-10-10","2021-10-11",2,3,423),
   ("3729 581263 81526","460","2017-02-26","2023-09-07",2,2,122);
-INSERT INTO `direccion` (`numero`,`cvv`,`fecha_otorgamiento`,`fecha_expiracion`,`tipo_tarjeta_id`,`marca_id`,`customer_id`)
+INSERT INTO `tarjeta` (`numero`,`cvv`,`fecha_otorgamiento`,`fecha_expiracion`,`tipo_tarjeta_id`,`marca_id`,`customer_id`)
 VALUES
   ("5312912947526553","727","2016-02-02","2021-12-05",2,3,259),
   ("455667 828548 5877","727","2019-04-06","2023-02-27",2,3,33),
@@ -310,7 +310,7 @@ VALUES
   ("5248 8368 7466 4377","213","2017-05-18","2022-05-15",2,2,70),
   ("4147341928546","264","2016-03-04","2023-10-14",2,2,198),
   ("531 51357 15162 560","981","2018-03-15","2024-05-24",2,2,498);
-INSERT INTO `direccion` (`numero`,`cvv`,`fecha_otorgamiento`,`fecha_expiracion`,`tipo_tarjeta_id`,`marca_id`,`customer_id`)
+INSERT INTO `tarjeta` (`numero`,`cvv`,`fecha_otorgamiento`,`fecha_expiracion`,`tipo_tarjeta_id`,`marca_id`,`customer_id`)
 VALUES
   ("5323667545791861","546","2016-12-11","2024-01-06",2,3,199),
   ("554453 5411714650","968","2016-01-21","2022-09-08",2,3,450),
@@ -362,7 +362,7 @@ VALUES
   ("344542612927672","870","2018-05-13","2023-09-13",2,2,189),
   ("4716 8868 7382 3378","667","2015-10-18","2023-09-22",2,3,413),
   ("4532 276 41 8532","869","2018-04-29","2022-05-26",2,1,237);
-INSERT INTO `direccion` (`numero`,`cvv`,`fecha_otorgamiento`,`fecha_expiracion`,`tipo_tarjeta_id`,`marca_id`,`customer_id`)
+INSERT INTO `tarjeta` (`numero`,`cvv`,`fecha_otorgamiento`,`fecha_expiracion`,`tipo_tarjeta_id`,`marca_id`,`customer_id`)
 VALUES
   ("492973 196185 9871","835","2021-01-23","2024-06-08",2,1,299),
   ("4716127451559336","479","2021-06-05","2023-06-17",2,1,130),
@@ -414,7 +414,7 @@ VALUES
   ("4716 6362 8155 8730","785","2019-07-12","2022-08-25",2,1,14),
   ("557575 1729891518","755","2016-08-20","2023-12-28",2,1,342),
   ("346644676842744","784","2021-04-14","2023-03-22",2,3,82);
-INSERT INTO `direccion` (`numero`,`cvv`,`fecha_otorgamiento`,`fecha_expiracion`,`tipo_tarjeta_id`,`marca_id`,`customer_id`)
+INSERT INTO `tarjeta` (`numero`,`cvv`,`fecha_otorgamiento`,`fecha_expiracion`,`tipo_tarjeta_id`,`marca_id`,`customer_id`)
 VALUES
   ("372732776125487","989","2020-08-20","2024-05-28",2,2,388),
   ("529168 8339646788","446","2021-02-11","2023-09-18",2,2,65),
@@ -466,7 +466,7 @@ VALUES
   ("4556 769 33 2124","884","2015-10-23","2023-05-15",2,1,404),
   ("3432 435358 45650","652","2021-06-03","2024-01-30",2,3,370),
   ("453967 225568 5519","394","2017-01-20","2023-07-28",2,1,318);
-INSERT INTO `direccion` (`numero`,`cvv`,`fecha_otorgamiento`,`fecha_expiracion`,`tipo_tarjeta_id`,`marca_id`,`customer_id`)
+INSERT INTO `tarjeta` (`numero`,`cvv`,`fecha_otorgamiento`,`fecha_expiracion`,`tipo_tarjeta_id`,`marca_id`,`customer_id`)
 VALUES
   ("3713 164621 27980","273","2016-06-01","2022-09-25",2,2,388),
   ("4532526682473","406","2018-09-09","2023-11-24",2,3,489),
