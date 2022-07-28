@@ -42,41 +42,48 @@ VALUES ('Débito'), ('Crédito');
 SELECT *
 FROM tipo_tarjetas;
 
---Desde aca para abajo no ejecute nada, lo de arriba si
-
 CREATE TABLE IF NOT EXISTS tarjeta(
 								numero TEXT PRIMARY KEY CHECK (length(numero)<=20),
-								CVV TEXT CHECK (length(numero)=3),
+								CVV TEXT CHECK (length(CVV)=3),
 								fecha_otorgamiento TEXT NOT NULL,
 								fecha_expiracion TEXT NOT NULL,
-								tipo_tarjeta_id INTEGER NOT NULL
+								tipo_tarjeta_id INTEGER NOT NULL,
+								marca_id INTEGER NOT NULL,
+								customer_id INTEGER NOT NULL,
 								FOREIGN KEY (tipo_tarjeta_id)
 								REFERENCES tipo_tarjetas(tipo_tarjeta_id)
+								FOREIGN KEY (marca_id) -- 1.3
+								REFERENCES marcas_tarjeta(marca_id)
+								FOREIGN KEY (customer_id) --1.4
+								REFERENCES cliente(customer_id)
 								);
---problematica 1.3
---Acá estoy creando una columna marca_id a la tabla de tarjeta y la estoy relacionando con la tabla de marcas_tarjeta
-ALTER TABLE tarjeta
-    ADD COLUMN marca_id INTEGER NOT NULL,
-    ADD FOREIGN KEY (marca_id)
-        REFERENCES marcas_tarjeta(marca_id);
-		
---problematica 1.4		
---Acá estoy creando una columna customer_id a la tabla de tarjeta y la estoy relacionando con la tabla de cliente
---para que cada tarjeta sepa a que cliente pertenece
-ALTER TABLE tarjeta
-    ADD COLUMN customer_id INTEGER NOT NULL,
-    ADD FOREIGN KEY (customer_id)
-        REFERENCES cliente(customer_id);
+--1.5 - Agregar 500 tarjetas de credito
+SELECT *
+FROM empleado
 
---Esta tabla puede ser usada por clientes, empleados y sucursales
+-- 1.6 - Agregar la entidad direcciones, que puede ser usada por los clientes, empleados y sucursales
 CREATE TABLE IF NOT EXISTS direccion(
 								direccion_id INTEGER PRIMARY KEY,
-								direccion_numero TEXT NOT NULL,
-								direccion_ciudad TEXT NOT NULL,
-								direccion_provincia TEXT NOT NULL,
-								direccion_pais TEXT NOT NULL
-								--REF
-								)
+								calle TEXT NOT NULL,
+								numero TEXT NOT NULL,
+								ciudad TEXT NOT NULL,
+								provincia TEXT NOT NULL,
+								pais TEXT NOT NULL,
+								customer_id INTEGER,
+								employee_id INTEGER,
+								branch_id INTEGER,
+								FOREIGN KEY (customer_id)
+								REFERENCES cliente(customer_id)
+								FOREIGN KEY (employee_id)
+								REFERENCES empleado(employee_id)
+								FOREIGN KEY (branch_id)
+								REFERENCES sucursal(branch_id)
+								);
+-- 1.7 - Insertar 500 direcciones, asignando del lote inicial a empleados, clientes o sucursal de forma aleatoria. 
+SELECT *
+FROM direccion
+
+-- EJECUTADO HASTA ACA!!
 
 --Actualiza de empleados, la columna employee_hire_date
 --substr(string, donde arranca, largo(opcional))
