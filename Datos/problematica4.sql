@@ -36,6 +36,17 @@ LEFT JOIN (
 ON tarjetasCredito.customer_id = cliente.customer_id
 GROUP BY cliente.branch_id
 
-
 -- 4.4
+-- verificar si es asi!!!!
+SELECT cliente.branch_id as sucursalID, count(prestamos.customer_id) as CantidadPrestamos
+FROM cliente
+LEFT JOIN (
+	SELECT prestamo.customer_id, count(prestamo.customer_id) as cantidadPrestamos
+	FROM prestamo
+	GROUP BY prestamo.customer_id
+) as prestamos
+ON prestamos.customer_id = cliente.customer_id
+GROUP BY cliente.branch_id
+
+
 
