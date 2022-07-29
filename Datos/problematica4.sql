@@ -87,5 +87,13 @@ SELECT *
 FROM auditoria_cuenta
 
 -- 4.6
-CREATE [UNIQUE] INDEX clientes 
-ON table_name(column_list);
+CREATE INDEX clientes_por_DNI
+ON cliente(customer_DNI);
+
+-- verifico que la consulta usa el indice creado
+EXPLAIN QUERY PLAN
+SELECT cliente.customer_DNI, cliente.customer_name
+FROM cliente
+WHERE customer_DNI = 50011089
+
+-- 4.7
