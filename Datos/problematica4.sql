@@ -23,3 +23,19 @@ FROM (
    ON sucursal.branch_id = cantidad_Empleados.sucursalID
    GROUP BY sucursal.branch_id
 ) as Division 
+
+-- 4.3
+-- verificar si es asi!!!!
+SELECT cliente.branch_id as sucursalID, count(tarjetasCredito.customer_id) as CantidadTarjetasCredito
+FROM cliente
+LEFT JOIN (
+		SELECT tarjeta.customer_id
+		FROM tarjeta
+		WHERE tarjeta.tipo_tarjeta_id = 2
+) as tarjetasCredito
+ON tarjetasCredito.customer_id = cliente.customer_id
+GROUP BY cliente.branch_id
+
+
+-- 4.4
+
