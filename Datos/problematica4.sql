@@ -77,8 +77,8 @@ BEGIN
 		new.tipo_cuenta, 'UPDATE', DATETIME('now')
 		);
 END;
--- 4.5.2
 
+-- 4.5.2
 UPDATE cuenta
 SET balance = balance - 100
 WHERE account_id >= 10 AND account_id <= 14;
@@ -86,4 +86,6 @@ WHERE account_id >= 10 AND account_id <= 14;
 SELECT *
 FROM auditoria_cuenta
 
-
+-- 4.6
+CREATE [UNIQUE] INDEX clientes 
+ON table_name(column_list);
