@@ -6,7 +6,6 @@ GROUP BY sucursal.branch_name
 ORDER BY COUNT(cliente.branch_id) DESC;
 
 --4.2
---El que hicimos en clase
 SELECT idBranch, qClientes, qEmpleados, round((qClientes * 1.0/qEmpleados * 1.0), 2) as 'Empleados por Cliente'
 FROM (
    SELECT sucursal.branch_id as idBranch, count(cliente.customer_id) as qClientes, qEmpleados
@@ -25,7 +24,6 @@ FROM (
 ) as Division ;
 
 -- 4.3
--- verificar si es asi!!!! --Sí!!!!
 SELECT cliente.branch_id as sucursalID, count(tarjetasCredito.customer_id) as CantidadTarjetasCredito
 FROM cliente
 LEFT JOIN (
@@ -36,17 +34,6 @@ LEFT JOIN (
 ON tarjetasCredito.customer_id = cliente.customer_id
 GROUP BY cliente.branch_id;
 
--- 4.4
--- verificar si es asi!!!! Creo que no!!!!
-SELECT cliente.branch_id as sucursalID, count(prestamos.customer_id) as CantidadPrestamos
-FROM cliente
-LEFT JOIN (
-	SELECT prestamo.customer_id, count(prestamo.customer_id) as cantidadPrestamos
-	FROM prestamo
-	GROUP BY prestamo.customer_id
-) as prestamos
-ON prestamos.customer_id = cliente.customer_id
-GROUP BY cliente.branch_id;
 
 --4.4
 SELECT idBranch, cantPrestamos, totalCredito, totalCredito /cantPrestamos as 'Promedio por sucursal'

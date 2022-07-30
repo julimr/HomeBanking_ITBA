@@ -62,7 +62,6 @@ WHERE substr(loan_date, 6,2) LIKE '04' OR  --Abril
 ORDER BY loan_total DESC;
 
 --3.9
---Este no se si es así
 SELECT loan_type as 'Tipo Préstamo', SUM(loan_total) AS  loan_total_accu
 FROM prestamo
 GROUP BY loan_type

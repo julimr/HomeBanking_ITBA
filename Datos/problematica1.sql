@@ -1,3 +1,4 @@
+-- 1
 CREATE TABLE IF NOT EXISTS tipos_cliente(
 							tipo_cliente_id INTEGER PRIMARY KEY,
 							tipo_cliente TEXT NOT NULL --Classic, Gold, Black
@@ -42,6 +43,7 @@ VALUES ('Débito'), ('Crédito');
 SELECT *
 FROM tipo_tarjetas;
 
+-- 1.2
 CREATE TABLE IF NOT EXISTS tarjeta(
 								numero TEXT PRIMARY KEY CHECK (length(numero)<=20),
 								CVV TEXT CHECK (length(CVV)=3),
@@ -57,11 +59,11 @@ CREATE TABLE IF NOT EXISTS tarjeta(
 								FOREIGN KEY (customer_id) --1.4
 								REFERENCES cliente(customer_id)
 								);
---1.5 - Agregar 500 tarjetas de credito
+--1.5 
 SELECT *
 FROM tarjeta
 
--- 1.6 - Agregar la entidad direcciones, que puede ser usada por los clientes, empleados y sucursales
+-- 1.6 
 CREATE TABLE IF NOT EXISTS direccion(
 								direccion_id INTEGER PRIMARY KEY,
 								calle TEXT NOT NULL,
@@ -79,14 +81,14 @@ CREATE TABLE IF NOT EXISTS direccion(
 								FOREIGN KEY (branch_id)
 								REFERENCES sucursal(branch_id)
 								);
--- 1.7 - Insertar 500 direcciones, asignando del lote inicial a empleados, clientes o sucursal de forma aleatoria. 
+-- 1.7 
 SELECT *
 FROM direccion
 
---1.8 - Ampliar el alcance de la entidad cuenta para que identifique el tipo de la misma
---(lo hice desde la edicion de la tabla para poder ponerle foreign key)
+--1.8 
+--(lo hicimos desde la edicion de la tabla para poder agregarle foreign key al campo)
 
--- 1.9 - Asignar un tipo de cuenta a cada registro de cuenta de forma aleatoria
+-- 1.9
 UPDATE cuenta 
 SET tipo_cuenta = ABS(RANDOM()) % (4 - 1) + 1;
 
