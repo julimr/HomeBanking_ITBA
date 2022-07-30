@@ -25,7 +25,7 @@ FROM (
 ) as Division 
 
 -- 4.3
--- verificar si es asi!!!!
+-- verificar si es asi!!!! --Sí (╯°□°）╯︵ ┻━┻!!!!
 SELECT cliente.branch_id as sucursalID, count(tarjetasCredito.customer_id) as CantidadTarjetasCredito
 FROM cliente
 LEFT JOIN (
@@ -37,7 +37,7 @@ ON tarjetasCredito.customer_id = cliente.customer_id
 GROUP BY cliente.branch_id
 
 -- 4.4
--- verificar si es asi!!!!
+-- verificar si es asi!!!! Creo que no!!!!
 SELECT cliente.branch_id as sucursalID, count(prestamos.customer_id) as CantidadPrestamos
 FROM cliente
 LEFT JOIN (
@@ -47,6 +47,25 @@ LEFT JOIN (
 ) as prestamos
 ON prestamos.customer_id = cliente.customer_id
 GROUP BY cliente.branch_id
+
+--4.4
+SELECT idBranch, cantPrestamos, totalCredito, totalCredito /cantPrestamos as 'Promedio por sucursal'
+FROM (
+   SELECT sucursal.branch_id as idBranch, count(cliente.branch_id) as cantPrestamos, totalCredito
+   FROM cliente
+   LEFT JOIN sucursal 
+   ON cliente.branch_id = sucursal.branch_id
+   LEFT JOIN (
+		SELECT cliente.branch_id as sucursalID,  prestamo.loan_total as totalCredito
+		FROM cliente
+		LEFT JOIN prestamo ON prestamo.customer_id = cliente.customer_id
+		WHERE prestamo.customer_id IS NOT NULL
+		GROUP BY cliente.branch_id
+   ) as cantidad_total
+   ON sucursal.branch_id = cantidad_total.sucursalID
+   GROUP BY sucursal.branch_id
+) as Division 
+WHERE totalCredito /cantPrestamos IS NOT NULL
 
 -- 4.5
 CREATE TABLE  IF NOT EXISTS auditoria_cuenta(
@@ -97,3 +116,4 @@ FROM cliente
 WHERE customer_DNI = 50011089
 
 -- 4.7
+--Mañana lo veo 😴
