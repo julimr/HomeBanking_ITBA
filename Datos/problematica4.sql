@@ -25,7 +25,7 @@ FROM (
 ) as Division 
 
 -- 4.3
--- verificar si es asi!!!! --Sí (╯°□°）╯︵ ┻━┻!!!!
+-- verificar si es asi!!!! --Sí!!!!
 SELECT cliente.branch_id as sucursalID, count(tarjetasCredito.customer_id) as CantidadTarjetasCredito
 FROM cliente
 LEFT JOIN (
@@ -64,7 +64,7 @@ FROM (
    ) as cantidad_total
    ON sucursal.branch_id = cantidad_total.sucursalID
    GROUP BY sucursal.branch_id
-) as Division 
+)
 WHERE totalCredito /cantPrestamos IS NOT NULL
 
 -- 4.5
@@ -99,7 +99,7 @@ END;
 
 -- 4.5.2
 UPDATE cuenta
-SET balance = balance - 100
+SET balance = balance -10000
 WHERE account_id >= 10 AND account_id <= 14;
 -- verifico que se crearon los campos en la tabla nueva
 SELECT *
@@ -116,4 +116,4 @@ FROM cliente
 WHERE customer_DNI = 50011089
 
 -- 4.7
---Mañana lo veo 😴
+--(╯°□°）╯︵ ┻━┻
