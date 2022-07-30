@@ -3,7 +3,7 @@ SELECT COUNT(cliente.branch_id) AS 'Cantidad Clientes', sucursal.branch_name AS 
 FROM cliente
 LEFT JOIN sucursal ON sucursal.branch_id = cliente.branch_id
 GROUP BY sucursal.branch_name
-ORDER BY COUNT(cliente.branch_id) DESC
+ORDER BY COUNT(cliente.branch_id) DESC;
 
 --4.2
 --El que hicimos en clase
@@ -22,7 +22,7 @@ FROM (
    ) as cantidad_Empleados
    ON sucursal.branch_id = cantidad_Empleados.sucursalID
    GROUP BY sucursal.branch_id
-) as Division 
+) as Division ;
 
 -- 4.3
 -- verificar si es asi!!!! --Sí!!!!
@@ -34,7 +34,7 @@ LEFT JOIN (
 		WHERE tarjeta.tipo_tarjeta_id = 2
 ) as tarjetasCredito
 ON tarjetasCredito.customer_id = cliente.customer_id
-GROUP BY cliente.branch_id
+GROUP BY cliente.branch_id;
 
 -- 4.4
 -- verificar si es asi!!!! Creo que no!!!!
@@ -46,7 +46,7 @@ LEFT JOIN (
 	GROUP BY prestamo.customer_id
 ) as prestamos
 ON prestamos.customer_id = cliente.customer_id
-GROUP BY cliente.branch_id
+GROUP BY cliente.branch_id;
 
 --4.4
 SELECT idBranch, cantPrestamos, totalCredito, totalCredito /cantPrestamos as 'Promedio por sucursal'
@@ -65,7 +65,7 @@ FROM (
    ON sucursal.branch_id = cantidad_total.sucursalID
    GROUP BY sucursal.branch_id
 )
-WHERE totalCredito /cantPrestamos IS NOT NULL
+WHERE totalCredito /cantPrestamos IS NOT NULL;
 
 -- 4.5
 CREATE TABLE  IF NOT EXISTS auditoria_cuenta(
@@ -87,7 +87,7 @@ CREATE TRIGGER IF NOT EXISTS post_actualizacion_cuentas
 		WHEN old.balance <> new.balance 
 			OR old.iban <> new.iban
 				OR  old.tipo_cuenta <> new.tipo_cuenta
-BEGIN
+BEGIN;
 	INSERT INTO auditoria_cuenta(
 		old_id, new_id, old_balance, new_balance, old_iban, new_iban, old_type,
 		new_type, user_action, created_at )
@@ -103,7 +103,7 @@ SET balance = balance -10000
 WHERE account_id >= 10 AND account_id <= 14;
 -- verifico que se crearon los campos en la tabla nueva
 SELECT *
-FROM auditoria_cuenta
+FROM auditoria_cuenta;
 
 -- 4.6
 CREATE INDEX clientes_por_DNI
@@ -113,7 +113,15 @@ ON cliente(customer_DNI);
 EXPLAIN QUERY PLAN
 SELECT cliente.customer_DNI, cliente.customer_name
 FROM cliente
-WHERE customer_DNI = 50011089
+WHERE customer_DNI = 50011089;
 
 -- 4.7
---(╯°□°）╯︵ ┻━┻
+CREATE TABLE  IF NOT EXISTS movimientos(
+							mov_id INTEGER PRIMARY KEY,
+							numero_cuenta INTEGER NOT NULL,
+							monto INTEGER NOT NULL,
+							tipo_operacion TEXT NOT NULL,
+							hora TEXT NOT NULL
+							);
+-- 4.7.1
+-- esta en otro archivo
