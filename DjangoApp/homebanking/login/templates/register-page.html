@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrarse - ITBANK Group</title>
+    <link rel="icon" href="{% static 'login/images/logo icono.png' %}">
+    <link rel="stylesheet" href="{% static 'register-page/css/reg-page-styles.css' %}" />
+    <!-- <link rel="stylesheet" href="./styles/reg-page-styles.css"> -->
+</head>
+<body>
+    <header>
+        <img src="{% static 'login/images/logo-blanco.png' %}" alt="Logo del Itbank Group">
+        <h1>Convertite en nuestro cliente</h1>
+    </header>
+    <main>
+        <section class="formulario-registro">
+            <h2>Regístrate</h2>
+            </div>
+            <div class="completar">
+                <label for="nombre">Nombre</label>
+                <input type="text" name="nombre" id="nombre">
+
+                <label for="apellido">Apellido</label>
+                <input type="text" name="apellido" id="apellido">   
+
+                <label for="dni">DNI</label>
+                <input type="number" name="dni" id="dni">  
+
+                <label for="nacimiento">Fecha de nacimiento</label>
+                <input type="date" name="nacimiento" id="nacimiento">
+
+                <label for="provincia">Provincia</label>
+                <input type="text" name="provincia" id="provincia">
+
+                <label for="ciudad">Ciudad</label>
+                <input type="text" name="ciudad" id="ciudad">
+
+                <label for="postal">Código postal</label>
+                <input type="number" name="postal" id="postal">   
+
+                <label for="telefono">Teléfono</label>
+                <input type="tel" name="telefono" id="telefono">
+
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email">
+
+                <label for="contraseña">Contraseña</label>
+                <input type="password" name="password" id="contraseña">
+
+                <label for="confirmar-contraseña">Confirme la contraseña</label>
+                <input type="password" name="confirmar-contraseña" id="confirmar-contraseña">
+            <div>
+            <div class="botones">
+                <button type="submit">Registrarse</button>
+            </div>
+            <div class="cliente-iniciar">
+                <p>¿Ya eres cliente? <a href="../" id="iniciar-sesion">Iniciar Sesión</a></p>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://kit.fontawesome.com/c15b744a04.js" crossorigin="anonymous" ></script>
+</body>
+</html>
