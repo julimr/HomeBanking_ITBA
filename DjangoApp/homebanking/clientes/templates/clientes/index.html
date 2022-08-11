@@ -20,14 +20,16 @@
           </tr>
         </thead>
         <tbody>
+          {% for cliente in clientes %}
           <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>123456</td>
-            <td>1998-04-2</td>
-            <td>2</td>
+            <th scope="row">{{ cliente.customer_id }}</th>
+            <td>{{ cliente.customer_name }}</td>
+            <td>{{ cliente.customer_surname }}</td>
+            <td>{{ cliente.customer_dni }}</td>
+            <td>{{ cliente.dob }}</td>
+            <td>{{ cliente.branch_id }}</td>
           </tr>
+          {% endfor %}
         </tbody>
       </table>
 </body>
