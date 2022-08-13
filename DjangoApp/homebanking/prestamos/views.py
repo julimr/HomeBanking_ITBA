@@ -4,6 +4,8 @@ from django.template import loader
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
 
+
+
 from prestamos.models import Prestamo
 from .forms import PrestamosForm
 
@@ -25,13 +27,25 @@ def prestamos(request):
         # con los siguientes límites: BLACK 500000$, GOLD 300000$ y CLASSIC 100000$
         if forms.is_valid():
             prestamo = forms.save(commit=False)
-            # prestamo.customer_id = request.user
-            #ACA HAY QUE CAMBIARLO CUANDO HAGAMOS EL LOGIN
+            # userLogID = request.user
+            #cuentaUserLog = Cuenta.objects.filter(customer_id = userLogID).values()
+            # if (cuentaUserLog.tipo_cuenta == 1 and prestamo.loan_total <= 100000 ):
+            #     prestamo_aprobado(prestamo)
+            # elif (cuentaUserLog.tipo_cuenta == 2 and prestamo.loan_total <= 300000):
+            #     prestamo_aprobado(prestamo)
+            # elif (cuentaUserLog.tipo_cuenta == 3 and prestamo.loan_total <= 500000):
+            #     prestamo_aprobado(prestamo)
             prestamo.customer_id = 12 
             prestamo.loan_date = datetime.now().date()
+            
             prestamo.save()
             return HttpResponseRedirect(reverse('prestamos'))
     else:
         forms = PrestamosForm()
     return render(request, "Prestamos/prestamos.html", {"forms": forms})
 
+def prestamo_aprobado(prestamo):
+    prestamo.customer_id = 12 
+    prestamo.loan_date = datetime.now().date()
+    prestamo.save()
+    return HttpResponseRedirect(reverse('prestamos'))
