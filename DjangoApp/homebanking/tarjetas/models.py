@@ -2,14 +2,15 @@ from django.db import models
 
 # Create your models here.
 class Tarjeta(models.Model):
+    tarjeta_id = models.AutoField(primary_key=True, blank=True, null=False)
     numero = models.TextField()
-    CVV = models.TextField()
+    cvv = models.TextField(db_column='CVV')  # Field name made lowercase.
     fecha_otorgamiento = models.TextField()
-    fecha_expiracion = models.TextField()
+    fecha_expiracion = models.FloatField()
     tipo_tarjeta_id = models.IntegerField()
     marca_id = models.IntegerField()
-    customer = models.ForeignKey("clientes.Cliente",  on_delete=models.CASCADE)
+    customer_id = models.IntegerField()
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'tarjeta'

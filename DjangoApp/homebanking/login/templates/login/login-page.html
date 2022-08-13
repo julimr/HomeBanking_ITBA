@@ -32,7 +32,7 @@
           <img src="{% static 'login/images/logo2.jpg' %}" alt="Logo ITBANK Group">
         </div>
         <h2 class="formulario__estructura-titulo">Ingresar</h2>
-        <form class="formulario__datos">
+        <!-- <form class="formulario__datos">
           <label for="usuario">Usuario</label>
           <input type="text" name="usuario" class="formulario__datos-usuario" required minlength="5">
           <label for="email">Email</label>
@@ -50,7 +50,14 @@
               <p class="enlaces-registrar">¿No tienes una cuenta?  <a href="../registrarse/">Regístrate.</a></p>
             </div>
           </div>
-        </form>
+        </form> -->
+        <form class="formulario-login" method="post">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <div class="botones">
+              <button type="submit">Ingresar</button>
+          </div>  
+      </form>
       </div>
     </section>
     <!-- <script src="js/login.js"></script> -->

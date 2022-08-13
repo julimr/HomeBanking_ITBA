@@ -11,6 +11,7 @@
   <table class="table">
     <thead>
       <tr>
+        <th scope="col">ID tarjeta</th>
         <th scope="col">Número</th>
         <th scope="col">CVV</th>
         <th scope="col">Fecha de otorgamiento</th>
@@ -23,13 +24,14 @@
     <tbody>
       {% for tarjeta in tarjetas %}
       <tr>
+        <th scope="row">{{ tarjeta.tarjeta_id }}</th>
         <th scope="row">{{ tarjeta.numero }}</th>
         <td>{{ tarjeta.CVV }}</td>
         <td>{{ tarjeta.fecha_otorgamiento }}</td>
         <td>{{ tarjeta.fecha_expiracion }}</td>
         <td>{{ tarjeta.tipo_tarjeta_id }}</td>
         <td>{{ tarjeta.marca_id }}</td>
-        <td>{{ tarjeta.customer }}</td>
+        <td>{{ tarjeta.customer_id }}</td>
       </tr>
       {% endfor %}
     </tbody>
