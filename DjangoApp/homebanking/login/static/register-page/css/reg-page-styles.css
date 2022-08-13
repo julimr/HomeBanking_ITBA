@@ -70,7 +70,7 @@ main .formulario-registro {
   font-size: 16px;
 }
 
-.formulario-registro input {
+.styleInput {
   border: none;
   border-bottom: solid 1px #bcd5eb;
   background: transparent;
