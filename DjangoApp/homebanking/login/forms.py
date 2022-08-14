@@ -5,12 +5,13 @@ from django.contrib.auth.forms import AuthenticationForm
 
 class UserRegisterForm(UserCreationForm):
     email = forms.EmailField()
+    dni = forms.CharField(label='DNI')
     password1: forms.Field = forms.CharField(label='Contraseña', widget=forms.PasswordInput)
     password2: forms.Field = forms.CharField(label='Confirmar contraseña', widget=forms.PasswordInput)
 
     class Meta:
         model = User
-        fields = ['username', 'email', 'password1', 'password2']
+        fields = ['username', 'email','dni', 'password1', 'password2']
         help_texts = {k:"" for k in fields}
 
 # class UserLoginForm(AuthenticationForm):
