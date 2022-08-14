@@ -10,10 +10,13 @@
     <title>Prestamos</title>
 </head>
 <body>
-    <div class="text-center d-flex justify-content-around align-items-center">
-      <h1>Préstamos</h1>
-      <button type="button" class="btn btn-light"><a href="nuevo_prestamo/">Nuevo préstamo</a></button>
-    </div>
+  <div class="text-center d-flex justify-content-start align-items-center ml-4 mt-4">
+    <button type="button" class="btn btn-light"><a href="../homebanking">Volver</a></button>
+  </div>
+  <div class="text-center d-flex justify-content-around align-items-center mb-5">
+    <h1>Préstamos</h1>
+    <button type="button" class="btn btn-light"><a href="nuevo_prestamo/">Nuevo préstamo</a></button>
+  </div>
     
     <table class="table table-striped">
         <thead class="head-table">
@@ -37,5 +40,12 @@
           {% endfor %}
         </tbody>
       </table>
+      {% if messages %}
+        <div class="">
+            <p class="">
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            </p>    
+        </div>
+        {% endif %}
 </body>
 </html>

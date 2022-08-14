@@ -29,9 +29,6 @@
       <ul class="nav-navegacion">
         <li><a href="../cuentas">CUENTAS</a></li>
         <li><a href="../tarjetas">TARJETAS</a></li>
-        <li>TRANSFERENCIAS</li>
-        <li>PAGOS</li>
-        <li>INVERSIONES</li>
         <li><a href="../prestamos">PRÉSTAMOS</a></li>
       </ul>
     </nav>
@@ -53,7 +50,7 @@
           <div class="carousel-item active">
             <div class="d-flex justify-content-around">
               <div>
-                <h1>Hola, {{user.username}}!</h1>
+                <h1>Hola, {{nombreCliente}}!</h1>
                 <p>Necesitas ayuda?</p>
                 <button class="bttn bttn-oscuro">Pedir ayuda</button>
               </div>
@@ -66,6 +63,7 @@
                 <h1>¿Necesitás dinero?</h1>
                 <p>Pedí un préstamo</p>
                 <button class="bttn bttn-oscuro">Pedi tu préstamo</button>
+                <a href="../prestamos/nuevo_prestamo">PEDILO</a>
               </div>
               <img class="w-25 imgCarousel" src="{% static 'principal/images/online_payment.svg' %}" class="d-block w-100" alt="...">
             </div>

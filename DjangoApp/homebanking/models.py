@@ -10,7 +10,7 @@ from django.db import models
 
 class AuditoriaCuenta(models.Model):
     old_id = models.IntegerField(blank=True, null=True)
-    new_id = models.AutoField(primary_key=True, blank=True, null=True)
+    new_id = models.IntegerField(blank=True, null=True)
     old_balance = models.IntegerField()
     new_balance = models.IntegerField()
     old_iban = models.TextField()

@@ -56,8 +56,9 @@ WHERE totalCredito /cantPrestamos IS NOT NULL;
 
 -- 4.5
 CREATE TABLE  IF NOT EXISTS auditoria_cuenta(
+							id INTEGER PRIMARY KEY,
 							old_id INTEGER,
-							new_id INTEGER PRIMARY KEY,
+							new_id INTEGER,
 							old_balance INTEGER NOT NULL,
 							new_balance INTEGER NOT NULL,
 							old_iban TEXT NOT NULL,
@@ -74,7 +75,7 @@ CREATE TRIGGER IF NOT EXISTS post_actualizacion_cuentas
 		WHEN old.balance <> new.balance 
 			OR old.iban <> new.iban
 				OR  old.tipo_cuenta <> new.tipo_cuenta
-BEGIN;
+BEGIN
 	INSERT INTO auditoria_cuenta(
 		old_id, new_id, old_balance, new_balance, old_iban, new_iban, old_type,
 		new_type, user_action, created_at )

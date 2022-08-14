@@ -27,5 +27,14 @@
         <!-- {{ forms }} -->
         <button type="submit" class="save btn btn-default btn-block">Guardar</button>
     </form>
+    {% if messages %}
+        <div class="">
+            <p class="">
+            {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+            </p>    
+        </div>
+    {% endif %}
 </body>
 </html>

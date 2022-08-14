@@ -14,3 +14,11 @@ class Tarjeta(models.Model):
     class Meta:
         managed = False
         db_table = 'tarjeta'
+
+class UserCliente(models.Model):
+    id_user = models.IntegerField()
+    id_cliente = models.IntegerField()
+
+    class Meta:
+        managed = False
+        db_table = 'user_cliente'
