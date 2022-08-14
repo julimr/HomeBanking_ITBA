@@ -16,6 +16,15 @@
         <h1>Convertite en nuestro cliente</h1>
     </header>
     <main>
+        {% if messages %}
+        <div class="formulario-registro">
+            <p class="">
+            {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+            </p>    
+        </div>
+        {% endif %}
         <!-- Hay que agregarle un par de estilos -->
         <form class="formulario-registro" method="post">
             {% csrf_token %}

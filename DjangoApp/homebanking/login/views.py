@@ -8,45 +8,18 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth.forms import AuthenticationForm
 from login.models import Cliente, UserCliente
 
+from django.contrib.auth.models import User
+
 def recuperarClave(request):
   template = loader.get_template('login/forgot.html')
   return HttpResponse(template.render({}, request))
-
-def registrarse(request):
-  if request.method == 'POST':
-    form = UserRegisterForm(request.POST)
-    if form.is_valid():
-      # username = form.cleaned_data['username']
-      #messages.success(request, f'Usuario {username} creado')
-      user = form.save()
-      login(request, user)
-      messages.success(request, "Registration successful." )
-      return redirect('index')  #Acá iria la direccion del HB
-    messages.error(request, "Unsuccessful registration. Invalid information.")
-
-  else:
-    form = UserRegisterForm()
-  
-  context = {'form' : form}
-  template = loader.get_template('login/register-page.html')
-  return HttpResponse(template.render(context, request))
 
 # def registrarse(request):
 #   if request.method == 'POST':
 #     form = UserRegisterForm(request.POST)
 #     if form.is_valid():
-#       dni = form.cleaned_data.get('dni')
-#       clientes = Cliente.objects.all().values().filter(customer_dni = dni)
-#       cliente = clientes.filter(customer_dni = dni)
-#       clienteid = cliente.first()['customer_id']
-#       # clienteid = 1
-#       # if len(clientes) != 0:
-#         # user = form.save(commit=False)
-#         # userCliente = UserCliente(id_user = 1, id_cliente = 1)
-#         # userCliente.save()
-#         # user = form.save()
-#         # login(request, user)
-#         # messages.success(request, "Registration successful." )
+#       # username = form.cleaned_data['username']
+#       #messages.success(request, f'Usuario {username} creado')
 #       user = form.save()
 #       login(request, user)
 #       messages.success(request, "Registration successful." )
@@ -59,6 +32,32 @@ def registrarse(request):
 #   context = {'form' : form}
 #   template = loader.get_template('login/register-page.html')
 #   return HttpResponse(template.render(context, request))
+
+def registrarse(request):
+  if request.method == 'POST':
+    form = UserRegisterForm(request.POST)
+    if form.is_valid():
+      dni = form.cleaned_data.get('dni')
+      cliente = Cliente.objects.filter(customer_dni = dni)
+      for x in cliente:
+        idCliente = x.customer_id
+      if len(cliente) != 0:
+        user : User = form.save()
+        login(request, user)
+        userCliente = UserCliente(id_user = user.pk , id_cliente = idCliente)
+        userCliente.save()
+        return redirect('index')
+      else:
+        messages.error(request, "No encontamos su DNI en la lista de clientes.")
+        messages.error(request, "Debe ser cliente del banco para poder registrarse.")
+
+  else:
+    form = UserRegisterForm()
+  
+  context = {'form' : form}
+  template = loader.get_template('login/register-page.html')
+  return HttpResponse(template.render(context, request))
+
 def iniciarSesion(request):
   if request.method == 'POST':
     form = AuthenticationForm(request, data=request.POST)
