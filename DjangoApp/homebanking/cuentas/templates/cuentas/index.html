@@ -10,9 +10,15 @@
     <title>Cuentas ITBANK</title>
 </head>
 <body>
+  {% if userID %}   
   <div class="text-center d-flex justify-content-start align-items-center ml-4 mt-4">
     <button type="button" class="btn btn-light"><a href="../homebanking">Volver</a></button>
   </div>
+  {% else %}
+  <div class="text-center d-flex justify-content-start align-items-center ml-4 mt-4">
+    <button type="button" class="btn btn-light"><a href="../">Volver</a></button>
+  </div>
+  {% endif %}
   <div class="text-center d-flex justify-content-around align-items-center mb-5">
     <h1>Cuentas</h1>
   </div>
