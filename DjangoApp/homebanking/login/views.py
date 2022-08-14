@@ -8,7 +8,6 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth.forms import AuthenticationForm
 from login.models import Cliente, UserCliente
 
-
 def recuperarClave(request):
   template = loader.get_template('login/forgot.html')
   return HttpResponse(template.render({}, request))
@@ -60,9 +59,6 @@ def registrarse(request):
 #   context = {'form' : form}
 #   template = loader.get_template('login/register-page.html')
 #   return HttpResponse(template.render(context, request))
-
-
-
 def iniciarSesion(request):
   if request.method == 'POST':
     form = AuthenticationForm(request, data=request.POST)
@@ -73,7 +69,7 @@ def iniciarSesion(request):
       if user is not None:
           login(request, user)
           messages.info(request, f"You are now logged in as {username}.")
-          return redirect('/homebanking')  #Acá iria la direccion del HB
+          return redirect('/homebanking')
       else:
         messages.error(request,"Invalid username or password.")
     else:

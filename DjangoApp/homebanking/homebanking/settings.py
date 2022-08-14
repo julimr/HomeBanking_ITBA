@@ -122,8 +122,9 @@ USE_I18N = True
 
 USE_TZ = True
 
-LOGIN_REDIRECT_URL = '' #Direccion del HB
-LOGOUT_REDIRECT_URL = reverse_lazy('login/')
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = 'principal/'
+LOGOUT_REDIRECT_URL = reverse_lazy('/login/')
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
