@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="icon" href="Images/logo icono.png">
+  <link rel="icon" href="{% static 'principal/images/logo icono.png' %}">
   <link rel=StyleSheet href="{% static 'principal/css/styles-Homebanking.css' %}" type="text/css" media=screen>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
@@ -62,8 +62,7 @@
               <div>
                 <h1>¿Necesitás dinero?</h1>
                 <p>Pedí un préstamo</p>
-                <button class="bttn bttn-oscuro">Pedi tu préstamo</button>
-                <a href="../prestamos/nuevo_prestamo">PEDILO</a>
+                <button class="bttn bttn-oscuro"><a href="../prestamos/nuevo_prestamo">Pedi tu préstamo</a></button>
               </div>
               <img class="w-25 imgCarousel" src="{% static 'principal/images/online_payment.svg' %}" class="d-block w-100" alt="...">
             </div>

@@ -11,11 +11,11 @@ def index(request):
   if userID is not None:
     idCliente = obtenerClienteID(userID)
     cuentasDelCliente = cuentas.filter(customer_id = idCliente)
-    context = { 'cuentas' : cuentasDelCliente }
+    context = { 'cuentas' : cuentasDelCliente , 'userID' : userID}
     if len(cuentasDelCliente) == 0:
       messages.info(request, 'No tiene cuentas a su nombre.')
   else: 
-        context = { 'cuentas' : cuentas }
+        context = { 'cuentas' : cuentas, 'userID' : userID }
   template = loader.get_template('cuentas/index.html')
   return HttpResponse(template.render(context, request))
 

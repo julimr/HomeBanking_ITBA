@@ -15,11 +15,11 @@ def index(request):
     if userID is not None:
         idCliente = obtenerClienteId(userID)
         prestamosDelCliente = prestamos.filter(customer_id = idCliente)
-        context = { 'prestamos' : prestamosDelCliente }
+        context = { 'prestamos' : prestamosDelCliente , 'userID' : userID }
         if len(prestamosDelCliente) == 0:
             messages.info(request, 'No tiene préstamos.')
     else: 
-        context = { 'prestamos' : prestamos }
+        context = { 'prestamos' : prestamos, 'userID' : userID }
     template = loader.get_template('prestamos/index.html')
     return HttpResponse(template.render(context, request))
 

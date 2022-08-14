@@ -11,11 +11,11 @@ def index(request):
   if userID is not None:
     idCliente = obtenerClienteID(userID)
     tarjetasDelCliente = tarjetas.filter(customer_id = idCliente)
-    context = { 'tarjetas' : tarjetasDelCliente }
+    context = { 'tarjetas' : tarjetasDelCliente, 'userID' : userID }
     if len(tarjetasDelCliente) == 0:
       messages.info(request, 'No tiene tarjetas a su nombre.')
   else: 
-        context = { 'tarjetas' : tarjetas }
+        context = { 'tarjetas' : tarjetas, 'userID' : userID }
 
   template = loader.get_template('tarjetas/index.html')
   return HttpResponse(template.render(context, request))
