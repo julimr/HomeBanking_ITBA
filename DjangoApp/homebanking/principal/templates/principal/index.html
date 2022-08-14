@@ -1,0 +1,167 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="icon" href="Images/logo icono.png">
+  <link rel=StyleSheet href="{% static 'principal/css/styles-Homebanking.css' %}" type="text/css" media=screen>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <title>Inicio</title>
+</head>
+<body>
+  <header>
+    <section class="header-elementos">
+      <img class="header-itbank-logo" src="{% static 'principal/images/logo-blanco.png' %}" alt="">
+      <div class="buttons-nav">
+        <button class="bttn bttn-claro mi-perfil ">MI PERFIL</button>
+        <button class="bttn bttn-claro cerrar-sesion">
+          <a href="{% url 'logout' %}">CERRAR SESIÓN</a>
+        </button>
+        <img class="menu-burger" src="{% static 'principal/images/menu.svg' %}" alt="">
+      </div>
+    </section>
+    <nav>
+      <ul class="nav-navegacion">
+        <li><a href="../cuentas">CUENTAS</a></li>
+        <li><a href="../tarjetas">TARJETAS</a></li>
+        <li>TRANSFERENCIAS</li>
+        <li>PAGOS</li>
+        <li>INVERSIONES</li>
+        <li><a href="../prestamos">PRÉSTAMOS</a></li>
+      </ul>
+    </nav>
+  </header>
+  <section>
+    <div class="carousel">
+      <div id="carouselExampleControls" class="carousel carousel-dark slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
+            aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
+            aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
+            aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3"
+            aria-label="Slide 4"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="d-flex justify-content-around">
+              <div>
+                <h1>Hola, {{user.username}}!</h1>
+                <p>Necesitas ayuda?</p>
+                <button class="bttn bttn-oscuro">Pedir ayuda</button>
+              </div>
+              <img class="w-25 imgCarousel" src="{% static 'principal/images/online_banking.svg' %}" class="d-block w-100" alt="...">
+            </div>
+          </div>
+          <div class="carousel-item ">
+            <div class="d-flex justify-content-around">
+              <div>
+                <h1>¿Necesitás dinero?</h1>
+                <p>Pedí un préstamo</p>
+                <button class="bttn bttn-oscuro">Pedi tu préstamo</button>
+              </div>
+              <img class="w-25 imgCarousel" src="{% static 'principal/images/online_payment.svg' %}" class="d-block w-100" alt="...">
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="d-flex justify-content-around">
+              <div>
+                <h1>Invertí tu dinero</h1>
+                <p>Hacé un plazo fijo</p>
+                <button class="bttn bttn-oscuro">Crear plazo fijo</button>
+              </div>
+              <img class="w-25 imgCarousel" src="{% static 'principal/images/finance.svg' %}" class="d-block w-100" alt="...">
+            </div>
+          </div>
+          <div class="carousel-item ">
+            <div class="d-flex justify-content-around">
+              <div>
+                <h1>Tenemos una novedad!</h1>
+                <h1>Nueva App de gastos</h1>
+                <p>Para que puedas dividir los gastos con tus amigos</p>
+                <button class="bttn bttn-oscuro">
+                  <a class="btn-appGastos" href="./Desafio App de Gastos/appDeGastos.html" target="_blank">Ir a la app</a>
+                  </button>
+              </div>
+              <img class="w-25 imgCarousel" src="{% static 'principal/images/happy_news.svg' %}" alt="...">
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+          data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+          data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+  </section>
+  <section class="sectionProductos">
+    <h2>Tus Productos</h2>
+    <div class="productos d-flex flex-wrap m-2">
+      <div class="card card-style" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title fw-semibold">CAJA DE AHORRO</h5>
+          <h6 class="card-subtitle mb-2 text-muted">$ N° 00000123</h6>
+          <div class="card-text d-flex">
+            <p class="text-secondary m-2">Saldo</p>
+            <p class="m-2">$ 2.000</p>
+          </div>
+          <div class="d-flex justify-content-end">
+            <img class="icon-copy" src="{% static 'principal/images/copy.svg' %}" alt="">
+            <a href="#" class="link-secondary">Alias/CBU</a>
+          </div>
+        </div>
+      </div>
+      <div class="card card-style" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title fw-semibold">VISA</h5>
+          <h6 class="card-subtitle mb-2 text-muted">XXXX-1234</h6>
+          <div class="card-text d-flex align-content-center">
+            <p class="text-secondary m-2">Saldo</p>
+            <div>
+              <p class="m-2">$ 10.132</p>
+              <p class="m-2">u$s 400</p>
+            </div>
+          </div>
+          <div class="d-flex justify-content-end">
+            <img class="icon-copy" src="{% static 'principal/images/copy.svg' %}" alt="">
+            <a href="#" class="link-secondary">Alias/CBU</a>
+          </div>
+        </div>
+      </div>
+      <div class="card card-style" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title fw-semibold">CAJA DE AHORRO</h5>
+          <h6 class="card-subtitle mb-2 text-muted">u$s N° 0003235</h6>
+          <div class="card-text d-flex align-content-center">
+            <p class="text-secondary m-2">Saldo</p>
+            <div>
+              <p class="m-2">u$s 1.300</p>
+            </div>
+          </div>
+          <div class="d-flex justify-content-end">
+            <img class="icon-copy" src="{% static 'principal/images/copy.svg' %}" alt="">
+            <a href="#" class="link-secondary">Alias/CBU</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- <script src="./js/main.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+    crossorigin="anonymous"></script>
+</body>
+</html>

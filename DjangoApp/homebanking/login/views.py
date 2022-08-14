@@ -73,7 +73,7 @@ def iniciarSesion(request):
       if user is not None:
           login(request, user)
           messages.info(request, f"You are now logged in as {username}.")
-          return redirect('../prestamos/')  #Acá iria la direccion del HB
+          return redirect('/homebanking')  #Acá iria la direccion del HB
       else:
         messages.error(request,"Invalid username or password.")
     else:

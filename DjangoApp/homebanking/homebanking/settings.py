@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'clientes.apps.ClientesConfig',
     'prestamos.apps.PrestamosConfig',
     'tarjetas.apps.TarjetasConfig',
-    'cuentas.apps.CuentasConfig'
+    'cuentas.apps.CuentasConfig',
+    'principal.apps.PrincipalConfig'
 ]
 
 MIDDLEWARE = [
@@ -122,7 +123,7 @@ USE_I18N = True
 USE_TZ = True
 
 LOGIN_REDIRECT_URL = '' #Direccion del HB
-
+LOGOUT_REDIRECT_URL = reverse_lazy('login/')
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
