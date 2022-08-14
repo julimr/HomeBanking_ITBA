@@ -14,25 +14,6 @@ def recuperarClave(request):
   template = loader.get_template('login/forgot.html')
   return HttpResponse(template.render({}, request))
 
-# def registrarse(request):
-#   if request.method == 'POST':
-#     form = UserRegisterForm(request.POST)
-#     if form.is_valid():
-#       # username = form.cleaned_data['username']
-#       #messages.success(request, f'Usuario {username} creado')
-#       user = form.save()
-#       login(request, user)
-#       messages.success(request, "Registration successful." )
-#       return redirect('index')  #Acá iria la direccion del HB
-#     messages.error(request, "Unsuccessful registration. Invalid information.")
-
-#   else:
-#     form = UserRegisterForm()
-  
-#   context = {'form' : form}
-#   template = loader.get_template('login/register-page.html')
-#   return HttpResponse(template.render(context, request))
-
 def registrarse(request):
   if request.method == 'POST':
     form = UserRegisterForm(request.POST)
