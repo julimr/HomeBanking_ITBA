@@ -11,7 +11,7 @@
     <title>Nuevo préstamos</title>
 </head>
 <body class="mt-3">
-    <h2 class="text-center">Nuevo préstamo</h2>
+    <h2 class="title">Nuevo préstamo</h2>
     <form method="POST" class="post-form">{% csrf_token %}
         <div class="form-group">
             <label for="id_loan_type">Tipo de préstamo</label>
@@ -26,13 +26,16 @@
             <input class="form-control" type="number" name="loan_total" required="" id="id_loan_total"> 
         </div>
         <!-- {{ forms }} -->
-        <button type="submit" class="save btn btn-default btn-block">Guardar</button>
+        <button type="submit" class="botonSolicitar">Solicitar</button>
     </form>
     {% if messages %}
-        <div class="">
-            <p class="">
+        <div class="errorMessages">
+            <p class="errorMessages_title">La solicitud no fue procesada</p>
             {% for message in messages %}
-                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                <div class="errorMessages_list">
+                    <img src="{% static 'prestamos/images/cruz.png' %}" alt="Cruz de error" width="16">
+                    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                </div>      
             {% endfor %}
             </p>    
         </div>

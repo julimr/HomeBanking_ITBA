@@ -55,25 +55,30 @@
   list-style: none;
   display: flex;
   justify-content: space-between;
-  /* background-image: linear-gradient(to right, #468faf, #01497c); */
-  /* color: white; */
   color: #2c56a8;
-  /* font-weight: bold; */
 }
 .nav-navegacion li {
   margin: 0.5em;
   background-color: none;
-  
+  border-bottom: 2px solid transparent;
 }
+
+.navEnlaces{
+  text-decoration: none;
+  padding: .5rem;
+  border-bottom: 2px solid transparent;
+  color: darkblue;
+  letter-spacing: 1px;
+  font-size: 1.2rem;
+}
+
 .nav-navegacion li:hover {
   /* color: #012641; */
   cursor: pointer;
   color: #fff;
-  background: #7697da;
-  border-radius: 8px;
-  box-shadow: 2px 5px 10px rgba(32, 32, 231, 0.603);
-  
+  border-bottom: 2px solid darkblue;
 }
+
 .carousel {
   /* background-color: #f2f2f2;
   color: #012641;

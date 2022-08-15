@@ -1,5 +1,5 @@
 body {
-    background: linear-gradient(to left, #1d5c97bb, #2287a0c7);
+    background: url("../images/fondo.png"), linear-gradient(to left, #1d5c97, #2287a0);
 }
 table {
     width: 80% !important;

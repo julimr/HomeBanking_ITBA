@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+
 body {
     background: linear-gradient(to left, #1d5c97bb, #2287a0c7);
 }
+
 table {
     width: 80% !important;
     margin: auto;
@@ -9,4 +12,19 @@ table {
 .head-table{
     background-color: #1d5c97;
     color: white;
+}
+
+.sinTarjetas{
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.info{
+    list-style-type: none;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 2.2rem;
+    color:rgb(3, 33, 71);
 }

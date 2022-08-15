@@ -17,18 +17,26 @@
     </header>
     <main>
         {% if messages %}
-        <div class="formulario-registro">
-            <p class="">
+        <div class="errorMessages">
+            <p class="errorMessages_title">La solicitud no fue procesada</p>
             {% for message in messages %}
-                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                <div class="errorMessages_list">
+                    <img src="{% static 'prestamos/images/cruz.png' %}" alt="Cruz de error" width="16">
+                    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                </div>      
             {% endfor %}
             </p>    
         </div>
         {% endif %}
-        <!-- Hay que agregarle un par de estilos -->
         <form class="formulario-registro" method="post">
             {% csrf_token %}
-            {{ form.as_p }}
+            {% for field in form %}
+            <div class="formulario__fields">
+              {{ field.errors }}
+              {{ field.label_tag }}<br>
+              {{ field }}
+            </div>
+            {% endfor %}
             <div class="botones">
                 <button type="submit">Registrarse</button>
             </div>
@@ -36,7 +44,6 @@
                 <p>¿Ya eres cliente? <a href="../" id="iniciar-sesion">Iniciar Sesión</a></p>
             </div>       
         </form>
-
     </main>
 
     <script src="https://kit.fontawesome.com/c15b744a04.js" crossorigin="anonymous" ></script>

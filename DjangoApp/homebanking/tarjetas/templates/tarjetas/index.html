@@ -56,8 +56,8 @@
     </tbody>
   </table>
   {% if messages %}
-        <div class="">
-            <p class="">
+        <div class="sinTarjetas">
+            <img src="{% static 'tarjetas/images/sinTarjeta.png' %}" alt="">
             {% for message in messages %}
                 <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
             {% endfor %}

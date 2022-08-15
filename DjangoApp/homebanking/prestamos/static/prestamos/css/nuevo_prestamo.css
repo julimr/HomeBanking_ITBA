@@ -1,6 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Sen&family=Sora&display=swap');
+
+:root {
+    --backColor1 : #023e8a;
+    --backColor2 : #002855;
+    --titleFont: 'Sora', sans-serif;
+    --textFont: 'Sora', sans-serif;
+}
+
 body {
-    background: linear-gradient(to left, #1d5c97bb, #2287a0c7);
-    width: 70%;
-    margin: auto;
-    
+    background: url("../images/fondo.png"), linear-gradient(to left, #1d5c97, #2287a0);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title{
+    color: white;
+    font-family: var(--titleFont);
+    text-shadow: 3px 2px 5px black;
+}
+
+.post-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 35vw;
+    margin: 3rem 0;
+    padding: 1.5rem 0 3rem 0;
+    background-color: #f5f5f5;
+    border: 3px solid var(--backColor1);
+}
+
+.form-group{
+    width: 80%;
+}
+
+.form-group label {
+    font-family: var(--textFont);
+    font-size: 1.2rem;
+    color: black;
+}
+
+.form-control{
+    border-color: #1457a3;
+}
+
+.botonSolicitar{
+    width: 10rem;
+    height: 3rem;
+    background-color: white;
+    border: 2px solid var(--backColor1);
+    color: var(--backColor2);
+    font-size: 1.2rem;
+    font-family: var(--textFont);
+}
+
+.botonSolicitar:hover{
+    border: 2px solid transparent;
+    background-color: var(--backColor2);
+    color: white;
+    cursor: pointer;
+    transition: .5s background;
+}
+
+.errorMessages{
+    display: flex;
+    flex-direction: column;
+    width: 35vw;
+    margin: 3rem 0;
+    padding: 1.5rem 0 3rem 0;
+    background-color: #f5f5f5;
+    border: 3px solid var(--backColor1);
+}
+
+.errorMessages_title{
+    font-family: var(--titleFont);
+    font-size: 1.4rem;
+    padding: .7rem;
+}
+
+.errorMessages_list{
+    list-style-type: none;
+    font-family: var(--textFont);
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: .7rem;
+    padding: .5rem 0 0 .5rem;
 }
