@@ -4,5 +4,5 @@ from django.urls import path, include
 from .views import SucursalesList
 
 urlpatterns = [
-    path('all', SucursalesList.as_view(), name="sucursales"),
+    path('all', SucursalesList.as_view(template_name="sucursales/index.html"), name="sucursales"),
 ]
