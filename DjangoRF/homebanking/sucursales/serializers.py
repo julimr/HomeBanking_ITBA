@@ -6,6 +6,7 @@ from .models import Sucursal, Direccion
 class SucursalSerializer(serializers.ModelSerializer):
     class Meta:
         model = Sucursal
+        #Acá se podría incluir el branch_number tambien
         fields = ('branch_id', 'branch_name')
 
 class DireccionSerializer(serializers.ModelSerializer):
