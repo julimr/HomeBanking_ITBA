@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'forgot/css/style-Forgot.css' %}" />
+    <link rel="icon" href="{% static 'login/images/logo icono.png' %}">
+    <title>Forgot-Recover</title>
+  </head>
+  <body>
+    <a href="../"><h1 class="logo"><img src="{% static 'login/images/logo-blanco.png' %}" alt="" /></h1></a>
+    <div class="contenedor">
+      <div class="cuerpo">
+        <a href="../" class="boton-volver"> volver</a>
+        <h2>Recuperá tu usuario y/o clave digital</h2>
+        <form>
+          <label for="username">Ingrese su tipo y número de documento</label>
+          <br />
+          <!-- Falta agrear estilo al select -->
+          <select name="idtype" id="idtype" class="select-box">
+            <option value="1">DNI</option>
+            <option value="2">LC</option>
+            <option value="3">LE</option>
+            <option value="4">LI</option>
+          </select>
+          <input type="text" placeholder="Ingrese su número de documento" />
+          <br />
+
+          <input type="submit" value="Recuperar" />
+          <br />
+        </form>
+      </div>
+    </div>
+    
+    <footer>
+      <div>
+      </div>
+    </footer>
+
+    <script
+      src="https://kit.fontawesome.com/c15b744a04.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

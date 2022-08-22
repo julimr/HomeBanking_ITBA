@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+.ilustracion__capa{
+    background-color: rgba(1, 33, 94, 0.52);
+    position: absolute;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+}
+
+.ilustracion__capa-logo{
+    width: 35%;
+    height: 25%;
+}
+
+.ilustracion__capa-titulo{
+    font-weight: bold;
+}
+
+.ilustracion__imagen {
+    /* background-image: url("{% static 'login/images/ilustracionLogin.jpg' %}") no-repeat top / contain; */
+    height: 100%;
+}
+
+.ilustracion__capa-informacion{
+    background-color: rgba(21, 95, 233, 1.0);
+    padding-bottom: 5px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-around;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.ilustracion__capa-informacion-boton{
+    background-color: #001845;
+    color: white;
+    border: none;
+    height: 80%;
+}
+
+.ilustracion__capa-informacion-boton:hover{
+    transition: .5s all;
+    cursor: pointer;
+    color: black;
+    background-color: #FDFDFD;
+}
+.ilustracion__capa-informacion-aviso{
+    font-size: 1em;
+}

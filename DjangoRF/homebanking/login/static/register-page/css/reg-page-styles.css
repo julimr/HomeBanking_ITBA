@@ -1,0 +1,192 @@
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@300&family=Source+Code+Pro&family=Source+Sans+Pro&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@300&family=Nunito&family=Source+Code+Pro&family=Source+Sans+Pro&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@300&family=Nunito&family=Roboto+Condensed&family=Source+Code+Pro&family=Source+Sans+Pro&display=swap");
+
+@import url('https://fonts.googleapis.com/css2?family=Sen&family=Sora&display=swap');
+
+:root {
+    --backColor1 : #023e8a;
+    --backColor2 : #002855;
+    --titleFont: 'Sora', sans-serif;
+    --textFont: 'Sora', sans-serif;
+}
+
+body {
+  margin: 0;
+  padding-bottom: 3rem;
+  /* background: url(/HomeBanking_ITBA-main/Images/fondo.png), #7B4397; */
+  /* background: url(/HomeBanking_ITBA-main/Images/fondo.png), -webkit-gradient(linear, right top, left top, from(#7B4397), to(#106980)); */
+  background: url("../../forgot/images/fondo.png"), linear-gradient(to left, #1d5c97, #2287a0);
+  /* background-size: cover; */
+  font-family: sans-serif;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header {
+  width: 940px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+}
+
+header img {
+  width: 30%;
+  height: 30%;
+}
+
+h1 {
+  font-family: "Nunito", sans-serif;
+  font-size: 40px;
+  color: #e8eff5;
+}
+
+main .formulario-registro {
+  width: 580px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  border: 3px solid var(--backColor1);
+  background: #fff;
+  padding: 3rem 0;
+}
+
+.formulario-registro h2 {
+  font-family: "Source Code Pro", monospace;
+  font-size: 36px;
+  text-align: center;
+  color: #000;
+  font-weight: bold;
+}
+
+.formulario-registro .completar {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  color: #000;
+}
+
+.formulario__fields {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+}
+
+.formulario__fields input {
+  height: 1.7rem;
+  border: none;
+  border-bottom: 2px solid rgb(34, 34, 34);
+  background-color: transparent;
+  margin-bottom: 2rem;
+  color: rgb(0, 0, 0);
+  font-size: 1rem;
+}
+
+.formulario__fields input:focus{
+  background: none;
+  outline: none;
+  border-bottom: 2px solid rgb(53, 110, 217);
+}
+
+.formulario__fields input:active{
+  background: none;
+  outline: none;
+}
+
+.formulario__fields label {
+  color: rgb(61, 61, 61);
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="time"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  border-radius: 4px;
+  margin-right: 2px;
+  opacity: 0.9;
+  filter: invert(0.9);
+}
+
+main .botones {
+  text-align: center;
+}
+
+main .botones button {
+  width: 270px;
+  height: 71px;
+
+  margin-top: 30px;
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 24px;
+
+  background: #325e9b;
+  color: white;
+
+  cursor: pointer;
+  border-color: rgb(0, 0, 0);
+  border-radius: 12px;
+
+}
+
+main .botones button:hover {
+  background: rgb(2, 2, 87);
+  color: white;
+  transition: .5s background;
+}
+
+main .formulario-registro .cliente-iniciar {
+  text-align: center;
+  font-size: 18px;
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+.cliente-iniciar #iniciar-sesion {
+  color: #457b9d;
+  text-decoration: none;
+}
+
+.cliente-iniciar #iniciar-sesion:hover {
+  color: grey;
+  text-decoration: underline;
+}
+
+.errorMessages{
+  display: flex;
+  flex-direction: column;
+  width: 580px;
+  margin-bottom: 1rem;
+  background-color: #f5f5f5;
+  border: 3px solid var(--backColor1);
+}
+
+.errorMessages_title{
+  font-family: var(--titleFont);
+  font-size: 1.4rem;
+  padding: .7rem;
+}
+
+.errorMessages_list{
+  list-style-type: none;
+  font-family: var(--textFont);
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: .7rem;
+  padding: .5rem 0 0 .5rem;
+}

@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Itbank Group | Login</title>
+    <link rel="icon" href="{% static 'login/images/logo icono.png' %}">
+    <link rel='stylesheet' href="{% static 'login/css/reset.css' %}">
+    <link rel='stylesheet' href="{% static 'login/css/login.css' %}">
+    <link rel='stylesheet' href="{% static 'login/css/login-ilustracion.css' %}">
+    <link rel='stylesheet' href="{% static 'login/css/login-formulario.css' %}">
+    <link rel='stylesheet' href="{% static 'login/css/login-final.css' %}">
+  </head>
+  <body>
+    <section class="ilustracion">
+      <div class="ilustracion__capa">
+        <a href="index.html"><img src="{% static 'login/images/logo-blanco.png' %}" alt="Logo ITBANK Group" class="ilustracion__capa-logo"></a>
+        <h1 class="ilustracion__capa-titulo">ITBANK Group Online Banking</h1>
+        <p class="ilustracion__capa-descripcion">Ingresá y gestioná tu dinero. Donde sea y cuando quieras.</p>
+        <div class="ilustracion__capa-informacion">
+          <p class="ilustracion__capa-informacion-aviso">Evitá ser victima de estafas. Conocé nuestras recomendaciones sobre seguridad digital.</p>
+          <button class="ilustracion__capa-informacion-boton">Ver recomendaciones</button>
+        </div>
+      </div>
+      <div class="ilustracion__imagen"> <img class="ilustracion__imagen" src="{% static 'login/images/ilustracionLogin.jpg' %}" alt=""></div>
+    </section>
+    <section class="formulario">
+      <div class="formulario__estructura">
+        <div class="formulario__estructura_contenedor-logo">
+          <img src="{% static 'login/images/logo2.jpg' %}" alt="Logo ITBANK Group">
+        </div>
+        <h2 class="formulario__estructura-titulo">Iniciar Sesión</h2>
+        <form class="formulario__datos" method="post">
+          {% csrf_token %}
+          {% for field in form %}
+            <div class="formulario__fields">
+              {{ field.errors }}
+              {{ field.label_tag }}<br>
+              {{ field }}
+            </div>
+          {% endfor %}
+            <button type="submit" class="botonIngresar">Ingresar</button>
+      </form>
+      <div class="formulario__datos-final-enlaces">
+        <p class="enlaces-registrar">¿No tienes una cuenta? <br> <a href="registrarse/">Regístrate.</a></p>
+      </div>
+      <div class="formulario__datos-final-enlaces">
+        <p class="enlaces-registrar">Ver todos los clientes <br> <a href="clientes/">Ver clientes.</a></p>
+      </div>
+      <div class="formulario__datos-final-enlaces">
+        <p class="enlaces-registrar">Ver todas las cuentas <br> <a href="cuentas/">Ver cuentas.</a></p>
+      </div>
+      <div class="formulario__datos-final-enlaces">
+        <p class="enlaces-registrar">Ver todas las tarjetas <br> <a href="tarjetas/">Ver tarjetas.</a></p>
+      </div>
+      <div class="formulario__datos-final-enlaces">
+        <p class="enlaces-registrar">Ver todos los préstamos <br> <a href="prestamos/">Ver préstamos.</a></p>
+      </div>
+    
+      </div>
+      
+    </section>
+    <script src="{% static 'login/js/login.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  </body>
+</html>

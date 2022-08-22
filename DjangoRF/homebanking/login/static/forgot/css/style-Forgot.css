@@ -1,0 +1,107 @@
+
+h1 {
+  text-align: center;
+  text-shadow: 2px 2px 5px grey;
+  color: #fff;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  /* background: url(/HomeBanking_ITBA-main/Images/fondo.png), #7B4397; */
+  /* background: url(/HomeBanking_ITBA-main/Images/fondo.png), -webkit-gradient(linear, right top, left top, from(#7B4397), to(#106980)); */
+  background: url("../images/fondo.png"), linear-gradient(to left, #1d5c97, #2287a0);
+  /* background-size: cover; */
+  font-family: sans-serif;
+  height: 100vh;
+}
+
+.contenedor {
+  width: 60%;
+  height: 30%;
+  margin: auto;
+  border: 3px solid #a8dadc;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 2px 2px 5px 4px grey;
+  color: #457b9d;
+  border-radius: 15px;
+  background: #fff;
+}
+
+.logo img{
+  height: 250px;
+}
+
+.cabecero {
+  background-color: #fff;
+}
+
+.cuerpo {
+  padding-top: 2px;
+  font-size: 1.2em;
+  font-weight: bolder;
+  /* text-shadow: 2px 2px 2px grey; */
+  /* text-decoration: none; */
+}
+
+.cuerpo h2 {
+  color: rgb(43, 53, 110);
+}
+
+.cuerpo input {
+  width: 250px;
+  margin-bottom: 20px;
+}
+
+.cuerpo input[type="text"] {
+  border: none;
+  border-bottom: 1px solid #457b9d;
+  background: transparent;
+  outline: none;
+  height: 40px;
+  color: #000;
+  font-size: 16px;
+}
+
+.cuerpo input[type="submit"] {
+  border: none;
+  outline: none;
+  height: 40px;
+  background: #457b9d;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 20px;
+}
+
+.cuerpo input[type="submit"]:hover {
+  background: #3a0ca3;
+}
+
+.cuerpo a {
+  text-decoration: none;
+  font-size: 15px;
+  line-height: 20px;
+}
+
+.cuerpo a:hover {
+  color: #3a0ca3;
+  text-decoration: underline;
+}
+
+.cuerpo a:visited {
+  text-decoration: none;
+  color: #457b9d;
+}
+
+.select-box {
+  height: 40px;
+  border: none;
+  border-radius: 15px;
+  color: #000000;
+  font-weight: bold;
+}
+
+.cabecero img {
+  width: 250px;
+}
