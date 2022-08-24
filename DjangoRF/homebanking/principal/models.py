@@ -21,3 +21,33 @@ class UserCliente(models.Model):
     class Meta:
         managed = False
         db_table = 'user_cliente'
+
+class Cuenta(models.Model):
+    account_id = models.AutoField(primary_key=True)
+    customer_id = models.IntegerField()
+    balance = models.IntegerField()
+    iban = models.TextField()
+    tipo_cuenta = models.ForeignKey('TipoCuentas', models.DO_NOTHING, db_column='tipo_cuenta', blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'cuenta'
+
+class TipoCuentas(models.Model):
+    cuenta_id = models.AutoField(primary_key=True, blank=True, null=False)
+    tipo_cuenta = models.TextField()
+
+    class Meta:
+        managed = False
+        db_table = 'tipo_cuentas'
+
+class Prestamo(models.Model):
+    loan_id = models.AutoField(primary_key=True)
+    loan_type = models.TextField()
+    loan_date = models.TextField()
+    loan_total = models.IntegerField()
+    customer_id = models.IntegerField()
+
+    class Meta:
+        managed = False
+        db_table = 'prestamo'

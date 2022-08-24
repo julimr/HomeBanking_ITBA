@@ -2,7 +2,6 @@ from dataclasses import field
 from rest_framework import serializers
 from .models import Sucursal, Direccion
 
-
 class SucursalSerializer(serializers.ModelSerializer):
     class Meta:
         model = Sucursal
