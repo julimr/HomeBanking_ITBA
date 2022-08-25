@@ -8,7 +8,7 @@ from rest_framework.renderers import TemplateHTMLRenderer, JSONRenderer
 from django.http import Http404
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from rest_framework import status
+from rest_framework import status, permissions
 
 # Create your views here.
 
@@ -29,9 +29,9 @@ def index(request):
 
 
 class TarjetasClienteDetail(APIView):
-  renderer_classes = [JSONRenderer, TemplateHTMLRenderer]
-  def get(self, request, pk=None):
-    if pk:
+  permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+  def get(self, request, pk):
+    if pk and request.user.id :
       cliente = Cliente.objects.filter(customer_id = pk)
       serializer = ClienteSerializer(cliente, context={'request':request}, many=True)
       if cliente:

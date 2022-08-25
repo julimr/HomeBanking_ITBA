@@ -5,7 +5,7 @@ from rest_framework.renderers import TemplateHTMLRenderer, JSONRenderer
 from django.http import Http404
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from rest_framework import status
+from rest_framework import status, permissions
 
 # Create your views here.
 class SucursalesList(APIView):
@@ -18,9 +18,9 @@ class SucursalesList(APIView):
         return Response({'direcciones' : dir_serializer.data})
 
 class SucursalDetail(APIView):
-    renderer_classes = [JSONRenderer, TemplateHTMLRenderer]
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     def get(self, request, pk=None):
-        if pk:
+        if pk and request.user.id:
             clientes = Cliente.objects.filter(branch_id = pk)
             serializer = ClienteSerializer(clientes, context={'request':request}, many=True)
             if clientes:
