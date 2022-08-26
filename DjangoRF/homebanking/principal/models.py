@@ -51,3 +51,18 @@ class Prestamo(models.Model):
     class Meta:
         managed = False
         db_table = 'prestamo'
+
+class Direccion(models.Model):
+    direccion_id = models.AutoField(primary_key=True, blank=True)
+    calle = models.TextField()
+    numero = models.TextField()
+    ciudad = models.TextField()
+    provincia = models.TextField()
+    pais = models.TextField()
+    customer_id = models.IntegerField()
+    employee_id = models.IntegerField()
+    branch_id = models.IntegerField()
+
+    class Meta:
+        managed = False
+        db_table = 'direccion'

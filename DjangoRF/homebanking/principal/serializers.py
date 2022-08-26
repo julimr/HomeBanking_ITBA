@@ -1,5 +1,5 @@
-from rest_framework import serializers
-from .models import Cliente, Prestamo, Cuenta
+from rest_framework import serializers,permissions
+from .models import Cliente, Direccion, Prestamo, Cuenta
 
 class CuentaSerializer(serializers.ModelSerializer):
     class Meta:
@@ -29,3 +29,9 @@ class DatosSerializer(serializers.ModelSerializer):
             serializer = PrestamoSerializer(customer_account_query, many=True)
     
             return serializer.data
+
+class DireccionSerializer(serializers.ModelSerializer):
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+    class Meta:
+        model = Direccion
+        fields = ('direccion_id', 'calle','numero','ciudad','provincia','pais')
