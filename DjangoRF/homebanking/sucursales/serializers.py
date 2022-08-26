@@ -1,5 +1,5 @@
 from dataclasses import field
-from rest_framework import serializers
+from rest_framework import serializers,  permissions
 from .models import Sucursal, Direccion, Prestamo, Cliente
 
 class SucursalSerializer(serializers.ModelSerializer):
@@ -28,6 +28,7 @@ class ClienteSerializer(serializers.ModelSerializer):
         model = Cliente
         fields = ('customer_id', 'branch_id', 'prestamos')
     def get_prestamos(self, obj):
+            permission_classes = [permissions.IsAuthenticatedOrReadOnly]
             customer_account_query = Prestamo.objects.filter(customer_id= obj.customer_id)
             serializer = PrestamoSerializer(customer_account_query, many=True)
     

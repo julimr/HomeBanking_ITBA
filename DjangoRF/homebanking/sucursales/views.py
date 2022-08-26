@@ -6,6 +6,7 @@ from django.http import Http404
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status, permissions
+from rest_framework.permissions import IsAdminUser
 
 # Create your views here.
 class SucursalesList(APIView):
@@ -18,11 +19,10 @@ class SucursalesList(APIView):
         return Response({'direcciones' : dir_serializer.data})
 
 class SucursalDetail(APIView):
-    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
-    def get(self, request, pk=None):
-        if pk and request.user.id:
-            clientes = Cliente.objects.filter(branch_id = pk)
-            serializer = ClienteSerializer(clientes, context={'request':request}, many=True)
-            if clientes:
-                return Response(serializer.data, status=status.HTTP_200_OK)
-            return Response(serializer.errors, status= status.HTTP_404_NOT_FOUND)
+    permission_classes = [IsAdminUser]
+    def get(self, request, pk):
+        clientes = Cliente.objects.filter(branch_id = pk)
+        serializer = ClienteSerializer(clientes, context={'request':request}, many=True)
+        if clientes:
+            return Response(serializer.data, status=status.HTTP_200_OK)
+        return Response(serializer.errors, status= status.HTTP_404_NOT_FOUND)

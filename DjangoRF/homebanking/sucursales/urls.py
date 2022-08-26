@@ -5,6 +5,6 @@ from .views import SucursalDetail, SucursalesList
 
 urlpatterns = [
     path('all', SucursalesList.as_view(template_name="sucursales/index.html"), name="sucursales"),
-    path('prestamos/<int:pk>', SucursalDetail.as_view()),
+    path('<int:pk>/prestamos', SucursalDetail.as_view()),
 
 ]
