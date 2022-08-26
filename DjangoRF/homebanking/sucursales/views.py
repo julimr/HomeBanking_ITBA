@@ -8,15 +8,15 @@ from rest_framework.response import Response
 from rest_framework import status, permissions
 from rest_framework.permissions import IsAdminUser
 
-# Create your views here.
 class SucursalesList(APIView):
     renderer_classes = [JSONRenderer, TemplateHTMLRenderer]
     template_name = "sucursales/index.html"
     def get(self, request):
-        direccion = Direccion.objects.filter(branch__lte = 100)
-        dir_serializer = DireccionSerializer(direccion, many=True)
-        #return render(request, 'sucursales/index.html', {'direcciones' : dir_serializer.data})
-        return Response({'direcciones' : dir_serializer.data})
+        sucursales = Sucursal.objects.all()
+        serializer = SucursalSerializer(sucursales, context={'request':request}, many=True)
+        if sucursales:
+            return Response(serializer.data, status=status.HTTP_200_OK)
+        return Response(serializer.errors, status= status.HTTP_404_NOT_FOUND)
 
 class SucursalDetail(APIView):
     permission_classes = [IsAdminUser]

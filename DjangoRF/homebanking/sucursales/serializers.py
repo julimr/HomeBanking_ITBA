@@ -3,18 +3,21 @@ from rest_framework import serializers,  permissions
 from .models import Sucursal, Direccion, Prestamo, Cliente
 
 class SucursalSerializer(serializers.ModelSerializer):
+    direccion = serializers.SerializerMethodField()
     class Meta:
         model = Sucursal
-        #Acá se podría incluir el branch_number tambien
-        fields = ('branch_id', 'branch_name')
+        fields = ('branch_id', 'branch_name','branch_number', 'branch_address_id','direccion')
+    def get_direccion(self, obj):
+            customer_account_query = Direccion.objects.filter(direccion_id= obj.branch_address_id)
+            serializer = DireccionSerializer(customer_account_query, many=True)
+    
+            return serializer.data
 
 
 class DireccionSerializer(serializers.ModelSerializer):
-    #Serializador anidado
-    branch = SucursalSerializer()
     class Meta:
         model = Direccion
-        fields = ('pais', 'provincia', 'ciudad', 'calle', 'numero', 'branch')
+        fields = ('pais', 'provincia', 'ciudad', 'calle', 'numero')
 
 class PrestamoSerializer(serializers.ModelSerializer):
     class Meta:
