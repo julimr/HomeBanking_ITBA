@@ -31,7 +31,6 @@ class DatosSerializer(serializers.ModelSerializer):
             return serializer.data
 
 class DireccionSerializer(serializers.ModelSerializer):
-    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     class Meta:
         model = Direccion
         fields = ('direccion_id', 'calle','numero','ciudad','provincia','pais')

@@ -23,24 +23,35 @@ class DatosCliente(APIView):
             return Response(serializer.data, status=status.HTTP_200_OK)
         return Response(serializer.errors, status=status.HTTP_404_NOT_FOUND)
 
+class DireccionDetail(APIView):
+    permission_classes = [permissions.IsAuthenticated]
+    def get(self,request):
+      if request.user.is_staff:
+        direccion = Direccion.objects.all()
+      else:
+        userID = request.user.id
+        idCliente = obtenerClienteId(userID)
+        direccion = Direccion.objects.filter(customer_id = idCliente)
+      serializer = DireccionSerializer(direccion, many=True)
+      if direccion:
+          return Response(serializer.data, status=status.HTTP_200_OK)
+      elif len(direccion) == 0:
+          return Response('No hay direcciones para el usuario autenticado')
+      return Response(serializer.errors, status=status.HTTP_404_NOT_FOUND)
 
-class DireccionCliente(APIView):
-  permission_classes = [permissions.IsAuthenticatedOrReadOnly]
-  def get(self, request, pk):
-    direccion = Direccion.objects.filter(direccion_id = pk)
-    serializer = DireccionSerializer(direccion, many=True)
-    if direccion:
-      return Response(serializer.data)
-    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-  def put(self, request, pk):
-    direccion = Direccion.objects.filter(direccion_id = pk).first()
-    serializer = DireccionSerializer(direccion, data=request.data)
-    if serializer.is_valid():
-      serializer.save()
-      return Response(serializer.data)
-    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
+    def put(self, request, pk):
+      userID = request.user.id
+      idCliente = obtenerClienteId(userID)
+      direccion = Direccion.objects.filter(direccion_id = pk).first()
+      if request.user.is_staff or direccion.customer_id == idCliente :
+        serializer = DireccionSerializer(direccion, data=request.data)
+        if serializer.is_valid():
+          serializer.save()
+          return Response(serializer.data)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+      else :
+        return Response('No existe o no puede acceder a la direccion')
+      
 def index(request):
   template = loader.get_template('principal/index.html')
   userID = request.user.id
@@ -56,7 +67,7 @@ def obtenerClienteId(userID):
     userCliente = UserCliente.objects.filter(id_user = userID)
     for x in userCliente:
         idCliente = x.id_cliente
-    return idCliente
+        return idCliente
 
 def obtenerNombreCliente(idCliente):
   cliente = Cliente.objects.filter(customer_id = idCliente)
