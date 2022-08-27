@@ -7,8 +7,49 @@ from django.contrib import messages
 from .models import TiposCliente
 from prestamos.models import Prestamo, Cliente,  UserCliente, Cuenta
 from .forms import PrestamosForm
+from .serializers import PrestamoSerializer
+from rest_framework.permissions import IsAdminUser
+from rest_framework.response import Response
+from rest_framework.views import APIView
+from rest_framework import status
 
 # Create your views here.
+class PrestamosCliente(APIView):
+    permission_classes = [IsAdminUser]
+    def get(self,request, pk):
+        prestamosCliente = Prestamo.objects.filter(customer_id=pk)
+        serializer = PrestamoSerializer(prestamosCliente, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
+    def post(self, request, pk, format=None):
+        serializer = PrestamoSerializer(data=request.data)
+        if serializer.is_valid():
+            monto = serializer.validated_data.get('loan_total')
+            id = serializer.validated_data.get('customer_id')
+            actualizarBalanceCliente(id, monto)
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+class EliminarPrestamo(APIView):
+    permission_classes = [IsAdminUser]
+
+    def get(self,request, pk):
+        prestamo = Prestamo.objects.filter(loan_id=pk)
+        serializer = PrestamoSerializer(prestamo, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
+    def delete(self, request, pk):
+        prestamo = Prestamo.objects.filter(pk=pk).first()
+        if prestamo:
+            serializer = PrestamoSerializer(prestamo)
+            monto = serializer.data['loan_total']
+            id = serializer.data['customer_id']
+            restarBalanceCliente(id, monto)
+            prestamo.delete()
+            return Response(serializer.data, status=status.HTTP_200_OK)
+        return Response(status=status.HTTP_404_NOT_FOUND)
+
 def index(request): 
     prestamos = Prestamo.objects.all().values()
     userID = request.user.id
@@ -60,11 +101,18 @@ def prestamo_aprobado(prestamo, clienteID, montoPrestamo):
    
 def actualizarBalanceCliente(clienteID, montoPrestamo):
     cuentas = Cuenta.objects.filter(customer_id = clienteID)
-    #Aca le agregue 2 ceros ya que los ultimos 2 numeros en la bd corresponden a los decimales
-    montoFinal = montoPrestamo + '00' 
+    montoFinal = montoPrestamo
     for x in cuentas:
         balanceAnterior = x.balance
-        x.balance = balanceAnterior - int(montoFinal)
+        x.balance = int(balanceAnterior) + int(montoFinal)
+        x.save()
+
+def restarBalanceCliente(clienteID, montoPrestamo):
+    cuentas = Cuenta.objects.filter(customer_id = clienteID)
+    montoFinal = montoPrestamo
+    for x in cuentas:
+        balanceAnterior = x.balance
+        x.balance = int(balanceAnterior) - int(montoFinal)
         x.save()
 
 def obtenerClienteId(userID):
